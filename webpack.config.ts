@@ -1,6 +1,6 @@
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import webpack from 'webpack';
+import { buildPlugins } from './config/build/buildPlugins';
 
 const config: webpack.Configuration =  {
     mode: "production",
@@ -10,12 +10,7 @@ const config: webpack.Configuration =  {
         path: path.resolve(__dirname, 'build'),
         clean: true,
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-                template: path.resolve(__dirname, 'public', 'index.html')
-        }),
-        new webpack.ProgressPlugin()
-    ],
+    plugins: buildPlugins(),
     module: {
         rules: [
           {

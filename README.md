@@ -13,3 +13,13 @@
 - 7. add webpack-progress-plugin
 - 8. add typescript (https://webpack.js.org/guides/typescript/)
 - 9. migrate webpack.config on TS (https://webpack.js.org/configuration/configuration-languages/)
+
+
+## 2 Декомпозиция конфига. Опции конфигурации
+
+- 1. создаем папку config/build, config/eslint, config/jest
+- 2. декомпозируем плагины
+- 3. декомпозируем лоадеры
+- 4. декомпозируем резолверы
+- 5. создаем файл config.ts в config/build/types в котором опишем типы конфига
+- 6. создаем buildWebpackConfig.ts, для декомпозиции webpack.config.ts

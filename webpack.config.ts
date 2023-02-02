@@ -2,6 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import { buildLoader } from './config/build/buildLoader';
 import { buildPlugins } from './config/build/buildPlugins';
+import { buildResolvers } from './config/build/buildResolvers';
 
 const config: webpack.Configuration =  {
     mode: "production",
@@ -15,9 +16,7 @@ const config: webpack.Configuration =  {
     module: {
         rules: buildLoader(),
       },
-    resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
-    },
+    resolve: buildResolvers(),
 };
 
 export default config;

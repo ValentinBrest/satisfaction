@@ -29,3 +29,9 @@
 
 - 1. add dev-server (https://webpack.js.org/configuration/dev-server/) 
 - 2. add env variables (https://webpack.js.org/guides/environment-variables/)
+
+
+## 4 Подключаем React и настраиваем css в webpack
+
+- 1. add react, react-dom and  its types (-D)
+- 2. add scss-loader, style-loader, css-loader (https://webpack.js.org/loaders/sass-loader/) 

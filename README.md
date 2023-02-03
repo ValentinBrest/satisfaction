@@ -23,3 +23,9 @@
 - 4. декомпозируем резолверы
 - 5. создаем файл config.ts в config/build/types в котором опишем типы конфига
 - 6. создаем buildWebpackConfig.ts, для декомпозиции webpack.config.ts
+
+
+## 3 Webpack-dev-server. Переменные окружения (env)
+
+- 1. add dev-server (https://webpack.js.org/configuration/dev-server/) 
+- 2. add env variables (https://webpack.js.org/guides/environment-variables/)

@@ -4,5 +4,6 @@ export function buildDevServer (port: number):DevServerConfiguration  {
     return {
         port,
         open: true,
+        historyApiFallback: true,
     }
 }

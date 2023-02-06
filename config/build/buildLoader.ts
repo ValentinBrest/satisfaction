@@ -8,7 +8,12 @@ export function buildLoader (isDev: boolean): webpack.RuleSetRule[] {
           // Creates `style` nodes from JS strings
           isDev ? "style-loader": MiniCssExtractPlugin.loader,
           // Translates CSS into CommonJS
-          "css-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+            }
+          },
           // Compiles Sass to CSS
           "sass-loader",
         ],

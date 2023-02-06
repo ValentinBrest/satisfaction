@@ -45,3 +45,9 @@
 - 4. add App.tsx
 - 5. add index.scss
 - 6. add in options.modules (auto and localIdentName) for css-loader
+
+
+## 6 Роутинг Code splitting Lazy Suspence
+
+- 1. add react-router-dom and its types
+- 2. code-spliting(https://reactjs.org/docs/code-splitting.html#reactlazy)

@@ -35,3 +35,13 @@
 
 - 1. add react, react-dom and  its types (-D)
 - 2. add scss-loader, style-loader, css-loader (https://webpack.js.org/loaders/sass-loader/) 
+
+
+## 5 Настраиваем css modules
+
+- 1. add MiniCssExtractPlugin (https://webpack.js.org/plugins/mini-css-extract-plugin)
+- 2. add css modules (https://webpack.js.org/loaders/css-loader/#modules)
+- 3. add global.d.ts – файл глобальной декларации типов
+- 4. add App.tsx
+- 5. add index.scss
+- 6. add in options.modules (auto and localIdentName) for css-loader

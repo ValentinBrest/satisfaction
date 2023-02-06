@@ -10,7 +10,7 @@ function Counter() {
     return (
         <div>
             <h2>{count}</h2>
-            <button className={cl.button} onClick={increase}>increase</button>
+            <button className={cl.btn} onClick={increase}>increase</button>
         </div>
     )
 }

@@ -74,3 +74,17 @@
 ## 9 Архитектура. введение. Теория
 
 - 1. read an article(https://feature-sliced.design/ru/)
+
+
+## 10 Архитектура. Основы
+
+- 1.  create folders (app, pages, widgets, features, entities, shared) in src
+- 2. put in src/app App.tsx, folder styles. Put global.d.ts in src/app/types
+- 3. delete folder components
+- 4. put ThemeProvoder.tsx in app/providers/ThemeProvider/ui. Create index.ts in app/providers/ThemeProvider for export outside
+- 5. put hook useTheme and ThemeContext in  app/providers/ThemeProvider/lib
+- 6. add “baseUrl, paths” in tsconfig.json
+- 7. setting absolute paths in webpack(https://webpack.js.org/configuration/resolve/#resolvemodules)
+- 8. create index.ts in pages/AboutPage and put AboutPage.(async).tsx in  pages/AboutPage/ui
+- 9. repeat step 8 for MainPage
+- 10. put folder classNames form helpers to shared/lib

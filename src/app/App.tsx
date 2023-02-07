@@ -1,6 +1,6 @@
 import { Suspense } from "react"
 import { Link, Route, Routes } from "react-router-dom"
-import { classNames } from "helpers/classNames/classNames"
+import { classNames } from "shared/lib/classNames/classNames"
 import './styles/index.scss'
 import { useTheme } from "app/providers/ThemeProvider"
 import { AboutPage } from "pages/AboutPage"

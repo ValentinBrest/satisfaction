@@ -3,11 +3,8 @@ import { Link, Route, Routes } from "react-router-dom"
 import './styles/index.scss'
 import { AboutPageAsync } from "./pages/AboutPage/AboutPage.async"
 import { MainPageAsync } from "./pages/MainPage/MainPage.async"
+import { Theme } from "./theme/ThemeContext"
 
-const enum Theme {
-    LIGHT = 'light',
-    DARK = 'dark'
-}
 
 function App() {
     const [theme, setTheme] = useState<Theme>(Theme.LIGHT)

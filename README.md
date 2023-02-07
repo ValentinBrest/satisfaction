@@ -69,3 +69,8 @@
 ## 8 classNames
 
 - 1. create classNames.ts in src/helpers/classNames
+
+
+## 9 Архитектура. введение. Теория
+
+- 1. read an article(https://feature-sliced.design/ru/)

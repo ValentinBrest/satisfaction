@@ -51,3 +51,16 @@
 
 - 1. add react-router-dom and its types
 - 2. code-spliting(https://reactjs.org/docs/code-splitting.html#reactlazy)
+
+
+## 7 Организация стилей. Добавляем темы
+
+- 1. create folder “styles”, adding index.scss there.
+- 2. create reset.scss in styles.
+- 3. create dark.scss and light.scss in styles/themes
+- 4. create global.scss in styles/variables
+- 5. add variables in global.scss
+- 6. add button for switching themes
+- 7. create ThemeContext.ts in src/theme
+- 8. create ThemeProvider.tsx in src/theme
+- 9. create hook useTheme in src/theme/useTheme.ts

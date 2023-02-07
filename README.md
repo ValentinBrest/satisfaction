@@ -64,3 +64,8 @@
 - 7. create ThemeContext.ts in src/theme
 - 8. create ThemeProvider.tsx in src/theme
 - 9. create hook useTheme in src/theme/useTheme.ts
+
+
+## 8 classNames
+
+- 1. create classNames.ts in src/helpers/classNames

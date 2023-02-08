@@ -12,7 +12,7 @@ function App() {
         <div className={classNames('app', {}, [theme])}>
             <button onClick={toggleTheme}>TOGGLE</button>
             <Link to="/about">О сайте</Link>
-            <Link to="/main">Главная</Link>
+            <Link to="/">Главная</Link>
             <AppRouter/>    
         </div>
     )

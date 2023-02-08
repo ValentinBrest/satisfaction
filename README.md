@@ -88,3 +88,13 @@
 - 8. create index.ts in pages/AboutPage and put AboutPage.(async).tsx in  pages/AboutPage/ui
 - 9. repeat step 8 for MainPage
 - 10. put folder classNames form helpers to shared/lib
+
+
+## 11 AppRouter. Конфиг для роутера
+
+- 1. create index.ts in app/providers/router. Create component AppRouter in app/providers/router/ui
+- 2. create routeConfig.tsx in shared/config/routeConfig
+- 2.1 create enum(AppRoutes) for routes
+- 2.2 create object(RoutePath) of paths for routes
+- 2.3 create object(routeConfig), where key is enum and value is {path, element}
+- 2.4 import routeConfig in AppRouter

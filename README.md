@@ -98,3 +98,12 @@
 - 2.2 create object(RoutePath) of paths for routes
 - 2.3 create object(routeConfig), where key is enum and value is {path, element}
 - 2.4 import routeConfig in AppRouter
+
+
+## 12 Navbar. Шаблоны для разработки. Первый UI Kit компонент
+
+- 1. create Navbar in widgets (includes index.ts, folder ui and style)
+- 2. refactor classNames
+- 3. add styles for NavBar
+- 4. setting of snippets
+- 5. create custom Link (AppLink) in shared/ui/AppLink and add styles

@@ -107,3 +107,13 @@
 - 3. add styles for NavBar
 - 4. setting of snippets
 - 5. create custom Link (AppLink) in shared/ui/AppLink and add styles
+
+
+## 13 Svg loader. File loader. Button UI kit
+
+- 1. create ThemeSwitcher in widgets
+- 2. add icons in shared/assets/icons
+- 3. add svgLoader (https://www.npmjs.com/package/@svgr/webpack)
+- 4. add fileLoader (https://v4.webpack.js.org/loaders/file-loader/)
+- 5. add types for svg/png/jpg/jpeg in global.d.ts
+- 6. create custom Button in shared/ui and its styles

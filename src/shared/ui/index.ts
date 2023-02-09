@@ -1,4 +1,4 @@
 import { AppLink } from "./AppLink/AppLink";
-import { Button } from "./Button/Button";
+import { Button, ThemeButton } from "./Button/Button";
 
-export {AppLink, Button}
+export {AppLink, Button, ThemeButton}

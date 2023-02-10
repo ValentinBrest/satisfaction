@@ -8,28 +8,12 @@ import { AppRouter } from "./providers/router"
 import './styles/index.scss'
 
 
-const Component = () => {
-    const { t, i18n } = useTranslation();
-
-    const toggleLng = () => {
-        i18n.changeLanguage(i18n.language === 'en' ? 'ru': 'en')
-    }
-
-    return (
-        <div>
-            <button onClick={toggleLng}>{t('Перевод')}</button>
-            {t('Тестовый пример')}
-        </div>
-    )
-}
-
 function App() {
     const {theme} = useTheme()
 
     return (
         <div className={classNames('app', {}, [theme])}>
             <Suspense fallback=''>
-                <Component/>
                 <NavBar/>
                 <div className="content-page">
                     <Sidebar/>

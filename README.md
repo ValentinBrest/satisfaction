@@ -117,3 +117,10 @@
 - 4. add fileLoader (https://v4.webpack.js.org/loaders/file-loader/)
 - 5. add types for svg/png/jpg/jpeg in global.d.ts
 - 6. create custom Button in shared/ui and its styles
+
+
+## 14 Sidebar. Layout приложения
+
+- 1. create Sidebar in widgets/Sidebar/ui/Sidebar
+- 2. add styles
+- 3. move ThemeSwitcher

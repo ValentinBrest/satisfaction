@@ -136,3 +136,8 @@
 - 6. add Translate component
 - 7. add chunk translation
 - 8. create LangSwitcher
+
+
+## 16 Webpack hot module replacement
+
+- 1. add React Refresh Webpack Plugin(https://github.com/pmmmwh/react-refresh-webpack-plugin)

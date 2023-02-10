@@ -1,5 +1,6 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin"
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 import webpack from 'webpack';
 
 export function buildPlugins (html: string, isDev: boolean): webpack.WebpackPluginInstance[] {
@@ -14,6 +15,7 @@ export function buildPlugins (html: string, isDev: boolean): webpack.WebpackPlug
         }),
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
-        })
+        }),
+        isDev && new ReactRefreshWebpackPlugin()
     ]
 }

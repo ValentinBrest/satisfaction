@@ -124,3 +124,15 @@
 - 1. create Sidebar in widgets/Sidebar/ui/Sidebar
 - 2. add styles
 - 3. move ThemeSwitcher
+
+
+## 15 i18n Интернационализация. Define plugin. Плагин для переводов
+
+- 1. add internalization i18n (https://www.i18next.com/overview/getting-started)
+- 2. create i18n.ts in shared/config/i18n
+- 3. add DefinePlugin (https://webpack.js.org/plugins/define-plugin/)
+- 4. import i18n in App.tsx
+- 5. add translation.json in public/locales/(en/ru)
+- 6. add Translate component
+- 7. add chunk translation
+- 8. create LangSwitcher

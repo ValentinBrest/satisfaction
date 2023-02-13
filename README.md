@@ -141,3 +141,8 @@
 ## 16 Webpack hot module replacement
 
 - 1. add React Refresh Webpack Plugin(https://github.com/pmmmwh/react-refresh-webpack-plugin)
+
+
+## 17 Babel (необязательно)
+
+- 1. install babel (https://babeljs.io/setup)

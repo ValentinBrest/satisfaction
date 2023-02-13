@@ -1,4 +1,4 @@
-import { ResolveOptions } from "webpack";
+import { ResolveOptions } from 'webpack';
 
 export function buildResolvers (src: string): ResolveOptions {
     return {
@@ -7,5 +7,5 @@ export function buildResolvers (src: string): ResolveOptions {
         modules: [src, 'node_modules'],
         mainFiles: ['index'],
         alias: {}
-    }
+    };
 }

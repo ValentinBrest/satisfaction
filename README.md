@@ -146,3 +146,10 @@
 ## 17 Babel (необязательно)
 
 - 1. install babel (https://babeljs.io/setup)
+
+
+## 18 Настраиваем EsLint. Исправляем ошибки
+
+- 1. install eslint (https://eslint.org/docs/latest/use/getting-started)
+- 2. npm init @eslint/config
+- 3. add rules in .eslintrc.js

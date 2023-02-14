@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink } from 'shared/ui';
 import { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+
 import cl from './NavBar.module.scss';
 
 interface NavBarProps {

@@ -8,9 +8,9 @@ export function buildLoader (isDev: boolean): webpack.RuleSetRule[] {
         use: {
             loader: 'babel-loader',
             options: {
-                presets: ['@babel/preset-env']
-            }
-        }
+                presets: ['@babel/preset-env'],
+            },
+        },
     };
   
     const svgLoader = {
@@ -38,9 +38,9 @@ export function buildLoader (isDev: boolean): webpack.RuleSetRule[] {
                 options: {
                     modules: {
                         auto: ((resourcePath: string) => Boolean(resourcePath.includes('.module.'))),
-                        localIdentName: isDev? '[path][name]__[local]--[hash:base64:5]': '[hash:base64:8]'
+                        localIdentName: isDev? '[path][name]__[local]--[hash:base64:5]': '[hash:base64:8]',
                     },
-                }
+                },
             },
             // Compiles Sass to CSS
             'sass-loader',
@@ -58,6 +58,6 @@ export function buildLoader (isDev: boolean): webpack.RuleSetRule[] {
         svgLoader,
         babelLoader,
         tsLoader,
-        cssLoader
+        cssLoader,
     ];
 }

@@ -1,9 +1,11 @@
-import { useTheme } from 'app/providers/ThemeProvider';
 import { Suspense } from 'react';
+import { useTheme } from 'app/providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { NavBar } from 'widgets/NavBar';
 import { Sidebar } from 'widgets/Sidebar/ui';
+
 import { AppRouter } from './providers/router';
+
 import './styles/index.scss';
 
 
@@ -12,7 +14,7 @@ function App() {
 
     return (
         <div className={classNames('app', {}, [theme])}>
-            <Suspense fallback=''>
+            <Suspense fallback="">
                 <NavBar/>
                 <div className="content-page">
                     <Sidebar/>

@@ -18,6 +18,11 @@ module.exports = {
         '@typescript-eslint',
         'simple-import-sort',
     ],
+    settings: {
+        react: {
+            version: 'detect',
+        },
+    },
     rules: {
         'react/jsx-indent': [2, 4],
         indent: [2, 4],

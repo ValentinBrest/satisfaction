@@ -153,3 +153,10 @@
 - 1. install eslint (https://eslint.org/docs/latest/use/getting-started)
 - 2. npm init @eslint/config
 - 3. add rules in .eslintrc.js
+
+
+## 19 Stylelint. Plugin for i18next
+
+- 1. add stylelint (https://stylelint.io/user-guide/get-started)
+- 2. create .stylelintrc.json and add rules
+- 3. install eslint-plugin-i18next

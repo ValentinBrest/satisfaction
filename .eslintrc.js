@@ -17,6 +17,7 @@ module.exports = {
         'react',
         '@typescript-eslint',
         'simple-import-sort',
+        'i18next',
     ],
     settings: {
         react: {
@@ -31,6 +32,7 @@ module.exports = {
         'react/require-default-props': 'off',
         'react/react-in-jsx-scope': 'off',
         'react/jsx-props-no-spreading': 'warn',
+        'i18next/no-literal-string': ['error', {markupOnly: true, onlyAttribute: ['']}],
         semi: 'error',
         'no-multi-spaces': 'error',
         'no-console': 'warn',

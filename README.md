@@ -167,3 +167,10 @@
 - 1. add jest (https://jestjs.io/docs/getting-started) and its @types/jest (-D), also add @babel/prest-typescript (-D).
 - 2. “jest –init” to cteate jest.config.ts, move it in config/jest 
 - 3. create unit-tests for classNames
+
+
+## 21 Несуществующие маршруты. Лоадер для загрузки страниц
+
+- 1. create NotFoundPage
+- 2. create PageLoader in widgets
+- 3. create Loader(https://loading.io/css/) in shared

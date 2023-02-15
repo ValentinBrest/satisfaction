@@ -18,7 +18,7 @@
     border-radius: 50%;
     width: 7px;
     height: 7px;
-    background: #fff;
+    background: var(--inverted-bg-color);
 }
 
 .lds-roller div:nth-child(1) {

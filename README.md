@@ -174,3 +174,9 @@
 - 1. create NotFoundPage
 - 2. create PageLoader in widgets
 - 3. create Loader(https://loading.io/css/) in shared
+
+
+## 22 ErrorBoundary. Обработка React ошибок
+
+- 1. create ErrorBoundary.ts in app/providers/ErrorBoundary/ui
+- 2. create PageError in widgets

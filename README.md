@@ -160,3 +160,10 @@
 - 1. add stylelint (https://stylelint.io/user-guide/get-started)
 - 2. create .stylelintrc.json and add rules
 - 3. install eslint-plugin-i18next
+
+
+## 20 Тестовая среда. Настраиваем Jest. Пишем первый тест
+
+- 1. add jest (https://jestjs.io/docs/getting-started) and its @types/jest (-D), also add @babel/prest-typescript (-D).
+- 2. “jest –init” to cteate jest.config.ts, move it in config/jest 
+- 3. create unit-tests for classNames

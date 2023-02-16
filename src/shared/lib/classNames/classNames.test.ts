@@ -11,11 +11,13 @@ describe('classNames', () => {
 
     test('with mods', () => {
         const expected = 'someClass cl1 cl2 hovered selected';
-        expect(classNames('someClass', {hovered: true, selected: true}, ['cl1', 'cl2'])).toBe(expected);
+        expect(classNames('someClass', {hovered: true, selected: true}, ['cl1', 'cl2']))
+            .toBe(expected);
     });
 
     test('with mods false', () => {
         const expected = 'someClass cl1 cl2 scrollable';
-        expect(classNames('someClass', {hovered: false, scrollable: true}, ['cl1', 'cl2'])).toBe(expected);
+        expect(classNames('someClass', {hovered: false, scrollable: true}, ['cl1', 'cl2']))
+            .toBe(expected);
     });
 });

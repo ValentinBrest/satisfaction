@@ -39,6 +39,7 @@ module.exports = {
         'jsx-quotes': ['error', 'prefer-double'],
         'comma-dangle': ['error', 'always-multiline'],
         '@typescript-eslint/ban-ts-comment': 'warn',
+        'max-len': ['error', {ignoreComments: true, code: 100}],
         'simple-import-sort/imports': [
             'error',
             {

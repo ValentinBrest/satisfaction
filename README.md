@@ -180,3 +180,8 @@
 
 - 1. create ErrorBoundary.ts in app/providers/ErrorBoundary/ui
 - 2. create PageError in widgets
+
+
+## 23 Анализ размера банда. BundleAnalyzer
+
+- 1. add webpack bundle alalyzer (https://github.com/webpack-contrib/webpack-bundle-analyzer) and its types

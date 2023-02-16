@@ -2,6 +2,7 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import webpack from 'webpack';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 export function buildPlugins (html: string, isDev: boolean): webpack.WebpackPluginInstance[] {
     return [
@@ -17,5 +18,8 @@ export function buildPlugins (html: string, isDev: boolean): webpack.WebpackPlug
             __IS_DEV__: JSON.stringify(isDev),
         }),
         isDev && new ReactRefreshWebpackPlugin({overlay: false}),
+        new BundleAnalyzerPlugin({
+            openAnalyzer: false,
+        }),
     ].filter(Boolean);
 }

@@ -4,12 +4,12 @@ import { Button, ThemeButton } from 'shared/ui/Button/Button';
 describe('Button', () => {
     test('Teset render', () => {
         render(<Button>Test</Button>);
-        expect(screen.getByText('Test')).toBeInTheDocument;
+        expect(screen.getByText('Test')).toBeInTheDocument();
     });
 
     test('Test clear theme', () => {
         render(<Button theme={ThemeButton.CLEAR}>Test</Button>);
-        expect(screen.getByText('Test')).toBeInTheDocument;
+        expect(screen.getByText('Test')).toBeInTheDocument();
         screen.debug();
     });
 });

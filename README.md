@@ -185,3 +185,15 @@
 ## 23 Анализ размера банда. BundleAnalyzer
 
 - 1. add webpack bundle alalyzer (https://github.com/webpack-contrib/webpack-bundle-analyzer) and its types
+
+
+## 24 React Testing Library. Тесты на компоненты
+- 1. add react testing library (https://testing-library.com/docs/react-testing-library/intro/) 
+- 2. add testing-library/jest-dom (https://github.com/testing-library/jest-dom) 
+- 3. create setupTests.ts in config/jest 
+- 4. add @babel/preset-react (https://babeljs.io/docs/en/babel-preset-react)
+- 5. add identity-obj-proxy for css modules 
+- 6. add regenerator-runtime to do test with i18n (https://www.npmjs.com/package/regenerator-runtime)
+- 7. create i18nForTests.tsx in shared/config/i18n (https://react.i18next.com/misc/testing)
+- 8. create renderWithTranslation.tsx in shared/lib/test/renderWithTranslation
+- 9. create test for Button and Sidebar

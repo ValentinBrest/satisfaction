@@ -10,7 +10,7 @@ export const Loader = ({className}: LoaderProps) => {
     const EmptyDivs = new Array(8).fill(<div />);
     return (
         <div className={classNames('lds-roller', {}, [className])}>
-            {...EmptyDivs}
+            {EmptyDivs.map(item => item)}
         </div>
     );
 };

@@ -4,8 +4,6 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 
 import { Button, ThemeButton } from './Button';
 
-import 'app/styles/index.scss';
-
 export default {
     title: 'shared/Button',
     component: Button,

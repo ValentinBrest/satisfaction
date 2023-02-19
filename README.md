@@ -206,3 +206,10 @@
 - 3. override webpack.config.ts in config/storybook
 - 4. add StyleDecorator, ThemeDecorator, RouteDecorator
 - 5. add sroties for shared, widgets, pages
+
+
+## 26 Скриншотные тесты. Loki. Регрессионное UI тестирование
+
+- 1. add Loki (https://loki.js.org/getting-started.html)
+- 2. npx loki init
+- 3. npx loki test (first npm run storybook)

@@ -197,3 +197,12 @@
 - 7. create i18nForTests.tsx in shared/config/i18n (https://react.i18next.com/misc/testing)
 - 8. create renderWithTranslation.tsx in shared/lib/test/renderWithTranslation
 - 9. create test for Button and Sidebar
+
+
+## 25 Настраиваем Storybook. Декораторы. Стори кейсы на компоненты
+
+- 1. add storybook (https://storybook.js.org/blog/storybook-for-webpack-5/)
+- 2. create Button.stories.tsx
+- 3. override webpack.config.ts in config/storybook
+- 4. add StyleDecorator, ThemeDecorator, RouteDecorator
+- 5. add sroties for shared, widgets, pages

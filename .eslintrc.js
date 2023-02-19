@@ -41,6 +41,7 @@ module.exports = {
         'comma-dangle': ['error', 'always-multiline'],
         '@typescript-eslint/ban-ts-comment': 'warn',
         'max-len': ['error', {ignoreComments: true, code: 100}],
+        'react/display-name': 'off',
         'simple-import-sort/imports': [
             'error',
             {

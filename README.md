@@ -213,3 +213,6 @@
 - 1. add Loki (https://loki.js.org/getting-started.html)
 - 2. npx loki init
 - 3. npx loki test (first npm run storybook)
+
+
+## 27 CI pipeline. Автоматизация прогона тестов [!!!ПРОПУЩЕН]

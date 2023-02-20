@@ -5,7 +5,7 @@ import webpack from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 export function buildPlugins (html: string, isDev: boolean): webpack.WebpackPluginInstance[] {
-    return [
+    const plugins = [
         new HtmlWebpackPlugin({
             template: html,
         }),
@@ -17,9 +17,12 @@ export function buildPlugins (html: string, isDev: boolean): webpack.WebpackPlug
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
         }),
-        isDev && new ReactRefreshWebpackPlugin({overlay: false}),
-        new BundleAnalyzerPlugin({
-            openAnalyzer: false,
-        }),
-    ].filter(Boolean);
+        new BundleAnalyzerPlugin({openAnalyzer: false}),
+    ];
+
+    if (isDev) {
+        plugins.push(new ReactRefreshWebpackPlugin({overlay: false}));
+    }
+    
+    return plugins;
 }

@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import OpenMenu from 'shared/assets/icons/sidebar/menu.svg';
 import CloseMenu from 'shared/assets/icons/sidebar/xmark.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ThemeButton } from 'shared/ui';
+import { Button, ButtonSize, ThemeButton } from 'shared/ui';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 
@@ -14,7 +13,6 @@ interface SidebarProps {
 }
 
 export const Sidebar = ({className}: SidebarProps) => {
-    const {t} = useTranslation();
     const [collapsed, setCollapsed] = useState(false);
 
     const onToggle = () => {
@@ -29,8 +27,10 @@ export const Sidebar = ({className}: SidebarProps) => {
                 data-testid="sidebar-toggle" 
                 theme={ThemeButton.CLEAR}
                 onClick={onToggle}
+                square
+                size={ButtonSize.M}
             >
-                {collapsed ? <CloseMenu className={cl.icon}/> : <OpenMenu className={cl.icon}/>}
+                {collapsed ? <OpenMenu className={cl.icon}/> : <CloseMenu className={cl.icon}/>}
             </Button>
             <div className={cl.switchers}>
                 <ThemeSwitcher/>

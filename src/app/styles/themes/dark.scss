@@ -1,8 +1,8 @@
 .dark {
     --bg-color: var(--dark-color);
     --inverted-bg-color: var(--light-color);
-    --primary-color: var(--text-color);
-    --inverted-primary-color: var(--inverted-text-color);
+    --primary-color: var(--inverted-text-color);
+    --inverted-primary-color: var(--text-color);
     --secondary-color: #171ab8;
     --inverted-secondary-color: #04e016;
 }

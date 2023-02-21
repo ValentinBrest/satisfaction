@@ -44,7 +44,7 @@ export const Sidebar = ({className}: SidebarProps) => {
                     className={cl.item}
                 >
                     <MainIcon className={cl.icon}/>
-                    <span className={cl.link}>{t('Ссылка главная')}</span>
+                    <span className={cl.link}>{t('ssylka-glavnaya')}</span>
                 </AppLink>
                 <AppLink 
                     theme={AppLinkTheme.INVERTED} 
@@ -52,7 +52,7 @@ export const Sidebar = ({className}: SidebarProps) => {
                     className={cl.item}
                 >
                     <AboutIcon className={cl.icon}/>
-                    <span className={cl.link}>{t('Ссылка о сайте')}</span>
+                    <span className={cl.link}>{t('ssylka-o-saite')}</span>
                 </AppLink>
             </div>
             <div className={cl.switchers}>

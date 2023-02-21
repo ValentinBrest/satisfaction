@@ -21,7 +21,7 @@ export const LangSwitcher = ({className, short}: LangSwitcherProps) => {
             theme={ThemeButton.BACKGROUND_INVERTED} 
             onClick={toggleLng}
         >
-            {t(short ? 'Короткий язык':'Язык')}
+            {t(short ? 'korotkii-yazyk':'yazyk')}
         </Button>
     );
 };

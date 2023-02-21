@@ -17,12 +17,12 @@ export const PageError = ({className}: PageErrorProps) => {
 
     return (
         <div className={classNames(cl.PageError, {}, [className])}>
-            <p>{t('Возникла непредвиденная ошибка')}</p>
+            <p>{t('voznikla-nepredvidennaya-oshibka')}</p>
             <Button 
                 onClick={reloadPage} 
                 theme={ThemeButton.BACKGROUND_INVERTED}
             >
-                {t('Обновить страницу')}
+                {t('obnovit-stranicu')}
             </Button>
         </div>
     );

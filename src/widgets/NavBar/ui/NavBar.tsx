@@ -22,13 +22,13 @@ export const NavBar = ({className}: NavBarProps) => {
                     to={RoutePath.about} 
                     className={cl.mainLink}
                 >
-                    {t('Ссылка о сайте')}
+                    {t('ssylka-o-saite')}
                 </AppLink>
                 <AppLink 
                     theme={AppLinkTheme.INVERTED} 
                     to={RoutePath.main}
                 >
-                    {t('Ссылка главная')}
+                    {t('ssylka-glavnaya')}
                 </AppLink>
             </div>
             

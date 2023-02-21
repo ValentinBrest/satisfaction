@@ -216,3 +216,10 @@
 
 
 ## 27 CI pipeline. Автоматизация прогона тестов [!!!ПРОПУЩЕН]
+
+
+## 28 Сайдбар. Состояния кнопки. UI Screenshot test report
+
+- 1. styling Button, LangSwitcher, SideBar
+- 2. create componetRender.tsx in shared/lib for tests of Sidebar as wrap
+- 3. add reg-cli for compare pictures (https://github.com/reg-viz/reg-cli) (https://github.com/oblador/loki/issues/76#issuecomment-595777550)

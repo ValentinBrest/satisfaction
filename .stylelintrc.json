@@ -611,7 +611,6 @@
 				"severity": "warning"
 			}
 		],
-		"no-eol-whitespace": true,
 		"no-extra-semicolons": true,
 		"no-invalid-double-slash-comments": true,
 		"no-missing-end-of-source-newline": null,

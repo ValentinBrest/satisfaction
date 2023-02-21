@@ -24,7 +24,12 @@ export const NavBar = ({className}: NavBarProps) => {
                 >
                     {t('Ссылка о сайте')}
                 </AppLink>
-                <AppLink to={RoutePath.main}>{t('Ссылка главная')}</AppLink>
+                <AppLink 
+                    theme={AppLinkTheme.INVERTED} 
+                    to={RoutePath.main}
+                >
+                    {t('Ссылка главная')}
+                </AppLink>
             </div>
             
         </div>

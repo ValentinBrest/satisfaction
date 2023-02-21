@@ -1,8 +1,8 @@
 :root {
-    --bg-color: #cadbc0;
-    --inverted-bg-color: #b9edf7;
-    --primary-color: #811c46;
+    --bg-color: var(--light-color);
+    --inverted-bg-color: var(--dark-color);
+    --primary-color: var(--inverted-text-color);
+    --inverted-primary-color: var(--text-color);
     --secondary-color: #04e016;
-    --inverted-primary-color: #0b0d58;
     --inverted-secondary-color: #171ab8;
 }

@@ -1,8 +1,12 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import AboutIcon from 'shared/assets/icons/sidebar/about.svg';
+import MainIcon from 'shared/assets/icons/sidebar/main.svg';
 import OpenMenu from 'shared/assets/icons/sidebar/menu.svg';
 import CloseMenu from 'shared/assets/icons/sidebar/xmark.svg';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ButtonSize, ThemeButton } from 'shared/ui';
+import { AppLink, AppLinkTheme, Button, ButtonSize, ThemeButton } from 'shared/ui';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 
@@ -13,6 +17,7 @@ interface SidebarProps {
 }
 
 export const Sidebar = ({className}: SidebarProps) => {
+    const {t} = useTranslation();
     const [collapsed, setCollapsed] = useState(false);
 
     const onToggle = () => {
@@ -32,6 +37,24 @@ export const Sidebar = ({className}: SidebarProps) => {
             >
                 {collapsed ? <OpenMenu className={cl.icon}/> : <CloseMenu className={cl.icon}/>}
             </Button>
+            <div className={cl.items}>
+                <AppLink 
+                    theme={AppLinkTheme.INVERTED} 
+                    to={RoutePath.main}
+                    className={cl.item}
+                >
+                    <MainIcon className={cl.icon}/>
+                    <span className={cl.link}>{t('Ссылка главная')}</span>
+                </AppLink>
+                <AppLink 
+                    theme={AppLinkTheme.INVERTED} 
+                    to={RoutePath.about} 
+                    className={cl.item}
+                >
+                    <AboutIcon className={cl.icon}/>
+                    <span className={cl.link}>{t('Ссылка о сайте')}</span>
+                </AppLink>
+            </div>
             <div className={cl.switchers}>
                 <ThemeSwitcher/>
                 <LangSwitcher short={collapsed} className={cl.lang}/>

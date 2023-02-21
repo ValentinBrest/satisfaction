@@ -1,5 +1,5 @@
-import { AppLink } from './AppLink/AppLink';
+import { AppLink, AppLinkTheme } from './AppLink/AppLink';
 import { Button, ButtonSize, ThemeButton } from './Button/Button';
 import { Loader } from './Loader/Loader';
 
-export {AppLink, Button, ButtonSize, Loader, ThemeButton};
+export {AppLink, AppLinkTheme, Button, ButtonSize, Loader, ThemeButton};

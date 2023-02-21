@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button } from 'shared/ui';
+import { Button, ThemeButton } from 'shared/ui';
 
 import cl from './PageError.module.scss';
 
@@ -18,7 +18,7 @@ export const PageError = ({className}: PageErrorProps) => {
     return (
         <div className={classNames(cl.PageError, {}, [className])}>
             <p>{t('Возникла непредвиденная ошибка')}</p>
-            <Button onClick={reloadPage}>{t('Обновить страницу')}</Button>
+            <Button onClick={reloadPage} theme={ThemeButton.BACKGROUND_INVERTED}>{t('Обновить страницу')}</Button>
         </div>
     );
 };

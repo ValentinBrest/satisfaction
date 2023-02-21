@@ -70,10 +70,10 @@ module.exports = {
             },
         },
         {
-            files: ['scipts/*.js'],
+            files: ['scripts/*.js'],
             rules: {
-                '@typescript-eslint/no-var-requires': off
-            }
-        }
+                '@typescript-eslint/no-var-requires': 'off',
+            },
+        },
     ],
 };

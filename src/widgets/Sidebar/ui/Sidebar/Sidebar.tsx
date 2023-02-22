@@ -6,7 +6,7 @@ import OpenMenu from 'shared/assets/icons/sidebar/menu.svg';
 import CloseMenu from 'shared/assets/icons/sidebar/xmark.svg';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme, Button, ButtonSize, ThemeButton } from 'shared/ui';
+import { AppLink, AppLinkTheme, Button, ButtonSize, ButtonTheme } from 'shared/ui';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 
@@ -30,7 +30,7 @@ export const Sidebar = ({className}: SidebarProps) => {
         >
             <Button 
                 data-testid="sidebar-toggle" 
-                theme={ThemeButton.CLEAR}
+                theme={ButtonTheme.CLEAR}
                 onClick={onToggle}
                 square
                 size={ButtonSize.M}

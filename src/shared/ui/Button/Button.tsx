@@ -3,7 +3,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 
 import cl from './Button.module.scss';
 
-export enum ThemeButton {
+export enum ButtonTheme {
     CLEAR = 'clear',
     CLEAR_INVERTED = 'clearInverted',
     OUTLINE = 'outline',
@@ -19,7 +19,7 @@ export const enum ButtonSize {
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
-    theme?: ThemeButton;
+    theme?: ButtonTheme;
     square?: boolean
     size?: ButtonSize
 }

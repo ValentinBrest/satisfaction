@@ -1,7 +1,7 @@
 import { Modal } from 'shared/ui/Modal/Modal';
 
 import { AppLink, AppLinkTheme } from './AppLink/AppLink';
-import { Button, ButtonSize, ThemeButton } from './Button/Button';
+import { Button, ButtonSize, ButtonTheme } from './Button/Button';
 import { Loader } from './Loader/Loader';
 
 
@@ -12,5 +12,5 @@ export {
     ButtonSize, 
     Loader, 
     Modal, 
-    ThemeButton,
+    ButtonTheme,
 };

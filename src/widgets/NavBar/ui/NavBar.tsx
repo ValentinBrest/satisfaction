@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, Modal, ThemeButton } from 'shared/ui';
+import { Button, ButtonTheme,Modal } from 'shared/ui';
 
 import cl from './NavBar.module.scss';
 
@@ -24,7 +24,7 @@ export const NavBar = ({className}: NavBarProps) => {
             <div className={cl.links}>
                 
                 <Button 
-                    theme={ThemeButton.CLEAR_INVERTED} 
+                    theme={ButtonTheme.CLEAR_INVERTED} 
                     onClick={onToggleModal}
                 >
                     {t('voiti')}

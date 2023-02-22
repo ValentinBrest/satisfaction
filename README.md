@@ -223,3 +223,8 @@
 - 1. styling Button, LangSwitcher, SideBar
 - 2. create componetRender.tsx in shared/lib for tests of Sidebar as wrap
 - 3. add reg-cli for compare pictures (https://github.com/reg-viz/reg-cli) (https://github.com/oblador/loki/issues/76#issuecomment-595777550)
+
+
+## 29 Модальное окно. Portal
+- 1. create Modal.tsx in shared/ui
+- 1. create Portal.tsx in shared/ui

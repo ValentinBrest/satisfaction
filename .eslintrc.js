@@ -1,8 +1,8 @@
 module.exports = {
     env: {
-        'browser': true,
-        'es2021': true,
-        'jest': true,
+        browser: true,
+        es2021: true,
+        jest: true,
     },
     extends: [
         'plugin:react/recommended',
@@ -11,14 +11,15 @@ module.exports = {
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
-        'ecmaVersion': 'latest',
-        'sourceType': 'module',
+        ecmaVersion: 'latest',
+        sourceType: 'module',
     },
     plugins: [
         'react',
         '@typescript-eslint',
         'simple-import-sort',
         'i18next',
+        'react-hooks',
     ],
     settings: {
         react: {
@@ -28,11 +29,17 @@ module.exports = {
     rules: {
         'react/jsx-indent': [2, 4],
         indent: [2, 4],
-        'react/jsx-filename-extension': [2, {'extensions': ['.js', '.jsx', '.tsx']}],
+        'react/jsx-filename-extension': [
+            2,
+            { extensions: ['.js', '.jsx', '.tsx'] },
+        ],
         '@typescript-eslint/no-unused-vars': 'warn',
         'react/require-default-props': 'off',
         'react/react-in-jsx-scope': 'off',
-        'i18next/no-literal-string': ['error', {markupOnly: true, onlyAttribute: ['']}],
+        'i18next/no-literal-string': [
+            'error',
+            { markupOnly: true, onlyAttribute: [''] },
+        ],
         semi: 'error',
         'no-multi-spaces': 'error',
         'no-console': 'warn',
@@ -40,13 +47,15 @@ module.exports = {
         'jsx-quotes': ['error', 'prefer-double'],
         'comma-dangle': ['error', 'always-multiline'],
         '@typescript-eslint/ban-ts-comment': 'warn',
-        'max-len': ['error', {ignoreComments: true, code: 100}],
+        'max-len': ['error', { ignoreComments: true, code: 100 }],
         'react/display-name': 'off',
+        'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+        'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
         'simple-import-sort/imports': [
             'error',
             {
-                'groups': [
-                // Packages `react` related packages come first.
+                groups: [
+                    // Packages `react` related packages come first.
                     ['^react', '^@?\\w'],
                     // Internal packages.
                     ['^(@|components)(/.*|$)'],

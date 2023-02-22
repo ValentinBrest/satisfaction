@@ -1,15 +1,15 @@
 .Button {
+    cursor: pointer;
     padding: 5px 15px;
     color: var(--primary-color);
-    cursor: pointer;
 }
 
 .clear,
 .clearInverted {
-    outline: none;
-    border: none;
     padding: 0;
     background: none;
+    border: none;
+    outline: none;
 }
 
 .clearInverted {
@@ -17,21 +17,21 @@
 }
 
 .outline {
-    border: 1px solid var(--primary-color);
     color: var(--primary-color);
     background: none;
+    border: 1px solid var(--primary-color);
 }
 
 .background {
-    border: none;
     color: var(--primary-color);
     background: var(--bg-color);
+    border: none;
 }
 
 .backgroundInverted {
-    border: none;
     color: var(--inverted-primary-color);
     background: var(--inverted-bg-color);
+    border: none;
 }
 
 .square {

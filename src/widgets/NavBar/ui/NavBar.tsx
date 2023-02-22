@@ -24,7 +24,7 @@ export const NavBar = ({className}: NavBarProps) => {
             <div className={cl.links}>
                 
                 <Button 
-                    theme={ThemeButton.BACKGROUND_INVERTED} 
+                    theme={ThemeButton.CLEAR_INVERTED} 
                     onClick={onToggleModal}
                 >
                     {t('voiti')}

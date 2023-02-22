@@ -1,7 +1,6 @@
-import { Suspense, useState } from 'react';
+import { Suspense } from 'react';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Modal } from 'shared/ui';
 import { NavBar } from 'widgets/NavBar';
 import { Sidebar } from 'widgets/Sidebar/ui';
 

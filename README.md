@@ -228,3 +228,16 @@
 ## 29 Модальное окно. Portal
 - 1. create Modal.tsx in shared/ui
 - 1. create Portal.tsx in shared/ui
+
+## 30 Redux-toolkit. Entity. Тесты на всех уровнях
+- 1.  add redux toolkit (https://redux-toolkit.js.org/introduction/getting-started)
+- 2. create StoreProvieder in app/providers/StoreProvider/ui/StoreProvider
+- 3. create store.ts in app/providers/StoreProvider/config
+- 4. create StateSchema.ts in .../StoreProvider/config
+- 5. create Counter.ts in entities/Counter/ui
+- 6. create folders(selectors, slice, types) in entities/Counter/model
+- 7. create counterSchema.ts in .../model/types
+- 8. create counterSlice.ts in .../model/slice
+- 9. create getCounter.(test).ts in .../model/selectors/getCounter (https://github.com/reduxjs/reselect)
+- 10. create getCounterValue.(test).ts in .../model/selectors/getCounterValue
+- 11. create tests for selectors, slice and Counter

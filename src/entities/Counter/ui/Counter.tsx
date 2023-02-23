@@ -17,9 +17,17 @@ export const Counter = () => {
 
     return (
         <div >
-            <h1>{counterValue}</h1>
-            <Button onClick={decrement} theme={ButtonTheme.BACKGROUND_INVERTED}>-</Button>
-            <Button onClick={increment} theme={ButtonTheme.BACKGROUND_INVERTED}>+</Button>
+            <h1 data-testid="value-title">{counterValue}</h1>
+            <Button 
+                data-testid="decrement-btn" 
+                onClick={decrement} 
+                theme={ButtonTheme.BACKGROUND_INVERTED}
+            >-</Button>
+            <Button 
+                data-testid="increment-btn" 
+                onClick={increment} 
+                theme={ButtonTheme.BACKGROUND_INVERTED}
+            >+</Button>
         </div>
     );
 };

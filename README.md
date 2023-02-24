@@ -229,7 +229,9 @@
 - 1. create Modal.tsx in shared/ui
 - 1. create Portal.tsx in shared/ui
 
+
 ## 30 Redux-toolkit. Entity. Тесты на всех уровнях
+
 - 1.  add redux toolkit (https://redux-toolkit.js.org/introduction/getting-started)
 - 2. create StoreProvieder in app/providers/StoreProvider/ui/StoreProvider
 - 3. create store.ts in app/providers/StoreProvider/config
@@ -241,3 +243,9 @@
 - 9. create getCounter.(test).ts in .../model/selectors/getCounter (https://github.com/reduxjs/reselect)
 - 10. create getCounterValue.(test).ts in .../model/selectors/getCounterValue
 - 11. create tests for selectors, slice and Counter
+
+
+## 31 Json server. Имитация бэкенда
+
+- 1. add json-server (https://github.com/typicode/json-server)
+

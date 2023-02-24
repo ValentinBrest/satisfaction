@@ -1,3 +1,4 @@
+import { Input } from 'shared/ui/Input/Input';
 import { Modal } from 'shared/ui/Modal/Modal';
 
 import { AppLink, AppLinkTheme } from './AppLink/AppLink';
@@ -10,6 +11,7 @@ export {
     AppLinkTheme, 
     Button, 
     ButtonSize, 
+    Input,
     Loader, 
     Modal, 
     ButtonTheme,

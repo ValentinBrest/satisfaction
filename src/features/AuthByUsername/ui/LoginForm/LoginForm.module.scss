@@ -5,9 +5,26 @@
 
 .input {
     margin-top: 10px;
+    padding: 0 10px 0 40px;
 }
 
 .loginBtn {
     margin-top: 40px;
-    padding: 10 30px;
+}
+
+.wrapInput {
+    position: relative;
+}
+
+.icon {
+    pointer-events: none;
+
+    position: absolute;
+    bottom: 18%;
+    left: 13px;
+
+    width: 15px;
+    height: 15px;
+
+    fill: var(--inverted-bg-color);
 }

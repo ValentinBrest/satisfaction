@@ -1,6 +1,9 @@
 import React, { ReactNode, useCallback, useEffect} from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui';
 import { Portal } from 'shared/ui/Portal/Portal';
+
+import CloseIcon from '../../assets/icons/sidebar/xmark.svg';
 
 import cl from './Modal.module.scss';
 
@@ -54,6 +57,15 @@ export const Modal = (props: ModalProps) => {
             <div className={classNames(cl.Modal, mods, [className])}>
                 <div className={cl.overlay} onClick={closeHandler}>
                     <div className={cl.content} onClick={onContentClick}>
+                        <Button 
+                            onClick={closeHandler}
+                            square
+                            size={ButtonSize.M} 
+                            theme={ButtonTheme.CLEAR} 
+                            className={cl.close}
+                        >
+                            <CloseIcon className={cl.icon}/>
+                        </Button>
                         {children}
                     </div>
                 </div>

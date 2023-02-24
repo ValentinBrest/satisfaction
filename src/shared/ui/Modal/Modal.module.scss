@@ -25,13 +25,14 @@
 .content {
     cursor: auto;
 
+    position: relative;
     transform: scale(0.5);
 
-    width: 50%;
+    width: 300px;
     padding: 20px;
 
     background: var(--bg-color);
-    border-radius: 12px;
+    border-radius: 3px;
 
     transition: transform 0.3s;
 }
@@ -44,4 +45,14 @@
     .content {
         transform: scale(1);
     }
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.icon {
+    fill: var(--primary-color);
 }

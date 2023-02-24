@@ -1,7 +1,8 @@
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { LoginModal } from 'features/AuthByUsername';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ButtonTheme,Modal } from 'shared/ui';
+import { Button, ButtonTheme } from 'shared/ui';
 
 import cl from './NavBar.module.scss';
 
@@ -14,8 +15,12 @@ export const NavBar = ({className}: NavBarProps) => {
 
     const [isAuthModal, setIsAuthModal] = useState(false);
 
-    const onToggleModal = useCallback( () => {
-        setIsAuthModal(prev => !prev);
+    const onCloseModal = useCallback( () => {
+        setIsAuthModal(false);
+    }, []);
+
+    const onShowModal = useCallback( () => {
+        setIsAuthModal(true);
     }, []);
 
     return (
@@ -25,17 +30,15 @@ export const NavBar = ({className}: NavBarProps) => {
                 
                 <Button 
                     theme={ButtonTheme.CLEAR_INVERTED} 
-                    onClick={onToggleModal}
+                    onClick={onShowModal}
                 >
                     {t('voiti')}
                 </Button>
                     
-                <Modal 
+                <LoginModal 
                     isOpen={isAuthModal} 
-                    onClose={onToggleModal}
-                >
-                    Авторизация
-                </Modal>
+                    onClose={onCloseModal}
+                />
             </div>
             
         </div>

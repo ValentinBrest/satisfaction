@@ -249,3 +249,11 @@
 
 - 1. add json-server (https://github.com/typicode/json-server)
 
+
+## 32 Кастомный Input. Окно авторизации. Lazy modal
+
+- 1. create User in shared
+- 2. create LoginModal.tsx in features/AuthByUsername/ui/LoginModal
+- 3. create LoginForm.tsx in features/AuthByUsername/ui/LoginForm
+- 4. create custom Input in shared
+

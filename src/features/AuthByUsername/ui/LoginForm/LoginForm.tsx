@@ -8,15 +8,16 @@ import cl from './LoginForm.module.scss';
 
 interface LoginFormProps {
     className?: string;
+    isOpen?: boolean; 
 }
 
-export const LoginForm = ({className}: LoginFormProps) => {
+export const LoginForm = ({className, isOpen}: LoginFormProps) => {
     const {t} = useTranslation();
     return (
         <div className={classNames(cl.LoginForm, {}, [className])}>
             <div className={cl.wrapInput}>
                 <EmailIcon className={cl.icon}/>
-                <Input className={cl.input} type="text" placeholder="Email" autoFocus/>
+                <Input className={cl.input} type="text" placeholder="Email" isOpen={isOpen}/>
             </div>
             <div className={cl.wrapInput}>
                 <PasswordIcon className={cl.icon}/>

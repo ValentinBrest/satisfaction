@@ -30,7 +30,7 @@ export const LoginModal = (props: LoginModalProps) => {
             lazy
         >
             <h3 className={cl.title}>{t('avtorizaciya')}</h3>
-            <LoginForm/>
+            <LoginForm isOpen={isOpen} />
         </Modal>
     );
 };

@@ -1,4 +1,4 @@
-import React, { ReactNode, useCallback, useEffect} from 'react';
+import React, { ReactNode, useCallback, useEffect, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui';
 import { Portal } from 'shared/ui/Portal/Portal';
@@ -11,20 +11,18 @@ interface ModalProps {
     className?: string;
     children?: ReactNode;
     isOpen?: boolean;
-    onClose?: () => void; 
+    onClose?: () => void;
+    lazy?: boolean;
 }
 
 export const Modal = (props: ModalProps) => {
-    const {
-        className,
-        children,
-        isOpen,
-        onClose,
-    } = props;
+    const { className, children, isOpen, onClose, lazy } = props;
 
-    const mods: Record<string, boolean> ={
+    const mods: Record<string, boolean> = {
         [cl.opened]: isOpen,
     };
+
+    const [isMounted, setIsMounted] = useState(false);
 
     const closeHandler = useCallback(() => {
         if (onClose) {
@@ -36,15 +34,19 @@ export const Modal = (props: ModalProps) => {
         e.stopPropagation();
     };
 
-    const onKeyDown = useCallback((e: KeyboardEvent) => {
-        if (e.key === 'Escape') {
-            closeHandler();
-        }
-    }, [closeHandler]);
+    const onKeyDown = useCallback(
+        (e: KeyboardEvent) => {
+            if (e.key === 'Escape') {
+                closeHandler();
+            }
+        },
+        [closeHandler],
+    );
 
-    useEffect (() => {
+    useEffect(() => {
         if (isOpen) {
             window.addEventListener('keydown', onKeyDown);
+            setIsMounted(true);
         }
 
         return () => {
@@ -52,19 +54,23 @@ export const Modal = (props: ModalProps) => {
         };
     }, [isOpen, onKeyDown]);
 
+    if (lazy && !isMounted) {
+        return null;
+    }
+
     return (
         <Portal>
             <div className={classNames(cl.Modal, mods, [className])}>
                 <div className={cl.overlay} onClick={closeHandler}>
                     <div className={cl.content} onClick={onContentClick}>
-                        <Button 
+                        <Button
                             onClick={closeHandler}
                             square
-                            size={ButtonSize.M} 
-                            theme={ButtonTheme.CLEAR} 
+                            size={ButtonSize.M}
+                            theme={ButtonTheme.CLEAR}
                             className={cl.close}
                         >
-                            <CloseIcon className={cl.icon}/>
+                            <CloseIcon className={cl.icon} />
                         </Button>
                         {children}
                     </div>

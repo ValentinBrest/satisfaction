@@ -16,7 +16,7 @@ export const LoginForm = ({className}: LoginFormProps) => {
         <div className={classNames(cl.LoginForm, {}, [className])}>
             <div className={cl.wrapInput}>
                 <EmailIcon className={cl.icon}/>
-                <Input className={cl.input} type="text" placeholder="Email"/>
+                <Input className={cl.input} type="text" placeholder="Email" autoFocus/>
             </div>
             <div className={cl.wrapInput}>
                 <PasswordIcon className={cl.icon}/>

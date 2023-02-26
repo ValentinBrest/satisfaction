@@ -257,3 +257,8 @@
 - 3. create LoginForm.tsx in features/AuthByUsername/ui/LoginForm
 - 4. create custom Input in shared
 
+
+## 33 Husky. Pre commit хуки 
+
+- 1. add husky (https://typicode.github.io/husky/#/)
+

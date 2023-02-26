@@ -1,4 +1,4 @@
-import React, { ReactNode, useCallback, useEffect, useState } from 'react';
+import React, { ReactNode, useCallback, useEffect } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui';
 import { Portal } from 'shared/ui/Portal/Portal';
@@ -13,16 +13,22 @@ interface ModalProps {
     isOpen?: boolean;
     onClose?: () => void;
     lazy?: boolean;
+    isMounted: boolean;
 }
 
 export const Modal = (props: ModalProps) => {
-    const { className, children, isOpen, onClose, lazy } = props;
+    const { 
+        className, 
+        children, 
+        isOpen, 
+        onClose, 
+        lazy, 
+        isMounted,
+    } = props;
 
     const mods: Record<string, boolean> = {
         [cl.opened]: isOpen,
     };
-
-    const [isMounted, setIsMounted] = useState(false);
 
     const closeHandler = useCallback(() => {
         if (onClose) {
@@ -46,7 +52,6 @@ export const Modal = (props: ModalProps) => {
     useEffect(() => {
         if (isOpen) {
             window.addEventListener('keydown', onKeyDown);
-            setIsMounted(true);
         }
 
         return () => {

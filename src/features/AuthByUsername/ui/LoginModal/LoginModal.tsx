@@ -10,23 +10,25 @@ interface LoginModalProps {
     className?: string;
     isOpen: boolean;
     onClose: () => void;
-
+    isMounted: boolean;
 }
 
 export const LoginModal = (props: LoginModalProps) => {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
-    const {
-        className,
-        isOpen,
-        onClose,
+    const { 
+        className, 
+        isOpen, 
+        onClose, 
+        isMounted,
     } = props;
 
     return (
-        <Modal 
-            className={classNames(cl.LoginModal, {}, [className])} 
-            isOpen={isOpen} 
+        <Modal
+            className={classNames(cl.LoginModal, {}, [className])}
+            isOpen={isOpen}
             onClose={onClose}
+            isMounted={isMounted}
             lazy
         >
             <h3 className={cl.title}>{t('avtorizaciya')}</h3>

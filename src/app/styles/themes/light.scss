@@ -3,6 +3,6 @@
     --inverted-bg-color: var(--dark-color);
     --primary-color: var(--text-color);
     --inverted-primary-color: var(--inverted-text-color);
-    --secondary-color: #04e016;
-    --inverted-secondary-color: #171ab8;
+    --secondary-color: var(--text-secondary-color);
+    --inverted-secondary-color: var(--inverted-text-secondary-color);
 }

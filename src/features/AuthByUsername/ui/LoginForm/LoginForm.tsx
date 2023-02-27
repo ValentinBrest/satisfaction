@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import EmailIcon from 'shared/assets/icons/auth/email.svg';
 import PasswordIcon from 'shared/assets/icons/auth/password.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ButtonTheme, Input } from 'shared/ui';
+import { Button, ButtonTheme, Input, Text, TextTheme } from 'shared/ui';
 
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
@@ -36,7 +36,7 @@ export const LoginForm = memo(({className, isOpen}: LoginFormProps) => {
 
     return (
         <div className={classNames(cl.LoginForm, {}, [className])}>
-            {error && <div className={cl.error}>{error}</div>}
+            {error && <Text text={error} theme={TextTheme.ERROR}/>}
             <div className={cl.wrapInput}>
                 <EmailIcon className={cl.icon}/>
                 <Input 

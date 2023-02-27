@@ -3,10 +3,10 @@
     padding: 5px 15px;
     color: var(--primary-color);
     transition: all 0.3s;
-}
 
-.Button:hover {
-    opacity: 0.8;
+    &:hover {
+        opacity: 0.8;
+    }
 }
 
 .clear,
@@ -77,4 +77,11 @@
 
 .size_xl {
     font: var(--font-xl);
+}
+
+.disabled,
+.disabled :hover {
+    pointer-events: none;
+    cursor: auto;
+    opacity: 0.5;
 }

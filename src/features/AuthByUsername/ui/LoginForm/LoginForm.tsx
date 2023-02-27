@@ -7,6 +7,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme, Input } from 'shared/ui';
 
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
+import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { loginActions } from '../../model/slice/loginSlice';
 
 import cl from './LoginForm.module.scss';
@@ -19,7 +20,7 @@ interface LoginFormProps {
 export const LoginForm = memo(({className, isOpen}: LoginFormProps) => {
     const {t} = useTranslation();
     const dispatch = useDispatch();
-    const {username, password} = useSelector(getLoginState);
+    const {username, password, isLoading, error} = useSelector(getLoginState);
 
     const onChangeUsername = useCallback((value: string) => {
         dispatch(loginActions.setUsername(value));
@@ -29,8 +30,13 @@ export const LoginForm = memo(({className, isOpen}: LoginFormProps) => {
         dispatch(loginActions.setPassword(value));
     }, [dispatch]);
 
+    const onLoginClick= useCallback(() => {
+        dispatch(loginByUsername({username, password}));
+    }, [dispatch, username, password]);
+
     return (
         <div className={classNames(cl.LoginForm, {}, [className])}>
+            {error && <div className={cl.error}>{error}</div>}
             <div className={cl.wrapInput}>
                 <EmailIcon className={cl.icon}/>
                 <Input 
@@ -56,6 +62,8 @@ export const LoginForm = memo(({className, isOpen}: LoginFormProps) => {
             <Button 
                 theme={ButtonTheme.BACKGROUND_INVERTED} 
                 className={cl.loginBtn}
+                onClick={onLoginClick}
+                disabled={isLoading}
             >
                 {t('voiti')}
             </Button>

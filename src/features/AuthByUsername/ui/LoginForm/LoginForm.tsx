@@ -36,7 +36,7 @@ export const LoginForm = memo(({className, isOpen}: LoginFormProps) => {
 
     return (
         <div className={classNames(cl.LoginForm, {}, [className])}>
-            {error && <Text text={error} theme={TextTheme.ERROR}/>}
+            {error && <Text text={t('vy-vveli-nevernyi-login-ili-parol')} theme={TextTheme.ERROR}/>}
             <div className={cl.wrapInput}>
                 <EmailIcon className={cl.icon}/>
                 <Input 

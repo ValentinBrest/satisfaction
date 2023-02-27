@@ -8,5 +8,6 @@
   "obnovit-stranicu": "Refresh the page",
   "voiti": "Login",
   "avtorizaciya": "AUTHORIZATION",
-  "vy-vveli-nevernyi-login-ili-parol": "Incorrect username or password"
+  "vy-vveli-nevernyi-login-ili-parol": "Incorrect username or password",
+  "vyiti": "Logout"
 }

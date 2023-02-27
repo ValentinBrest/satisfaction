@@ -262,3 +262,16 @@
 
 - 1. add husky (https://typicode.github.io/husky/#/)
 
+
+## 34 Авторизация. Reducers, slices, async thunk. Custom text
+
+- 1. create folders in AuthByUsername/model/selectors(slice,types)
+- 2. create loginSchema.ts in types
+- 3. create loginSlice.ts in slice
+- 4. create getLoginState.ts in .../model/selectors/getLoginState
+- 5. create async thunk loginByUsername.(test).ts  in ../model/services/ loginByUsername
+- 6. create Text in shared
+- 7. create localstorage.ts in shared/const
+- 8. add actions in userSlice.ts
+- 9. create StoreDecorator in storybook
+- 10. add stories for LoginForm

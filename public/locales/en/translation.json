@@ -7,5 +7,6 @@
   "voznikla-nepredvidennaya-oshibka": "An unexpected error has occurred",
   "obnovit-stranicu": "Refresh the page",
   "voiti": "Login",
-  "avtorizaciya": "AUTHORIZATION"
+  "avtorizaciya": "AUTHORIZATION",
+  "vy-vveli-nevernyi-login-ili-parol": "Incorrect username or password"
 }

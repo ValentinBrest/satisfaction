@@ -8,5 +8,6 @@
   "voznikla-nepredvidennaya-oshibka": "Возникла непредвиденная ошибка",
   "obnovit-stranicu": "Обновить страницу",
   "voiti": "Войти",
-  "avtorizaciya": "АВТОРИЗАЦИЯ"
+  "avtorizaciya": "АВТОРИЗАЦИЯ",
+  "vy-vveli-nevernyi-login-ili-parol": "Вы ввели неверный логин или пароль"
 }

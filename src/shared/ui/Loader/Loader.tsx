@@ -7,10 +7,10 @@ interface LoaderProps {
 }
 
 export const Loader = ({className}: LoaderProps) => {
-    const EmptyDivs = new Array(8).fill(<div />);
+    const EmptyDivs = new Array(8).fill('');
     return (
         <div className={classNames('lds-roller', {}, [className])}>
-            {EmptyDivs.map(item => item)}
+            {EmptyDivs.map((_, index) => <div key={index}></div>)}
         </div>
     );
 };

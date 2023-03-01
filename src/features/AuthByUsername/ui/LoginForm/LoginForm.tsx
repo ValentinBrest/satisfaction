@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import EmailIcon from 'shared/assets/icons/auth/email.svg';
 import PasswordIcon from 'shared/assets/icons/auth/password.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ButtonTheme, Input, Text, TextTheme } from 'shared/ui';
+import { Button, ButtonTheme, Input, Loader, Text, TextTheme } from 'shared/ui';
 
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
@@ -37,7 +37,8 @@ export const LoginForm = memo(({className, isOpen}: LoginFormProps) => {
     return (
         <div className={classNames(cl.LoginForm, {}, [className])}>
             {error && <Text text={t('vy-vveli-nevernyi-login-ili-parol')} theme={TextTheme.ERROR}/>}
-            <div className={cl.wrapInput}>
+            {isLoading && <Loader className={cl.loader}/>}
+            <div className={classNames(cl.wrapInput, {[cl.isLoad]: isLoading})}>
                 <EmailIcon className={cl.icon}/>
                 <Input 
                     className={cl.input} 
@@ -48,7 +49,7 @@ export const LoginForm = memo(({className, isOpen}: LoginFormProps) => {
                     value={username}
                 />
             </div>
-            <div className={cl.wrapInput}>
+            <div className={classNames(cl.wrapInput, {[cl.isLoad]: isLoading})}>
                 <PasswordIcon className={cl.icon}/>
                 <Input 
                     className={cl.input} 

@@ -275,3 +275,12 @@
 - 8. add actions in userSlice.ts
 - 9. create StoreDecorator in storybook
 - 10. add stories for LoginForm
+
+
+## 35 Оптимизация. Асинхронные редюсеры. Размер бандла
+
+- 1. redo LoginForm in async LoginForm
+- 2. code splitting redux-store. Using Reducer Manager (https://redux.js.org/usage/code-splitting)
+- 3. create selectors for fields in LoginForm
+- 4. create DynamicModuleLoader in shared/lib/components/ DynamicModuleLoader for add/remove async reducers
+- 5. refactor store

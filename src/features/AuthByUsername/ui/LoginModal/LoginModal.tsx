@@ -1,8 +1,9 @@
+import { Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Modal, Text} from 'shared/ui';
+import { Loader, Modal, Text} from 'shared/ui';
 
-import { LoginForm } from '../LoginForm/LoginForm';
+import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 
 import cl from './LoginModal.module.scss';
 
@@ -25,14 +26,16 @@ export const LoginModal = (props: LoginModalProps) => {
 
     return (
         <Modal
-            className={classNames(cl.LoginModal, {}, [className])}
+            className={classNames('', {}, [className])}
             isOpen={isOpen}
             onClose={onClose}
             isMounted={isMounted}
             lazy
         >
             <Text title={t('avtorizaciya')} className={cl.title}/>
-            <LoginForm isOpen={isOpen} />
+            <Suspense fallback={<Loader className={cl.loader}/>}>
+                <LoginFormAsync isOpen={isOpen} />
+            </Suspense>
         </Modal>
     );
 };

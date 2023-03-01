@@ -12,12 +12,12 @@ import { loginActions } from '../../model/slice/loginSlice';
 
 import cl from './LoginForm.module.scss';
 
-interface LoginFormProps {
+export interface LoginFormProps {
     className?: string;
     isOpen?: boolean; 
 }
 
-export const LoginForm = memo(({className, isOpen}: LoginFormProps) => {
+const LoginForm = memo(({className, isOpen}: LoginFormProps) => {
     const {t} = useTranslation();
     const dispatch = useDispatch();
     const {username, password, isLoading, error} = useSelector(getLoginState);
@@ -71,3 +71,5 @@ export const LoginForm = memo(({className, isOpen}: LoginFormProps) => {
         </div>
     );
 });
+
+export default LoginForm;

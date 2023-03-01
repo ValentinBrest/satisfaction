@@ -1,10 +1,10 @@
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector, useStore } from 'react-redux';
-import { ReduxStoreWithManager } from 'app/providers/StoreProvider';
+import { useDispatch, useSelector } from 'react-redux';
 import EmailIcon from 'shared/assets/icons/auth/email.svg';
 import PasswordIcon from 'shared/assets/icons/auth/password.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Button, ButtonTheme, Input, Loader, Text, TextTheme } from 'shared/ui';
 
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
@@ -24,20 +24,10 @@ export interface LoginFormProps {
 const LoginForm = memo(({className, isOpen}: LoginFormProps) => {
     const {t} = useTranslation();
     const dispatch = useDispatch();
-    const store = useStore() as ReduxStoreWithManager;
     const username = useSelector(getLoginUsername);
     const password = useSelector(getLoginPassword);
     const isLoading = useSelector(getLoginIsLoading);
     const error = useSelector(getLoginError);
-
-    useEffect (() => {
-        store.reducerManager.add('loginForm', loginReducer);
-        return () => {
-            store.reducerManager.remove('loginForm');
-        };
-        //eslint-disable-next-line
-    }, []);
-
 
     const onChangeUsername = useCallback((value: string) => {
         dispatch(loginActions.setUsername(value));
@@ -52,40 +42,42 @@ const LoginForm = memo(({className, isOpen}: LoginFormProps) => {
     }, [dispatch, username, password]);
 
     return (
-        <div className={classNames(cl.LoginForm, {}, [className])}>
-            {error && <Text text={t('vy-vveli-nevernyi-login-ili-parol')} theme={TextTheme.ERROR}/>}
-            {isLoading && <Loader className={cl.loader}/>}
-            <div className={classNames(cl.wrapInput, {[cl.isLoad]: isLoading})}>
-                <EmailIcon className={cl.icon}/>
-                <Input 
-                    className={cl.input} 
-                    type="text" 
-                    placeholder="Email" 
-                    isOpen={isOpen} 
-                    onChange={onChangeUsername}
-                    value={username}
-                />
-            </div>
-            <div className={classNames(cl.wrapInput, {[cl.isLoad]: isLoading})}>
-                <PasswordIcon className={cl.icon}/>
-                <Input 
-                    className={cl.input} 
-                    type="password" 
-                    placeholder="Password" 
-                    onChange={onChangePassword}
-                    value={password}
-                />
-            </div>
+        <DynamicModuleLoader name="loginForm" reducer={loginReducer} removeAfterUnmount>
+            <div className={classNames(cl.LoginForm, {}, [className])}>
+                {error && <Text text={t('vy-vveli-nevernyi-login-ili-parol')} theme={TextTheme.ERROR}/>}
+                {isLoading && <Loader className={cl.loader}/>}
+                <div className={classNames(cl.wrapInput, {[cl.isLoad]: isLoading})}>
+                    <EmailIcon className={cl.icon}/>
+                    <Input 
+                        className={cl.input} 
+                        type="text" 
+                        placeholder="Email" 
+                        isOpen={isOpen} 
+                        onChange={onChangeUsername}
+                        value={username}
+                    />
+                </div>
+                <div className={classNames(cl.wrapInput, {[cl.isLoad]: isLoading})}>
+                    <PasswordIcon className={cl.icon}/>
+                    <Input 
+                        className={cl.input} 
+                        type="password" 
+                        placeholder="Password" 
+                        onChange={onChangePassword}
+                        value={password}
+                    />
+                </div>
             
-            <Button 
-                theme={ButtonTheme.BACKGROUND_INVERTED} 
-                className={cl.loginBtn}
-                onClick={onLoginClick}
-                disabled={isLoading}
-            >
-                {t('voiti')}
-            </Button>
-        </div>
+                <Button 
+                    theme={ButtonTheme.BACKGROUND_INVERTED} 
+                    className={cl.loginBtn}
+                    onClick={onLoginClick}
+                    disabled={isLoading}
+                >
+                    {t('voiti')}
+                </Button>
+            </div>
+        </DynamicModuleLoader>
     );
 });
 

@@ -47,7 +47,7 @@ module.exports = {
         'jsx-quotes': ['error', 'prefer-double'],
         'comma-dangle': ['error', 'always-multiline'],
         '@typescript-eslint/ban-ts-comment': 'warn',
-        'max-len': ['error', { ignoreComments: true, code: 100 }],
+        'max-len': ['error', { ignoreComments: true, code: 120 }],
         'react/display-name': 'off',
         'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
         'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies

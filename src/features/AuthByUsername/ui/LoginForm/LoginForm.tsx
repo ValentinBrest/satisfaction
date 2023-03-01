@@ -7,7 +7,10 @@ import PasswordIcon from 'shared/assets/icons/auth/password.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme, Input, Loader, Text, TextTheme } from 'shared/ui';
 
-import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
+import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 
@@ -22,11 +25,13 @@ const LoginForm = memo(({className, isOpen}: LoginFormProps) => {
     const {t} = useTranslation();
     const dispatch = useDispatch();
     const store = useStore() as ReduxStoreWithManager;
-    const {username, password, isLoading, error} = useSelector(getLoginState);
+    const username = useSelector(getLoginUsername);
+    const password = useSelector(getLoginPassword);
+    const isLoading = useSelector(getLoginIsLoading);
+    const error = useSelector(getLoginError);
 
     useEffect (() => {
         store.reducerManager.add('loginForm', loginReducer);
-
         return () => {
             store.reducerManager.remove('loginForm');
         };

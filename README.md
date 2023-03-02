@@ -284,3 +284,10 @@
 - 3. create selectors for fields in LoginForm
 - 4. create DynamicModuleLoader in shared/lib/components/ DynamicModuleLoader for add/remove async reducers
 - 5. refactor store
+
+
+## 36 Тестирование фичи authByUsername. TestAsyncThunk
+
+- 1. create tests for selectors and services in AuthByUsername
+- 2. create TestAsyncThunk.ts in shared/lib/tests/TestAsyncThunk. Refactor loginByUsername.test
+- 3. create tests for loginSlice.

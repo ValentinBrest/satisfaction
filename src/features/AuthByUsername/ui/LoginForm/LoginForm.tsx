@@ -20,13 +20,14 @@ import cl from './LoginForm.module.scss';
 export interface LoginFormProps {
     className?: string;
     isOpen?: boolean; 
+    onSuccess: () => void
 }
 
 const initialReducer: ReducerList = {
     loginForm: loginReducer,
 };
 
-const LoginForm = memo(({className, isOpen}: LoginFormProps) => {
+const LoginForm = memo(({className, isOpen, onSuccess}: LoginFormProps) => {
     const {t} = useTranslation();
     const dispatch = useAppDispatch();
     const username = useSelector(getLoginUsername);
@@ -42,9 +43,12 @@ const LoginForm = memo(({className, isOpen}: LoginFormProps) => {
         dispatch(loginActions.setPassword(value));
     }, [dispatch]);
 
-    const onLoginClick= useCallback(() => {
-        dispatch(loginByUsername({username, password}));
-    }, [dispatch, username, password]);
+    const onLoginClick= useCallback( async () => {
+        const result = await dispatch(loginByUsername({username, password}));
+        if (result.meta.requestStatus === 'fulfilled') {
+            onSuccess();
+        }
+    }, [dispatch, username, password, onSuccess]);
 
     return (
         <DynamicModuleLoader reducers={initialReducer} removeAfterUnmount>

@@ -34,7 +34,7 @@ export const LoginModal = (props: LoginModalProps) => {
         >
             <Text title={t('avtorizaciya')} className={cl.title}/>
             <Suspense fallback={<Loader className={cl.loader}/>}>
-                <LoginFormAsync isOpen={isOpen} />
+                <LoginFormAsync isOpen={isOpen} onSuccess={onClose}/>
             </Suspense>
         </Modal>
     );

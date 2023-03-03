@@ -291,3 +291,16 @@
 - 1. create tests for selectors and services in AuthByUsername
 - 2. create TestAsyncThunk.ts in shared/lib/tests/TestAsyncThunk. Refactor loginByUsername.test
 - 3. create tests for loginSlice.
+
+
+## 37 Страница профиля. Оптимизация перерисовок. Учимся использовать memo
+
+- 1. typify dispatch in AppDispatch. (https://redux-toolkit.js.org/usage/usage-with-typescript#getting-the-dispatch-type)
+- 2. create hook useAppDispatch.ts in shared/lib/hooks/ useAppDispatch
+- 3. auto-closing of Modal after success authorization
+- 4. change profile in db.json
+- 5. create ProfilePage
+- 6. create SidebarItem.(module.scss)tsx in Sidebar/ui/SidebarItem
+- 7. create items.ts in widgets/Sidebar/model
+- 8. use HOK memo for components
+- 9. create Profile in entities

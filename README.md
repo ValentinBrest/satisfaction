@@ -304,3 +304,12 @@
 - 7. create items.ts in widgets/Sidebar/model
 - 8. use HOK memo for components
 - 9. create Profile in entities
+
+
+## 38 Инстанс API. ApiUrl
+
+- 1. create api.ts in shared/api (https://axios-http.com/docs/instance)
+- 2. add api in middleware (https://redux-toolkit.js.org/api/getDefaultMiddleware#customizing-the-included-middleware)
+- 3. add navigate in middleware
+- 4. typify extraArgument
+- 5. add global variable __API__

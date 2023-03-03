@@ -1,14 +1,13 @@
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { RoutePath } from 'app/providers/router/routeConfig/routeConfig';
-import AboutIcon from 'shared/assets/icons/sidebar/about.svg';
-import MainIcon from 'shared/assets/icons/sidebar/main.svg';
 import OpenMenu from 'shared/assets/icons/sidebar/menu.svg';
 import CloseMenu from 'shared/assets/icons/sidebar/xmark.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme, Button, ButtonSize, ButtonTheme } from 'shared/ui';
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
+
+import { SidebarItemsList } from '../../model/items';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 import cl from './Sidebar.module.scss';
 
@@ -17,7 +16,6 @@ interface SidebarProps {
 }
 
 export const Sidebar = ({className}: SidebarProps) => {
-    const {t} = useTranslation();
     const [collapsed, setCollapsed] = useState(false);
 
     const onToggle = () => {
@@ -38,22 +36,9 @@ export const Sidebar = ({className}: SidebarProps) => {
                 {collapsed ? <OpenMenu className={cl.icon}/> : <CloseMenu className={cl.icon}/>}
             </Button>
             <div className={cl.items}>
-                <AppLink 
-                    theme={AppLinkTheme.INVERTED} 
-                    to={RoutePath.main}
-                    className={cl.item}
-                >
-                    <MainIcon className={cl.icon}/>
-                    <span className={cl.link}>{t('ssylka-glavnaya')}</span>
-                </AppLink>
-                <AppLink 
-                    theme={AppLinkTheme.INVERTED} 
-                    to={RoutePath.about} 
-                    className={cl.item}
-                >
-                    <AboutIcon className={cl.icon}/>
-                    <span className={cl.link}>{t('ssylka-o-saite')}</span>
-                </AppLink>
+                {SidebarItemsList.map(item => (
+                    <SidebarItem item={item} key={item.path} collapsed={collapsed}/>
+                ))}
             </div>
             <div className={cl.switchers}>
                 <ThemeSwitcher/>

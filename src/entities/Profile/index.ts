@@ -1,9 +1,11 @@
-export {
-    ProfileSchema, 
-    Profile,
-} from './model/types/profile';
+import { fetchProfileData } from './model/services/fetchProfileData/fetchProfileData';
+import { profileActions, profileReducer } from './model/slice/profileSlice';
+import { Profile,ProfileSchema } from './model/types/profile';
 
 export {
+    fetchProfileData,
+    Profile,
     profileActions, 
     profileReducer,
-} from './model/slice/profileSlice';
+    ProfileSchema,
+};

@@ -313,3 +313,11 @@
 - 3. add navigate in middleware
 - 4. typify extraArgument
 - 5. add global variable __API__
+
+
+## 39 Модуль профиля. Фетчинг данных.
+
+- 1. create async thunc(fetchProfileData.ts) for Profile in ../Profile/model/services/ fetchProfileData
+- 2. add extraReducers in profileSlice.ts
+- 3. create selectors in ../Profile/model/selectors
+- 4. create ProfileCard in ../Profile/ui/ProfileCard

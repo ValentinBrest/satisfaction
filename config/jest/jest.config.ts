@@ -20,6 +20,7 @@ export default {
     testEnvironment: 'jsdom',
     globals: {
         '__IS_DEV__': true,
+        '__API__': '',
     },
     coveragePathIgnorePatterns: [
         '/node_modules/',

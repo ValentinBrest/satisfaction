@@ -20,6 +20,8 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, {rej
 
             localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data));
             dispatch(userActions.setAuthData(response.data));
+            //@ts-ignore
+            extra.navigate('/about');
             return response.data;
         } catch (error) {
             return rejectWithValue('error');

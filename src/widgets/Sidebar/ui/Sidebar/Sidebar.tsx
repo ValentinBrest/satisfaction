@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import OpenMenu from 'shared/assets/icons/sidebar/menu.svg';
 import CloseMenu from 'shared/assets/icons/sidebar/xmark.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -15,7 +15,7 @@ interface SidebarProps {
     className?: string;
 }
 
-export const Sidebar = ({className}: SidebarProps) => {
+export const Sidebar = memo(({className}: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(false);
 
     const onToggle = () => {
@@ -46,4 +46,4 @@ export const Sidebar = ({className}: SidebarProps) => {
             </div>
         </div>
     );
-};
+});

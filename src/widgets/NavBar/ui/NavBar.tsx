@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
@@ -12,7 +12,7 @@ interface NavBarProps {
     className?: string;
 }
 
-export const NavBar = ({ className }: NavBarProps) => {
+export const NavBar = memo(({ className }: NavBarProps) => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
     const authData = useSelector(getUserAuthData);
@@ -68,4 +68,4 @@ export const NavBar = ({ className }: NavBarProps) => {
             </div>
         </div>
     );
-};
+});

@@ -29,11 +29,11 @@ export const Input = memo((props: InputProps) => {
         onChange?.(e.target.value);
     };
 
-    const refInput = useRef<HTMLInputElement>();
+    const refInput = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
         if (isOpen) {
-            refInput.current.focus();
+            refInput.current?.focus();
         }
     }, [isOpen]);
 

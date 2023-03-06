@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useRef, useState } from 'react';
+import { memo, MutableRefObject, useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
@@ -20,7 +20,7 @@ export const NavBar = memo(({ className }: NavBarProps) => {
     const [isAuthModal, setIsAuthModal] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
 
-    const timeRef = useRef<ReturnType<typeof setTimeout>>();
+    const timeRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
 
     const onCloseModal = useCallback(() => {
         setIsAuthModal(false);

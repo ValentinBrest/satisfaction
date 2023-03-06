@@ -321,3 +321,9 @@
 - 2. add extraReducers in profileSlice.ts
 - 3. create selectors in ../Profile/model/selectors
 - 4. create ProfileCard in ../Profile/ui/ProfileCard
+
+
+## 40 Чиним типы и проект после TS strict mode. ThunkConfig
+
+- 1. add TS strict mode
+- 2. fix mistakes

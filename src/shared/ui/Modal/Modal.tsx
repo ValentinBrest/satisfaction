@@ -1,5 +1,5 @@
 import React, { ReactNode, useCallback, useEffect } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui';
 import { Portal } from 'shared/ui/Portal/Portal';
 
@@ -26,7 +26,7 @@ export const Modal = (props: ModalProps) => {
         isMounted,
     } = props;
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cl.opened]: isOpen,
     };
 

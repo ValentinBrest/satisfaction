@@ -3,7 +3,7 @@ import { Button, ButtonSize, ButtonTheme } from './Button/Button';
 import { Input } from './Input/Input';
 import { Loader } from './Loader/Loader';
 import { Modal } from './Modal/Modal';
-import { Text, TextTheme } from './Text/Text';
+import { Text, TextAlign, TextTheme } from './Text/Text';
 
 
 export {
@@ -16,5 +16,6 @@ export {
     Loader, 
     Modal,
     Text, 
+    TextAlign,
     TextTheme,
 };

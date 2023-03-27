@@ -11,6 +11,8 @@ import {
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
+import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
+
 const reducers: ReducerList = {
     profile: profileReducer,
 };
@@ -27,6 +29,7 @@ const ProfilePage = memo(() => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+            <ProfilePageHeader/>
             <ProfileCard 
                 profile={profile} 
                 isLoading={isLoading} 

@@ -1,7 +1,7 @@
 
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, Input, Loader, Text, TextAlign, TextTheme } from 'shared/ui';
+import { Input, Loader, Text, TextAlign, TextTheme } from 'shared/ui';
 
 import { Profile } from '../../model/types/profile';
 
@@ -46,18 +46,11 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     return (
         <div className={classNames(cl.ProfileCard, {}, [className])}>
-            <div className={cl.header}>
-                <Text title={t('profile')}/>
-                
-            </div>
+            
             <div className={cl.body}>
                 <Input placeholder={profile?.first}/>
                 <Input placeholder={profile?.lastname}/>
             </div>
-            <div className={cl.footer}>
-                <Button>{t('redaktirovat')}</Button>
-            </div>
-            
         </div>
     );
 };

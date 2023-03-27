@@ -1,5 +1,13 @@
 import { memo, useEffect } from 'react';
-import { fetchProfileData, ProfileCard, profileReducer } from 'entities/Profile';
+import { useSelector } from 'react-redux';
+import { 
+    fetchProfileData, 
+    getProfileData, 
+    getProfileError, 
+    getProfileIsLoading, 
+    ProfileCard, 
+    profileReducer,
+} from 'entities/Profile';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
@@ -9,6 +17,9 @@ const reducers: ReducerList = {
 
 const ProfilePage = memo(() => {
     const dispatch = useAppDispatch();
+    const profile = useSelector(getProfileData);
+    const isLoading = useSelector(getProfileIsLoading);
+    const error = useSelector(getProfileError);
 
     useEffect (() => {
         dispatch(fetchProfileData());
@@ -16,7 +27,11 @@ const ProfilePage = memo(() => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <ProfileCard />
+            <ProfileCard 
+                profile={profile} 
+                isLoading={isLoading} 
+                error={error}
+            />
         </DynamicModuleLoader>
     );
 });

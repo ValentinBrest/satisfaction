@@ -1,7 +1,7 @@
 
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Input, Loader, Text, TextAlign, TextTheme } from 'shared/ui';
+import { Avatar, Input, Loader, Text, TextAlign, TextTheme } from 'shared/ui';
 
 import { Profile } from '../../model/types/profile';
 
@@ -60,7 +60,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         <div className={classNames(cl.ProfileCard, {}, [className])}>
             
             <div className={cl.body}>
-                {profile?.avatar && <img src={profile?.avatar} alt="" width="150px"/>}
+                {profile?.avatar && <Avatar src={profile?.avatar} size={150} alt="usericon"/>}
                 <div className={cl.inputWrap}>
                     <Input 
                         className={cl.profileInput}

@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { getProfileReadonly, profileActions } from 'entities/Profile';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Button, Text } from 'shared/ui';
+import { Button, ButtonTheme, Text } from 'shared/ui';
 
 import cl from './ProfilePageHeader.module.scss';
 
@@ -26,6 +26,10 @@ export const ProfilePageHeader = ({className}: ProfilePageHeaderProps) => {
     const onCancelEdit = useCallback(() => {
         dispatch(profileActions.cancelEdit());
     }, [dispatch]);
+    
+    const onSave = useCallback(() => {
+        dispatch(profileActions.cancelEdit());
+    }, [dispatch]);
 
     return (
         <div className={classNames(cl.ProfilePageHeader, {}, [className])}>
@@ -35,7 +39,16 @@ export const ProfilePageHeader = ({className}: ProfilePageHeaderProps) => {
                     <Button onClick={onEdit}>{t('redaktirovat')}</Button>
                 )
                 : (
-                    <Button onClick={onCancelEdit}>{t('otmenit')}</Button>
+                    <div>
+                        <Button onClick={onSave}>{t('sokhranit')}</Button>
+                        <Button 
+                            className={cl.cancelBtn} 
+                            onClick={onCancelEdit} 
+                            theme={ButtonTheme.OUTLINE_RED}
+                        >
+                            {t('otmenit')}
+                        </Button>
+                    </div>
                 )
             }
         </div>

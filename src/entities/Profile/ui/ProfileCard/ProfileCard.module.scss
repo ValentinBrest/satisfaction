@@ -3,6 +3,12 @@
     border: 1px solid var(--inverted-bg-color);
 }
 
+.body {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
 .body input:nth-child(n) {
     margin-bottom: 10px;
 }

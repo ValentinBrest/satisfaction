@@ -8,5 +8,7 @@
   "vashe-imya": "your name",
   "vasha-familiya": "Your last name",
   "vash-vozrast": "Your age",
-  "vash-gorod": "Your city"
+  "vash-gorod": "Your city",
+  "vvedite-imya-polzovatelya": "Enter username",
+  "vvedite-sslyku-na-avatar": "Enter link to avatar"
 }

@@ -46,6 +46,10 @@ const ProfilePage = memo(() => {
         dispatch(profileActions.updateProfile({age: Number(validateValue || 0)}));
     }, [dispatch]);
 
+    const onChangeUsername = useCallback((value?: string) => {
+        dispatch(profileActions.updateProfile({username: value || ''}));
+    }, [dispatch]);
+
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <ProfilePageHeader/>
@@ -57,6 +61,7 @@ const ProfilePage = memo(() => {
                 onChangeLastname={onChangeLastname}
                 onChangeCity={onChangeCity}
                 onChangeAge={onChangeAge}
+                onChangeUsername={onChangeUsername}
                 readonly={readonly}
             />
         </DynamicModuleLoader>

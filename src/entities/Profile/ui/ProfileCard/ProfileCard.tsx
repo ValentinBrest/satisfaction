@@ -17,6 +17,7 @@ interface ProfileCardProps {
     onChangeLastname?: (value?: string) => void;
     onChangeAge?: (value?: string) => void;
     onChangeCity?: (value?: string) => void;
+    onChangeUsername?: (value?: string) => void;
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
@@ -30,6 +31,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         onChangeLastname,
         onChangeAge,
         onChangeCity,
+        onChangeUsername,
     } = props;
     const {t} = useTranslation('profile');
 
@@ -58,34 +60,44 @@ export const ProfileCard = (props: ProfileCardProps) => {
         <div className={classNames(cl.ProfileCard, {}, [className])}>
             
             <div className={cl.body}>
-                <Input 
-                    className={cl.profileInput}
-                    placeholder={t('vashe-imya')}
-                    value={profile?.first} 
-                    onChange={onChangeFirstname} 
-                    readonly={readonly}
-                />
-                <Input 
-                    className={cl.profileInput}
-                    placeholder={t('vasha-familiya')}
-                    value={profile?.lastname} 
-                    onChange={onChangeLastname} 
-                    readonly={readonly}
-                />
-                <Input 
-                    className={cl.profileInput}
-                    placeholder={t('vash-vozrast')}
-                    value={profile?.age} 
-                    onChange={onChangeAge} 
-                    readonly={readonly}
-                />
-                <Input 
-                    className={cl.profileInput}
-                    placeholder={t('vash-gorod')}
-                    value={profile?.city} 
-                    onChange={onChangeCity} 
-                    readonly={readonly}
-                />
+                {profile?.avatar && <img src={profile?.avatar} alt="" width="150px"/>}
+                <div className={cl.inputWrap}>
+                    <Input 
+                        className={cl.profileInput}
+                        placeholder={t('vashe-imya')}
+                        value={profile?.first} 
+                        onChange={onChangeFirstname} 
+                        readonly={readonly}
+                    />
+                    <Input 
+                        className={cl.profileInput}
+                        placeholder={t('vasha-familiya')}
+                        value={profile?.lastname} 
+                        onChange={onChangeLastname} 
+                        readonly={readonly}
+                    />
+                    <Input 
+                        className={cl.profileInput}
+                        placeholder={t('vash-vozrast')}
+                        value={profile?.age} 
+                        onChange={onChangeAge} 
+                        readonly={readonly}
+                    />
+                    <Input 
+                        className={cl.profileInput}
+                        placeholder={t('vash-gorod')}
+                        value={profile?.city} 
+                        onChange={onChangeCity} 
+                        readonly={readonly}
+                    />
+                    <Input 
+                        className={cl.profileInput}
+                        placeholder={t('vvedite-imya-polzovatelya')}
+                        value={profile?.username} 
+                        onChange={onChangeUsername} 
+                        readonly={readonly}
+                    />
+                </div>
             </div>
         </div>
     );

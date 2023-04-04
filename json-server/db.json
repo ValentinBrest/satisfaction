@@ -30,14 +30,14 @@
       "password": "1236"
     }
   ],
-  "profile": { 
-    "first": "Валентин", 
-    "lastname": "Конопацкий", 
-    "age": "27", 
-    "currency": "BYN", 
-    "country": "Belarus", 
-    "city": "Brest", 
-    "username": "admin", 
+  "profile": {
+    "first": "Валентин",
+    "lastname": "Конопацкий",
+    "age": 27,
+    "currency": "BYN",
+    "country": "Belarus",
+    "city": "Brest",
+    "username": "admin",
     "avatar": "https://visualpharm.com/assets/381/Admin-595b40b65ba036ed117d3b23.svg"
   }
 }

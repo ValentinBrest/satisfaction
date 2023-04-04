@@ -2,5 +2,6 @@
   "profile": "Profile",
   "redaktirovat": "edit",
   "proizloshla-oshibka-pri-zagruzke-profilya": "An error occurred while loading the profile",
-  "poprobuite-obnovit-stranicu": "Try refreshing the page"
+  "poprobuite-obnovit-stranicu": "Try refreshing the page",
+  "otmenit": "Cancel"
 }

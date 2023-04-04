@@ -8,6 +8,10 @@
     border: none;
     border-radius: 3px;
 
+    .readonly {
+        opacity: 0.7;
+    }
+
     &:focus {
         background: var(--input-color-focus);
         outline: none;

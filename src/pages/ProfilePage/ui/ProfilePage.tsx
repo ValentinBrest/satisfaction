@@ -1,10 +1,12 @@
-import { memo, useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { 
     fetchProfileData, 
     getProfileData, 
     getProfileError, 
     getProfileIsLoading, 
+    getProfileReadonly, 
+    profileActions, 
     ProfileCard, 
     profileReducer,
 } from 'entities/Profile';
@@ -22,9 +24,18 @@ const ProfilePage = memo(() => {
     const profile = useSelector(getProfileData);
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
+    const readonly = useSelector(getProfileReadonly);
 
     useEffect (() => {
         dispatch(fetchProfileData());
+    }, [dispatch]);
+
+    const onChangeFirstname = useCallback((value?: string) => {
+        dispatch(profileActions.updateProfile({first: value || ''}));
+    }, [dispatch]);
+
+    const onChangeLastname = useCallback((value?: string) => {
+        dispatch(profileActions.updateProfile({lastname: value || ''}));
     }, [dispatch]);
 
     return (
@@ -34,6 +45,9 @@ const ProfilePage = memo(() => {
                 profile={profile} 
                 isLoading={isLoading} 
                 error={error}
+                onChangeFirstname={onChangeFirstname}
+                onChangeLastname={onChangeLastname}
+                readonly={readonly}
             />
         </DynamicModuleLoader>
     );

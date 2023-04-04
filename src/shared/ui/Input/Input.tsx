@@ -1,11 +1,11 @@
 import { InputHTMLAttributes, memo, useEffect, useRef } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 
 import cl from './Input.module.scss';
 
 type HTMLInputProps = Omit<
     InputHTMLAttributes<HTMLInputElement>,
-    'value' | 'onChange'
+    'value' | 'onChange' | 'readonly'
 >;
 
 interface InputProps extends HTMLInputProps {
@@ -13,6 +13,7 @@ interface InputProps extends HTMLInputProps {
     value?: string;
     onChange?: (value: string) => void;
     isOpen?: boolean;
+    readonly?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -22,6 +23,7 @@ export const Input = memo((props: InputProps) => {
         onChange,
         type = 'text',
         isOpen,
+        readonly,
         ...otherProps
     } = props;
 
@@ -37,13 +39,18 @@ export const Input = memo((props: InputProps) => {
         }
     }, [isOpen]);
 
+    const mods: Mods = {
+        [cl.readonly] : readonly, 
+    };
+
     return (
         <input
             ref={refInput}
-            className={classNames(cl.Input, {}, [className])}
+            className={classNames(cl.Input, mods, [className])}
             type={type}
             value={value}
             onChange={onChangeHandler}
+            readOnly={readonly}
             {...otherProps}
         />
     );

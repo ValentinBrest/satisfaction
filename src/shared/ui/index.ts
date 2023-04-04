@@ -4,6 +4,7 @@ import { Button, ButtonSize, ButtonTheme } from './Button/Button';
 import { Input } from './Input/Input';
 import { Loader } from './Loader/Loader';
 import { Modal } from './Modal/Modal';
+import { Select } from './Select/Select';
 import { Text, TextAlign, TextTheme } from './Text/Text';
 
 
@@ -17,6 +18,7 @@ export {
     Input,
     Loader, 
     Modal,
+    Select,
     Text, 
     TextAlign,
     TextTheme,

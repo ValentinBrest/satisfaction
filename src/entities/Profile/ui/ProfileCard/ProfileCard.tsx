@@ -1,7 +1,8 @@
 
 import { useTranslation } from 'react-i18next';
+import { Currency } from 'shared/const/common';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Avatar, Input, Loader, Text, TextAlign, TextTheme } from 'shared/ui';
+import { Avatar, Input, Loader, Select, Text, TextAlign, TextTheme } from 'shared/ui';
 
 import { Profile } from '../../model/types/profile';
 
@@ -97,6 +98,14 @@ export const ProfileCard = (props: ProfileCardProps) => {
                         onChange={onChangeUsername} 
                         readonly={readonly}
                     />
+                    <Select 
+                        label={t('ukazhite-valyutu')}
+                        options={[
+                            {value: Currency.RUB, content: Currency.RUB},
+                            {value: Currency.BYN, content: Currency.BYN},
+                            {value: Currency.EUR, content: Currency.EUR},
+                            {value: Currency.USD, content: Currency.USD},
+                        ]}/>
                 </div>
             </div>
         </div>

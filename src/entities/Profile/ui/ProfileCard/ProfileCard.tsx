@@ -54,8 +54,8 @@ export const ProfileCard = (props: ProfileCardProps) => {
         <div className={classNames(cl.ProfileCard, {}, [className])}>
             
             <div className={cl.body}>
-                <Input placeholder={profile?.first} onChange={onChangeFirstname} readonly={readonly}/>
-                <Input placeholder={profile?.lastname} onChange={onChangeLastname} readonly={readonly}/>
+                <Input value={profile?.first} onChange={onChangeFirstname} readonly={readonly}/>
+                <Input value={profile?.lastname} onChange={onChangeLastname} readonly={readonly}/>
             </div>
         </div>
     );

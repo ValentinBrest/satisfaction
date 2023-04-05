@@ -343,3 +343,8 @@
 - 10. create Currency component in entities
 - 11. create Country component in entities
 - 12. improve routes for Profile
+
+
+## 42 Валидация профиля. Коды ошибок
+
+- 1. create validation for Profile

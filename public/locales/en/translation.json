@@ -10,5 +10,6 @@
   "avtorizaciya": "AUTHORIZATION",
   "vy-vveli-nevernyi-login-ili-parol": "Incorrect username or password",
   "vyiti": "Logout",
-  "ukazhite-valyutu": "Specify currency"
+  "ukazhite-valyutu": "Specify currency",
+  "ukazhite-stranu": "Specify country"
 }

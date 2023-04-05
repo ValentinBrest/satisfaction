@@ -1,7 +1,7 @@
 
 import { useTranslation } from 'react-i18next';
+import { Country, CountrySelect } from 'entities/Country';
 import { Currency, CurrencySelect } from 'entities/Currency';
-import { Country } from 'shared/const/common';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Avatar, Input, Loader, Text, TextAlign, TextTheme } from 'shared/ui';
 
@@ -104,8 +104,15 @@ export const ProfileCard = (props: ProfileCardProps) => {
                         readonly={readonly}
                     />
                     <CurrencySelect 
+                        className={cl.input}
                         value={profile?.currency} 
                         onChange={onChangeCurrency} 
+                        readonly={readonly}
+                    />
+                    <CountrySelect 
+                        className={cl.input}
+                        value={profile?.country}
+                        onChange={onChangeCountry}
                         readonly={readonly}
                     />
                 </div>

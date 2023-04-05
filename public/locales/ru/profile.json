@@ -10,5 +10,10 @@
   "vash-vozrast": "Ваш возраст",
   "vash-gorod": "Ваш город",
   "vvedite-imya-polzovatelya": "Введите имя пользователя",
-  "vvedite-sslyku-na-avatar": "Введите сслыку на аватар"
+  "vvedite-sslyku-na-avatar": "Введите сслыку на аватар",
+  "servernaya-oshibka": "Серверная ошибка",
+  "nekorrektnyi-vozrast": "Некорректный возраст",
+  "nekorrektnyi-region": "Некорректный регион",
+  "imya-i-familiya-obyazatelny": "Имя и фамилия обязательны",
+  "dannye-ne-ukazany": "Данные не указаны"
 }

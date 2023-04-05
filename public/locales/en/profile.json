@@ -10,5 +10,10 @@
   "vash-vozrast": "Your age",
   "vash-gorod": "Your city",
   "vvedite-imya-polzovatelya": "Enter username",
-  "vvedite-sslyku-na-avatar": "Enter link to avatar"
+  "vvedite-sslyku-na-avatar": "Enter link to avatar",
+  "servernaya-oshibka": "Server error",
+  "nekorrektnyi-vozrast": "Incorrect age",
+  "nekorrektnyi-region": "Incorrect region",
+  "imya-i-familiya-obyazatelny": "First and last name are required",
+  "dannye-ne-ukazany": "Data not specified"
 }

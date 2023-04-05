@@ -327,3 +327,19 @@
 
 - 1. add TS strict mode
 - 2. fix mistakes
+
+
+## 41 Модуль профиля. Avatar. Редактирование и сохранение. Приватные роуты
+
+- 1. refactor ProfileCard
+- 2. improve component Text (add TextAlign)
+- 3. create ProfilePageHeader
+- 4. add feature readonly Input
+- 5. create method cancelEdit
+- 6. add inputs (city, age) and outline_red style for button
+- 7. create updateProfileData
+- 8. create Avatar component in shared
+- 9. create Select component in shared
+- 10. create Currency component in entities
+- 11. create Country component in entities
+- 12. improve routes for Profile

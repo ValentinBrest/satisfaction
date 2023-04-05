@@ -1,5 +1,6 @@
 import { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { Currency } from 'entities/Currency';
 import {
     fetchProfileData, getProfileError,
     getProfileForm,
@@ -50,6 +51,10 @@ const ProfilePage = memo(() => {
         dispatch(profileActions.updateProfile({username: value || ''}));
     }, [dispatch]);
 
+    const onChangeCurrency = useCallback((currency: Currency) => {
+        dispatch(profileActions.updateProfile({currency}));
+    }, [dispatch]);
+
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <ProfilePageHeader/>
@@ -62,6 +67,7 @@ const ProfilePage = memo(() => {
                 onChangeCity={onChangeCity}
                 onChangeAge={onChangeAge}
                 onChangeUsername={onChangeUsername}
+                onChangeCurrency={onChangeCurrency}
                 readonly={readonly}
             />
         </DynamicModuleLoader>

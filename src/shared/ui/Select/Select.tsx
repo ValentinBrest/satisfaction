@@ -14,6 +14,7 @@ interface selectProps {
     options?: SelectOption[];
     value?: string;
     onChange?: (value: string) => void;
+    readonly?: boolean;
 }
 
 export const Select = memo((props: selectProps) => {
@@ -23,6 +24,7 @@ export const Select = memo((props: selectProps) => {
         options, 
         value, 
         onChange,
+        readonly,
     }= props;
 
     const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -44,7 +46,12 @@ export const Select = memo((props: selectProps) => {
             {label && (
                 <span className={cl.label}>{label}</span>
             )}
-            <select className={cl.select} value={value} onChange={onChangeHandler}>
+            <select 
+                className={cl.select} 
+                disabled={readonly} 
+                value={value} 
+                onChange={onChangeHandler}
+            >
                 {optionsList }
                 
             </select>

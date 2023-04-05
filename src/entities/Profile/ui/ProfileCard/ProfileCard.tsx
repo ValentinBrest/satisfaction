@@ -1,8 +1,9 @@
 
 import { useTranslation } from 'react-i18next';
-import { Currency } from 'shared/const/common';
+import { Currency, CurrencySelect } from 'entities/Currency';
+import { Country } from 'shared/const/common';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Avatar, Input, Loader, Select, Text, TextAlign, TextTheme } from 'shared/ui';
+import { Avatar, Input, Loader, Text, TextAlign, TextTheme } from 'shared/ui';
 
 import { Profile } from '../../model/types/profile';
 
@@ -19,6 +20,8 @@ interface ProfileCardProps {
     onChangeAge?: (value?: string) => void;
     onChangeCity?: (value?: string) => void;
     onChangeUsername?: (value?: string) => void;
+    onChangeCurrency?: (currency: Currency) => void;
+    onChangeCountry?: (country: Country) => void;
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
@@ -33,6 +36,8 @@ export const ProfileCard = (props: ProfileCardProps) => {
         onChangeAge,
         onChangeCity,
         onChangeUsername,
+        onChangeCurrency,
+        onChangeCountry,
     } = props;
     const {t} = useTranslation('profile');
 
@@ -98,14 +103,11 @@ export const ProfileCard = (props: ProfileCardProps) => {
                         onChange={onChangeUsername} 
                         readonly={readonly}
                     />
-                    <Select 
-                        label={t('ukazhite-valyutu')}
-                        options={[
-                            {value: Currency.RUB, content: Currency.RUB},
-                            {value: Currency.BYN, content: Currency.BYN},
-                            {value: Currency.EUR, content: Currency.EUR},
-                            {value: Currency.USD, content: Currency.USD},
-                        ]}/>
+                    <CurrencySelect 
+                        value={profile?.currency} 
+                        onChange={onChangeCurrency} 
+                        readonly={readonly}
+                    />
                 </div>
             </div>
         </div>

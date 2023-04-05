@@ -9,5 +9,6 @@
   "voiti": "Login",
   "avtorizaciya": "AUTHORIZATION",
   "vy-vveli-nevernyi-login-ili-parol": "Incorrect username or password",
-  "vyiti": "Logout"
+  "vyiti": "Logout",
+  "ukazhite-valyutu": "Specify currency"
 }

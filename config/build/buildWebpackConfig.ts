@@ -7,7 +7,7 @@ import { buildPlugins } from './buildPlugins';
 import { buildResolvers } from './buildResolvers';
 
 export function buildWebpackConfig (options: BuildOptions): webpack.Configuration {
-    const {paths, mode, port, isDev, apiUrl} = options;
+    const {paths, mode, port, isDev, apiUrl, project} = options;
     const {entry, build, html, src} = paths;
     return {
         mode,
@@ -17,7 +17,7 @@ export function buildWebpackConfig (options: BuildOptions): webpack.Configuratio
             path: build,
             clean: true,
         },
-        plugins: buildPlugins(html, isDev, apiUrl),
+        plugins: buildPlugins(html, isDev, apiUrl, project),
         module: {
             rules: buildLoader(isDev),
         },

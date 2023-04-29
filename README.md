@@ -362,3 +362,9 @@
 ## 44 Color pallete. Внедряем новую третью тему
 
 - 1.  add orange theme. Use https://mobilepalette.colorion.co/
+
+
+## 45 npm concurrently. File templates
+
+- 1. add concurrently (https://www.npmjs.com/package/concurrently)
+- 2. install Folder Plugin for VsCode (https://marketplace.visualstudio.com/items?itemName=Huuums.vscode-fast-folder-structure)

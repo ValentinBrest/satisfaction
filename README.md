@@ -348,3 +348,12 @@
 ## 42 Валидация профиля. Коды ошибок
 
 - 1. create validation for Profile
+
+
+## 43 Переменная __PROJECT__. Тесты на модуль профиля
+
+- 1. add stories for ProfileCard and ProfilePage
+- 2. add __PROJECT__ variable
+- 3. add tests for selectors Profile
+- 4. add tests services Profile
+- 5. add tests (extra-)reducers Profile

@@ -357,3 +357,8 @@
 - 3. add tests for selectors Profile
 - 4. add tests services Profile
 - 5. add tests (extra-)reducers Profile
+
+
+## 44 Color pallete. Внедряем новую третью тему
+
+- 1.  add orange theme. Use https://mobilepalette.colorion.co/

@@ -368,3 +368,11 @@
 
 - 1. add concurrently (https://www.npmjs.com/package/concurrently)
 - 2. install Folder Plugin for VsCode (https://marketplace.visualstudio.com/items?itemName=Huuums.vscode-fast-folder-structure)
+
+
+## 46 React refresh plugin. build babel loader [!!!ПРОПУЩЕН]
+
+
+## 47 Router v6 private protectеd routes. Защищенные маршруты
+
+- 1. refactor AppRoter. Add RequireAuth

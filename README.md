@@ -376,3 +376,10 @@
 ## 47 Router v6 private protectеd routes. Защищенные маршруты
 
 - 1. refactor AppRoter. Add RequireAuth
+
+
+## 48 ArticlesPage и ArticleDetailsPage. Декомпозиция. Сущности. Webpack publicPath
+
+- 1. create ArticlesPage
+- 2. create ArticleDetailsPage
+- 3. add publicPatch in webpack config

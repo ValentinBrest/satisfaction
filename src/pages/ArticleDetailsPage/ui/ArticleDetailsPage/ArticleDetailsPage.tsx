@@ -1,5 +1,6 @@
 import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { ArticleDetails } from 'entities/Article';
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import cl from './ArticleDetailsPage.module.scss';
@@ -13,7 +14,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const { t } = useTranslation('articles');
 
     return <div className={classNames(cl.ArticleDetailsPage, {}, [className])}>
-        <div>{t('article')}</div>
+        <ArticleDetails/>
     </div>;
 };
 

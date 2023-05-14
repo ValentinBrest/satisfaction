@@ -1,5 +1,6 @@
 import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 import { ArticleDetails } from 'entities/Article';
 import { classNames } from 'shared/lib/classNames/classNames';
 
@@ -12,9 +13,18 @@ interface ArticleDetailsPageProps {
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const { className } = props;
     const { t } = useTranslation('articles');
+    const { id } = useParams<{id: string}>();
+
+    if (!id) {
+        return (
+            <div className={classNames(cl.ArticleDetailsPage, {}, [className])}>
+                {t('statya-ne-naidena')}
+            </div>
+        );
+    }
 
     return <div className={classNames(cl.ArticleDetailsPage, {}, [className])}>
-        <ArticleDetails/>
+        <ArticleDetails id={id}/>
     </div>;
 };
 

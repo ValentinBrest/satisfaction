@@ -12,4 +12,7 @@
         "src/shared/config/i18n"
     ],
     "i18n-ally.keystyle": "nested",
+    "files.associations": {
+        "**/.fttemplates/**": "plaintext",
+    }
 }

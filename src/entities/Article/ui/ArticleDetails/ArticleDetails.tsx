@@ -8,6 +8,8 @@ import {
     ReducerList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Text,TextAlign, TextTheme } from 'shared/ui';
+import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 
 import { 
     getArticleDetailsData, 
@@ -42,11 +44,22 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     let content;
 
     if (error) {
-        // eslint-disable-next-line i18next/no-literal-string
-        content = <div>Error</div>;
+        content = (
+            <Text 
+                theme={TextTheme.ERROR}
+                align={TextAlign.CENTER}
+                title={t('Произошла ошибка при загрузке страницы')}/>
+        );
     } else if (isLoading) {
-        // eslint-disable-next-line i18next/no-literal-string
-        content = <div>...Loading</div>;
+        content = (
+            <div>
+                <Skeleton className={cl.avatar} width={200} height={200} border="50%"/>
+                <Skeleton className={cl.title} width={300} height={32} />
+                <Skeleton className={cl.skeleton} width={600} height={24} />
+                <Skeleton className={cl.skeleton}width="100%" height={200} />
+                <Skeleton className={cl.skeleton} width="100%" height={200} />
+            </div>
+        );
     } else {
         // eslint-disable-next-line i18next/no-literal-string
         content = <div>Article Details</div>;

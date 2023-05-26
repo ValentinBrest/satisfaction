@@ -383,3 +383,15 @@
 - 1. create ArticlesPage
 - 2. create ArticleDetailsPage
 - 3. add publicPatch in webpack config
+
+
+## 49 Entity article, async thunk, slices. Блоки. Skeleton loader
+
+- 1. improving db.json
+- 2. describe types of Article
+- 3. fix Template component
+- 4. create ui compoents for Article
+- 5. create slice Article
+- 6. create services Article + extraReducers
+- 7. create selectors Article
+- 8. create Skeleton in entities

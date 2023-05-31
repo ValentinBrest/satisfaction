@@ -41,7 +41,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const error = useSelector(getArticleDetailsError);
 
     useEffect(() => {
-        dispatch(fetchArticleById(id));
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchArticleById(id));
+        }
     }, [dispatch, id]);
 
     let content;
@@ -87,7 +89,10 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     <CalendarIcon className={cl.icon}/>
                     <Text text={article?.createdAt}/>
                 </div>
-                {article?.blocks.map(renderBlock)}
+                <div className={cl.blockWrap}>
+                    {article?.blocks.map(renderBlock)}
+                </div>
+                
             </>
         );
     }

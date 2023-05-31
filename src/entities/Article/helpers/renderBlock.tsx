@@ -8,7 +8,7 @@ import cl from '../ui/ArticleDetails/ArticleDetails.module.scss';
 export const renderBlock = (block: ArticleBlock) => {
     switch (block.type) {
     case ArticleBlockType.CODE:
-        return <ArticleCodeBlockComponent className={cl.block}/>;
+        return <ArticleCodeBlockComponent className={cl.block} block={block}/>;
     case ArticleBlockType.IMAGE:
         return <ArticleImageBlockComponent className={cl.block}/>;
     case ArticleBlockType.TEXT:

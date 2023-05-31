@@ -10,7 +10,7 @@ export const renderBlock = (block: ArticleBlock) => {
     case ArticleBlockType.CODE:
         return <ArticleCodeBlockComponent className={cl.block} block={block}/>;
     case ArticleBlockType.IMAGE:
-        return <ArticleImageBlockComponent className={cl.block}/>;
+        return <ArticleImageBlockComponent className={cl.block} block={block}/>;
     case ArticleBlockType.TEXT:
         return <ArticleTextBlockComponent className={cl.block} block={block}/>;
     default:

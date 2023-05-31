@@ -3,15 +3,16 @@ import { ArticleCodeBlockComponent } from '../ui/ArticleCodeBlockComponent/Artic
 import { ArticleImageBlockComponent } from '../ui/ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
 
+import cl from '../ui/ArticleDetails/ArticleDetails.module.scss';
 
 export const renderBlock = (block: ArticleBlock) => {
     switch (block.type) {
     case ArticleBlockType.CODE:
-        return <ArticleCodeBlockComponent />;
+        return <ArticleCodeBlockComponent className={cl.block}/>;
     case ArticleBlockType.IMAGE:
-        return <ArticleImageBlockComponent />;
+        return <ArticleImageBlockComponent className={cl.block}/>;
     case ArticleBlockType.TEXT:
-        return <ArticleTextBlockComponent />;
+        return <ArticleTextBlockComponent className={cl.block} block={block}/>;
     default:
         return null;
     }

@@ -8,11 +8,11 @@ import cl from '../ui/ArticleDetails/ArticleDetails.module.scss';
 export const renderBlock = (block: ArticleBlock) => {
     switch (block.type) {
     case ArticleBlockType.CODE:
-        return <ArticleCodeBlockComponent className={cl.block} block={block}/>;
+        return <ArticleCodeBlockComponent key={block.id} className={cl.block} block={block}/>;
     case ArticleBlockType.IMAGE:
-        return <ArticleImageBlockComponent className={cl.block} block={block}/>;
+        return <ArticleImageBlockComponent key={block.id} className={cl.block} block={block}/>;
     case ArticleBlockType.TEXT:
-        return <ArticleTextBlockComponent className={cl.block} block={block}/>;
+        return <ArticleTextBlockComponent key={block.id} className={cl.block} block={block}/>;
     default:
         return null;
     }

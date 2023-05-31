@@ -5,7 +5,7 @@ import { Input } from './Input/Input';
 import { Loader } from './Loader/Loader';
 import { Modal } from './Modal/Modal';
 import { Select } from './Select/Select';
-import { Text, TextAlign, TextTheme } from './Text/Text';
+import { Text, TextAlign, TextSize, TextTheme } from './Text/Text';
 
 
 export {
@@ -21,5 +21,6 @@ export {
     Select,
     Text, 
     TextAlign,
+    TextSize,
     TextTheme,
 };

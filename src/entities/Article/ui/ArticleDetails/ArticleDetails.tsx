@@ -2,15 +2,18 @@ import { memo, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
+import CalendarIcon from 'shared/assets/icons/article/calendar.svg';
+import EyeIcon from 'shared/assets/icons/article/eye.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
     DynamicModuleLoader,
     ReducerList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Text,TextAlign, TextTheme } from 'shared/ui';
+import { Avatar, Text,TextAlign, TextSize, TextTheme } from 'shared/ui';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 
+import { renderBlock } from '../../helpers/renderBlock';
 import { 
     getArticleDetailsData, 
     getArticleDetailsError, 
@@ -52,17 +55,41 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         );
     } else if (isLoading) {
         content = (
-            <div>
+            <>
                 <Skeleton className={cl.avatar} width={200} height={200} border="50%"/>
                 <Skeleton className={cl.title} width={300} height={32} />
                 <Skeleton className={cl.skeleton} width={600} height={24} />
                 <Skeleton className={cl.skeleton}width="100%" height={200} />
                 <Skeleton className={cl.skeleton} width="100%" height={200} />
-            </div>
+            </>
         );
     } else {
-        // eslint-disable-next-line i18next/no-literal-string
-        content = <div>Article Details</div>;
+        content = (
+            <>
+                <div className={cl.avatarWrap}>
+                    <Avatar 
+                        className={cl.avatar} 
+                        size={200} src={article?.img} 
+                        alt="ava"
+                    />
+                </div>
+                <Text 
+                    className={cl.title} 
+                    title={article?.title} 
+                    text={article?.subtitle} 
+                    size={TextSize.L}
+                />
+                <div className={cl.articleInfo}>
+                    <EyeIcon className={cl.icon}/>
+                    <Text text={String(article?.views)}/>
+                </div>
+                <div className={cl.articleInfo}>
+                    <CalendarIcon className={cl.icon}/>
+                    <Text text={article?.createdAt}/>
+                </div>
+                {article?.blocks.map(renderBlock)}
+            </>
+        );
     }
 
     return (

@@ -1,0 +1,17 @@
+.CommentCard {
+    display: flex;
+    margin-left: 20px;
+    padding: 20px;
+    border: 1px solid var(--inverted-bg-color);
+}
+
+.textWrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.username {
+    margin-bottom: 10px;
+}

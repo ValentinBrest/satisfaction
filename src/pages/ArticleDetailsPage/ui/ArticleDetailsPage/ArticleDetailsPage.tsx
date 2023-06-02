@@ -2,7 +2,9 @@ import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { ArticleDetails } from 'entities/Article';
+import { CommentList } from 'entities/Comment';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Text, TextSize } from 'shared/ui';
 
 import cl from './ArticleDetailsPage.module.scss';
 
@@ -25,6 +27,8 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
     return <div className={classNames(cl.ArticleDetailsPage, {}, [className])}>
         <ArticleDetails id={id}/>
+        <Text title={t('kommentarii')} size={TextSize.L}/>
+        <CommentList comments={[]}/>
     </div>;
 };
 

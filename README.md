@@ -395,3 +395,16 @@
 - 6. create services Article + extraReducers
 - 7. create selectors Article
 - 8. create Skeleton in entities
+
+
+## 50 Страница статьи. Блочная структура. Компонент Code. Копирование
+
+- 1. add ThemeSize and improve styles
+- 2.  improve ArticleDetails and create renderBlock in helper
+- 3.  improve ArticleTextBlockComponent
+- 4.  create component Code in shared
+- 5.  improve ArticleCodeBlockComponent
+- 6.  improve ArticleImageBlockComponent
+- 7. add story for ArticleDetails
+- 8. impove styles in Article and fix mistakes
+- 9. add tests fot selectors and services ArticleDetails

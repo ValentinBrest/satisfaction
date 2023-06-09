@@ -1,17 +1,24 @@
 .CommentCard {
     display: flex;
+    flex-direction: column;
+
     margin-left: 20px;
     padding: 20px;
+
     border: 1px solid var(--inverted-bg-color);
 }
 
-.textWrap {
+.wrap {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     width: 100%;
-    margin-left: 20px;
 }
 
 .username {
-    margin-bottom: 10px;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.comment {
+    margin-left: 45px;
 }

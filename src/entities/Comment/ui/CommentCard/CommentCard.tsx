@@ -1,6 +1,7 @@
 import { memo } from 'react';
+import { RoutePath } from 'app/providers/router/routeConfig/routeConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Avatar, Text } from 'shared/ui';
+import { AppLink, Avatar, Text } from 'shared/ui';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 
 import { Comment } from '../../model/types/comment';
@@ -30,15 +31,22 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
     return (
         <div className={classNames(cl.CommentCard, {}, [className])}>
-            <Avatar 
-                src={ comment.user.avatar || 'https://visualpharm.com/assets/381/Admin-595b40b65ba036ed117d3b23.svg'} 
-                size={40} 
-                alt="avatar"/>
-            <div className={cl.textWrap}>
-                <Text className={cl.username} title={comment.user.username}/>
-                <Text className={cl.text} text={comment.text}/>
+            <div className={cl.wrap}>
+                <AppLink to={`${RoutePath.profile}${comment.user.id}`}>
+                    <Avatar 
+                        src={
+                            comment.user.avatar || 
+                            'https://visualpharm.com/assets/381/Admin-595b40b65ba036ed117d3b23.svg'
+                        } 
+                        size={40} 
+                        alt="avatar"/>
+                </AppLink>
+                <AppLink className={cl.username} to={`${RoutePath.profile}${comment.user.id}`}>
+                    <Text title={comment.user.username}/>
+                </AppLink>
             </div>
             
+            <Text className={cl.comment} text={comment.text}/>
         </div>
     );
 });

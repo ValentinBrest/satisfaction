@@ -408,3 +408,12 @@
 - 7. add story for ArticleDetails
 - 8. impove styles in Article and fix mistakes
 - 9. add tests fot selectors and services ArticleDetails
+
+
+## 51 Модуль комментариев. Нормализация данных. EntityAdapter 
+
+- 1. create CommentCard in entities/Card
+- 2. create CommentList in entities/Card
+- 3. create slice for ArticleDetailsComment and add its types
+- 4. create selectors for ArticleDetailsComment
+- 5. create services for ArticleDetailsComment and useInitialEffect

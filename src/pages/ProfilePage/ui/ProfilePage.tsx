@@ -1,6 +1,7 @@
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import {
@@ -16,6 +17,7 @@ import {
 } from 'entities/Profile';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Text, TextTheme } from 'shared/ui';
 
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
@@ -27,6 +29,7 @@ const reducers: ReducerList = {
 const ProfilePage = memo(() => {
     const { t } = useTranslation('profile');
     const dispatch = useAppDispatch();
+    const { id } = useParams<{id: string}>();
     const formProfile = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
@@ -41,11 +44,11 @@ const ProfilePage = memo(() => {
         [ValidateProfileError.NO_DATA]: t('dannye-ne-ukazany'),
     };
 
-    useEffect (() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData());
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [dispatch]);
+    });
 
     const onChangeFirstname = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({first: value || ''}));
@@ -78,7 +81,7 @@ const ProfilePage = memo(() => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <ProfilePageHeader/>
+            {validateErrors?.length && <ProfilePageHeader/>}
             {validateErrors?.length && validateErrors.map(err => (
                 <Text theme={TextTheme.ERROR} key={err} text={validateErrorTranslates[err]}/>
             ))}

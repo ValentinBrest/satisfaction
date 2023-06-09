@@ -118,14 +118,28 @@
       "avatar": "https://visualpharm.com/assets/381/Admin-595b40b65ba036ed117d3b23.svg"
     }
   ],
-  "profile": {
-    "first": "Валентин",
-    "lastname": "Конопацкий",
-    "age": 27,
-    "currency": "BYN",
-    "country": "Belarus",
-    "city": "Brest",
-    "username": "admin",
-    "avatar": "https://visualpharm.com/assets/381/Admin-595b40b65ba036ed117d3b23.svg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Валентин",
+      "lastname": "Конопацкий",
+      "age": 27,
+      "currency": "BYN",
+      "country": "Belarus",
+      "city": "Brest",
+      "username": "admin",
+      "avatar": "https://visualpharm.com/assets/381/Admin-595b40b65ba036ed117d3b23.svg"
+    },
+    {
+      "id": "2",
+      "first": "Юрий",
+      "lastname": "Конопацкий",
+      "age": 24,
+      "currency": "BYN",
+      "country": "Belarus",
+      "city": "Brest",
+      "username": "user",
+      "avatar": "https://visualpharm.com/assets/381/Admin-595b40b65ba036ed117d3b23.svg"
+    }
+  ]
 }

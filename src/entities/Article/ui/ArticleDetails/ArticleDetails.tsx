@@ -1,4 +1,4 @@
-import { memo, useEffect } from 'react';
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
@@ -10,13 +10,14 @@ import {
     ReducerList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Avatar, Text,TextAlign, TextSize, TextTheme } from 'shared/ui';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { Avatar, Text, TextAlign, TextSize, TextTheme } from 'shared/ui';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 
 import { renderBlock } from '../../helpers/renderBlock';
-import { 
-    getArticleDetailsData, 
-    getArticleDetailsError, 
+import {
+    getArticleDetailsData,
+    getArticleDetailsError,
     getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
@@ -40,11 +41,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const article = useSelector(getArticleDetailsData);
     const error = useSelector(getArticleDetailsError);
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchArticleById(id));
-        }
-    }, [dispatch, id]);
+    useInitialEffect(() => dispatch(fetchArticleById(id)));
 
     let content;
 

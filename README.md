@@ -417,3 +417,13 @@
 - 3. create slice for ArticleDetailsComment and add its types
 - 4. create selectors for ArticleDetailsComment
 - 5. create services for ArticleDetailsComment and useInitialEffect
+
+
+## 52 Профили пользователей. Фича addCommentForm
+
+- 1. add Profiles and change fetchProfileData
+- 2. improve CommentCard ==> click Profile
+- 3. create addCommentForm(types, slice) in features
+- 4. create selector addCommentForArticle for articleDetailsPage
+- 5. fix update, edit save Profile
+- 6. add stories for AddCommentForm, CommentList, CommentCard

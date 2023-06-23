@@ -81,7 +81,7 @@ const ProfilePage = memo(() => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            {validateErrors?.length && <ProfilePageHeader/>}
+            <ProfilePageHeader/>
             {validateErrors?.length && validateErrors.map(err => (
                 <Text theme={TextTheme.ERROR} key={err} text={validateErrorTranslates[err]}/>
             ))}

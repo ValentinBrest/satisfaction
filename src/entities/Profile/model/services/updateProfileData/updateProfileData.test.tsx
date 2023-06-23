@@ -14,6 +14,7 @@ const data = {
     username: 'admin',
     age: 27,
     currency: Currency.EUR,
+    id: '1',
 };
 
 

@@ -2,5 +2,7 @@
   "articles": "Articles",
   "article": "Article",
   "statya-ne-naidena": "Article is not defined",
-  "kommentarii": "Comments"
+  "kommentarii": "Comments",
+  "vvedite-kommentarii": "Enter a comment",
+  "otpravit": "Send"
 }

@@ -1,9 +1,10 @@
-import { FC, memo } from 'react';
+import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { ArticleDetails } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
+import { AddCommentForm } from 'features/addComentForm';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -11,6 +12,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { Text, TextSize } from 'shared/ui';
 
 import { getArticleCommentsError, getArticleCommentsIsLoading } from '../../model/selectors/comments';
+import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { fetchCommentsByArticleById } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slices/articleDetailsCommentSlice';
 
@@ -33,6 +35,10 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
     const commentsError = useSelector(getArticleCommentsError);
 
+    const onSendComment = useCallback((text: string) => {
+        dispatch(addCommentForArticle(text));
+    }, [dispatch]);
+
     useInitialEffect(() => dispatch(fetchCommentsByArticleById(id)));
 
     if (!id) {
@@ -48,6 +54,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
             <div className={classNames(cl.ArticleDetailsPage, {}, [className])}>
                 <ArticleDetails id={id}/>
                 <Text title={t('kommentarii')} size={TextSize.L}/>
+                <AddCommentForm onSendComment={onSendComment}/>
                 <CommentList isLoading={commentsIsLoading} comments={comments}/>
             </div>
         </DynamicModuleLoader>

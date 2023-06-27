@@ -427,3 +427,8 @@
 - 4. create selector addCommentForArticle for articleDetailsPage
 - 5. fix update, edit save Profile
 - 6. add stories for AddCommentForm, CommentList, CommentCard
+
+
+## 53 Апгрейд сайдбара. Селекторы
+
+- 1. refactor getSidebarItems

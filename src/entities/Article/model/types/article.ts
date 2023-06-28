@@ -1,3 +1,4 @@
+import { User } from 'entities/User/model/types/user';
 
 export interface ArcticleCodeBlock {
     id: string;
@@ -31,6 +32,11 @@ export enum ArticleType {
     ECONOMICS = 'ECONOMICS',
 }
 
+export enum ArticleView {
+    LIST = 'LIST',
+    GRID = 'GRID',
+}
+
 export interface Article {
     id: string;
     title: string;
@@ -39,5 +45,6 @@ export interface Article {
     views: number;
     createdAt: string;
     type: ArticleType[];
+    user: User;
     blocks: ArticleBlock[];
 }

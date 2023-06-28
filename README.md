@@ -432,3 +432,13 @@
 ## 53 Апгрейд сайдбара. Селекторы
 
 - 1. refactor getSidebarItems
+
+
+## 54 Список статей. Переключение
+
+- 1. create Card in shared
+- 2. add mock data
+- 3. create ArticleListItem with Skeleton
+- 4. create ArticleList
+- 5. add button back for ArticleDetailsPage
+- 6. improve ActiclePage

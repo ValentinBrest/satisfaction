@@ -12,6 +12,7 @@ import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicM
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Button, ButtonTheme, Text, TextSize } from 'shared/ui';
+import { Page } from 'shared/ui/Page/Page';
 
 import { getArticleCommentsError, getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
@@ -50,15 +51,15 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
     if (!id) {
         return (
-            <div className={classNames(cl.ArticleDetailsPage, {}, [className])}>
+            <Page className={classNames(cl.ArticleDetailsPage, {}, [className])}>
                 {t('statya-ne-naidena')}
-            </div>
+            </Page>
         );
     }
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames(cl.ArticleDetailsPage, {}, [className])}>
+            <Page className={classNames(cl.ArticleDetailsPage, {}, [className])}>
                 <Button onClick={onBackToList} theme={ButtonTheme.CLEAR} className={cl.icon}>
                     <BackIcon/>
                 </Button>
@@ -66,7 +67,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                 <Text title={t('kommentarii')} size={TextSize.L}/>
                 <AddCommentForm onSendComment={onSendComment}/>
                 <CommentList isLoading={commentsIsLoading} comments={comments}/>
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

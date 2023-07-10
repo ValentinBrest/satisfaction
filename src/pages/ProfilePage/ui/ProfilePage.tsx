@@ -19,6 +19,7 @@ import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicM
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Text, TextTheme } from 'shared/ui';
+import { Page } from 'shared/ui/Page/Page';
 
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
@@ -81,23 +82,25 @@ const ProfilePage = memo(() => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <ProfilePageHeader/>
-            {validateErrors?.length && validateErrors.map(err => (
-                <Text theme={TextTheme.ERROR} key={err} text={validateErrorTranslates[err]}/>
-            ))}
-            <ProfileCard 
-                profile={formProfile} 
-                isLoading={isLoading} 
-                error={error}
-                onChangeFirstname={onChangeFirstname}
-                onChangeLastname={onChangeLastname}
-                onChangeCity={onChangeCity}
-                onChangeAge={onChangeAge}
-                onChangeUsername={onChangeUsername}
-                onChangeCurrency={onChangeCurrency}
-                onChangeCountry={onChangeCountry}
-                readonly={readonly}
-            />
+            <Page>
+                <ProfilePageHeader/>
+                {validateErrors?.length && validateErrors.map(err => (
+                    <Text theme={TextTheme.ERROR} key={err} text={validateErrorTranslates[err]}/>
+                ))}
+                <ProfileCard 
+                    profile={formProfile} 
+                    isLoading={isLoading} 
+                    error={error}
+                    onChangeFirstname={onChangeFirstname}
+                    onChangeLastname={onChangeLastname}
+                    onChangeCity={onChangeCity}
+                    onChangeAge={onChangeAge}
+                    onChangeUsername={onChangeUsername}
+                    onChangeCurrency={onChangeCurrency}
+                    onChangeCountry={onChangeCountry}
+                    readonly={readonly}
+                />
+            </Page>
         </DynamicModuleLoader>
     );
 });

@@ -44,7 +44,7 @@ export const NavBar = memo(({ className }: NavBarProps) => {
     }, []);
 
     return (
-        <div className={classNames(cl.NavBar, {}, [className])}>
+        <header className={classNames(cl.NavBar, {}, [className])}>
             <div className={cl.links}>
                 {authData 
                     ?<Button
@@ -66,6 +66,6 @@ export const NavBar = memo(({ className }: NavBarProps) => {
                     isMounted={isMounted}
                 />
             </div>
-        </div>
+        </header>
     );
 });

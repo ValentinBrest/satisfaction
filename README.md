@@ -442,3 +442,11 @@
 - 4. create ArticleList
 - 5. add button back for ArticleDetailsPage
 - 6. improve ActiclePage
+
+
+## 55 Статьи. EntityAdapter, thunks, slices. View selector
+
+- 1. create ArticleViewSelector
+- 2. add types for ArticlesPage
+- 3. create selectors, service, slice for ArticlesPage
+- 4. add articles in db

@@ -58,7 +58,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     }
 
     return (
-        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+        <DynamicModuleLoader reducers={reducers}>
             <Page className={classNames(cl.ArticleDetailsPage, {}, [className])}>
                 <Button onClick={onBackToList} theme={ButtonTheme.CLEAR} className={cl.icon}>
                     <BackIcon/>

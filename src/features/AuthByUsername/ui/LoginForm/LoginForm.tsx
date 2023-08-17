@@ -51,7 +51,7 @@ const LoginForm = memo(({className, isOpen, onSuccess}: LoginFormProps) => {
     }, [dispatch, username, password, onSuccess]);
 
     return (
-        <DynamicModuleLoader reducers={initialReducer} removeAfterUnmount>
+        <DynamicModuleLoader reducers={initialReducer}>
             <div className={classNames(cl.LoginForm, {}, [className])}>
                 {error && <Text text={t('vy-vveli-nevernyi-login-ili-parol')} theme={TextTheme.ERROR}/>}
                 {isLoading && <Loader className={cl.loader}/>}

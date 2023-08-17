@@ -1,4 +1,3 @@
-import { NavigateOptions, To } from 'react-router-dom';
 import { CombinedState, configureStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
@@ -10,7 +9,6 @@ import { StateSchema } from './StateSchema';
 export function createReduxStore (
     initialState?: StateSchema, 
     asyncReducers?: ReducersMapObject<StateSchema>,
-    navigate?: (to: To, options?: NavigateOptions) => void,
 ) {
 
     const rootReducers: ReducersMapObject<StateSchema> = {
@@ -29,7 +27,6 @@ export function createReduxStore (
             thunk: {
                 extraArgument: {
                     api: $api,
-                    navigate,
                 },
             },
         }),

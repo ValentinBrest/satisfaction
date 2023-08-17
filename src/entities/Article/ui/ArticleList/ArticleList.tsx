@@ -26,13 +26,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
         .fill(0)
         .map((item, index) => <ArticleListItemSkeleton view={view} key={index}/>);
 
-    if (isLoading) {
-        return (
-            <div className={classNames(cl.ArticleList, {}, [className, cl[view]])}>
-                {getSkeletons(view)}
-            </div>);
-    }
-
     const renderArticles = (article: Article) => {
         return <ArticleListItem view={view} article={article} key={article.id}/>;
     };
@@ -43,6 +36,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                 ? articles.map(renderArticles)
                 : null
             }
+            {isLoading && getSkeletons(view)}
         </div>
     );
 });

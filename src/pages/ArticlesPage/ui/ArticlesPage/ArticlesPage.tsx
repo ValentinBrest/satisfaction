@@ -10,12 +10,11 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { Text, TextSize } from 'shared/ui';
 import { Page } from 'shared/ui/Page/Page';
 
-import { 
-    getArticlesPageError, 
-    getArticlesPageIsLoading, 
-    getArticlesPageView, 
+import {
+    getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView,
 } from '../../model/selectors/articlePageSelectors';
 import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArticleList';
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/articlePageSlice';
 
 import cl from './ArticlesPage.module.scss';
@@ -37,6 +36,10 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
     const error = useSelector(getArticlesPageError);
     const view = useSelector(getArticlesPageView);
 
+    const onLoadNextPart = useCallback(() => {
+        dispatch(fetchNextArticlesPage());
+    }, [dispatch]);
+
     useInitialEffect(() => {
         dispatch(articlesPageActions.initialState());
         dispatch(fetchArticleList({
@@ -50,7 +53,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
 
     return(
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <Page className={classNames(cl.ArticlesPage, {}, [className])}>
+            <Page className={classNames(cl.ArticlesPage, {}, [className])} onScrollEnd={onLoadNextPart}>
                 <Text title={t('articles')} size={TextSize.L} className={cl.title}/>
                 <ArticleViewSelector view={view} onViewClick={onViewChange}/>
                 <ArticleList articles={articles} isLoading={isLoading} view={view}/>

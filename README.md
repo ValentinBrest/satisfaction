@@ -458,3 +458,9 @@
 - 2. add pagination in ArticlesPage
 - 3. create hook useInfiniteScroll (https://developer.mozilla.org/ru/docs/Web/API/Intersection_Observer_API)
 - 4. create fetchNextArticlesPage thunk
+
+
+## 57 Инициализация страницы. Чиним монтирование Store. Mounted reducers
+
+- 1. fix navigate
+- 2. refactor reducers in DynamicModuleLoader

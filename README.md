@@ -450,3 +450,11 @@
 - 2. add types for ArticlesPage
 - 3. create selectors, service, slice for ArticlesPage
 - 4. add articles in db
+
+
+## 56 Пагинация. Page. Бесконечная лента. Observer API. useInfiniteScroll
+
+- 1. add semantic tags, create Page in shared and use it
+- 2. add pagination in ArticlesPage
+- 3. create hook useInfiniteScroll (https://developer.mozilla.org/ru/docs/Web/API/Intersection_Observer_API)
+- 4. create fetchNextArticlesPage thunk

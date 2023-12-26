@@ -464,3 +464,9 @@
 
 - 1. fix navigate
 - 2. refactor reducers in DynamicModuleLoader
+
+
+## 58 Инициализация страницы. Чиним монтирование Store. Mounted reducers
+
+- 1. save scrollPosition
+- 2. create hook usethrottle

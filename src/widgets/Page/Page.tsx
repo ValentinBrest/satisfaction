@@ -6,9 +6,10 @@ import { getSaveScrollByPath, saveScrollSliceActions } from 'features/saveScroll
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useThrottle } from 'shared/lib/hooks/useThrottle/useThrottle';
 
 import cl from './Page.module.scss';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 
 interface PageProps {
    className?: string;
@@ -30,12 +31,12 @@ export const Page = memo((props: PageProps) => {
         callback: onScrollEnd,
     });
 
-    const onScroll = (e: UIEvent<HTMLDivElement>) => {
+    const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
         dispatch(saveScrollSliceActions.setScrollPosition({
             position: e.currentTarget.scrollTop,
             path: pathname,
         }));
-    };
+    }, 1000);
 
     useInitialEffect(() => {
         wrapperRef.current.scrollTop = scrollPosition;

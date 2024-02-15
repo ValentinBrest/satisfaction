@@ -1,5 +1,11 @@
 import { User } from 'entities/User/model/types/user';
 
+export enum ArticleSortField {
+    VIEWS = 'views',
+    TITLE = 'title',
+    CREATED = 'createdAt'
+}
+
 export interface ArcticleCodeBlock {
     id: string;
     type: ArticleBlockType.CODE;

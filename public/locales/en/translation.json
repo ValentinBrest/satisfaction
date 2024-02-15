@@ -11,5 +11,13 @@
   "vy-vveli-nevernyi-login-ili-parol": "Incorrect username or password",
   "vyiti": "Logout",
   "ukazhite-valyutu": "Specify currency",
-  "ukazhite-stranu": "Specify country"
+  "ukazhite-stranu": "Specify country",
+  "sortirovat-po": "Sort by",
+  "poisk": "Search",
+  "po": "By",
+  "vozrastaniyu": "ascending",
+  "ubyvaniyu": "descending",
+  "date-sozdaniya": "creation date",
+  "naimenovaniyu": "name",
+  "prosmotram": "views"
 }

@@ -1,8 +1,7 @@
 import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { ArticleList, ArticleView } from 'entities/Article';
-import { ArticleViewSelector } from 'features/ArticleViewSelector/ArticleViewSelector';
+import { ArticleList } from 'entities/Article';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -15,7 +14,8 @@ import {
 } from '../../model/selectors/articlePageSelectors';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
-import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/articlePageSlice';
+import { articlesPageReducer, getArticles } from '../../model/slices/articlePageSlice';
+import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 
 import cl from './ArticlesPage.module.scss';
 
@@ -45,16 +45,12 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
             
     });
 
-    const onViewChange = useCallback((view: ArticleView) => {
-        dispatch(articlesPageActions.setView(view));
-    }, [dispatch]);
-
     return(
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page className={classNames(cl.ArticlesPage, {}, [className])} onScrollEnd={onLoadNextPart}>
                 <Text title={t('articles')} size={TextSize.L} className={cl.title}/>
-                <ArticleViewSelector view={view} onViewClick={onViewChange}/>
-                <ArticleList articles={articles} isLoading={isLoading} view={view}/>
+                <ArticlesPageFilters/>
+                <ArticleList className={cl.list} articles={articles} isLoading={isLoading} view={view}/>
             </Page>
         </DynamicModuleLoader>
     ) 

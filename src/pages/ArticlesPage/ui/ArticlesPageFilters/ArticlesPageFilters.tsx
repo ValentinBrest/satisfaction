@@ -14,6 +14,7 @@ import {
     getArticlesPageSort, 
     getArticlesPageView,
 } from '../../model/selectors/articlePageSelectors';
+import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArticleList';
 import { articlesPageActions } from '../../model/slices/articlePageSlice';
 
 import cl from './ArticlesPageFilters.module.scss';
@@ -31,21 +32,33 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
     const sort = useSelector(getArticlesPageSort);
     const search = useSelector(getArticlesPageSearch);
 
+    const fetchData = useCallback(() => {
+        dispatch(fetchArticleList({replace: true}));
+    }, [dispatch]);
+
     const onViewChange = useCallback((view: ArticleView) => {
         dispatch(articlesPageActions.setView(view));
-    }, [dispatch]);
+        dispatch(articlesPageActions.setPage(1));
+        fetchData();
+    }, [dispatch, fetchData]);
 
     const onChangeOrder = useCallback((newOrder: SortOrder) => {
         dispatch(articlesPageActions.setOrder(newOrder));
-    }, [dispatch]);
+        dispatch(articlesPageActions.setPage(1));
+        fetchData();
+    }, [dispatch, fetchData]);
 
     const onChangeSort = useCallback((newSort: ArticleSortField) => {
         dispatch(articlesPageActions.setSort(newSort));
-    }, [dispatch]);
+        dispatch(articlesPageActions.setPage(1));
+        fetchData();
+    }, [dispatch, fetchData]);
 
     const onChangeSearch = useCallback((search: string) => {
         dispatch(articlesPageActions.setSearch(search));
-    }, [dispatch]);
+        dispatch(articlesPageActions.setPage(1));
+        fetchData();
+    }, [dispatch, fetchData]);
 
     return (
         <div className={classNames(cl.ArticlesPageFilters, {}, [className])}>

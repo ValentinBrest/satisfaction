@@ -5,6 +5,7 @@ import { ArticleSortField, ArticleSortSelector, ArticleView } from 'entities/Art
 import { ArticleViewSelector } from 'features/ArticleViewSelector/ArticleViewSelector';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
 import { SortOrder } from 'shared/types';
 import { Card, Input } from 'shared/ui';
 
@@ -36,6 +37,8 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
         dispatch(fetchArticleList({replace: true}));
     }, [dispatch]);
 
+    const debouncedFetchData = useDebounce(fetchData, 500);
+
     const onViewChange = useCallback((view: ArticleView) => {
         dispatch(articlesPageActions.setView(view));
         dispatch(articlesPageActions.setPage(1));
@@ -57,8 +60,8 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
     const onChangeSearch = useCallback((search: string) => {
         dispatch(articlesPageActions.setSearch(search));
         dispatch(articlesPageActions.setPage(1));
-        fetchData();
-    }, [dispatch, fetchData]);
+        debouncedFetchData();
+    }, [dispatch, debouncedFetchData]);
 
     return (
         <div className={classNames(cl.ArticlesPageFilters, {}, [className])}>

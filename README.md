@@ -470,3 +470,15 @@
 
 - 1. save scrollPosition
 - 2. create hook usethrottle
+
+
+## 59 Большой урок. Фильтры. Сортировка. Поиск. Tabs. useDebounce
+
+1. refactor Select
+2. create ArticleSortSelector, add types and translations
+3. create ArticlePageFilter, improve sclice, schema, add selectors
+4. improve fetchArticleList
+5. create hook useDebounce
+6. init params in first render
+7. create Tabs in shared
+8. update Card, ArticlePageFilters

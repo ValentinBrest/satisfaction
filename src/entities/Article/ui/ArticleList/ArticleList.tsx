@@ -1,5 +1,7 @@
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Text } from 'shared/ui';
 
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
@@ -22,6 +24,8 @@ export const ArticleList = memo((props: ArticleListProps) => {
         view = ArticleView.LIST, 
     } = props;
 
+    const { t } = useTranslation();
+
     const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.GRID ? 9 : 3)
         .fill(0)
         .map((item, index) => <ArticleListItemSkeleton view={view} key={index}/>);
@@ -29,6 +33,14 @@ export const ArticleList = memo((props: ArticleListProps) => {
     const renderArticles = (article: Article) => {
         return <ArticleListItem view={view} article={article} key={article.id}/>;
     };
+
+    if (!isLoading && !articles.length) {
+        return (
+            <div className={classNames(cl.ArticleList, {}, [className, cl[view]])}>
+                <Text title={t('Статьи не найдены')}/>
+            </div>
+        );
+    }
 
     return (
         <div className={classNames(cl.ArticleList, {}, [className, cl[view]])}>

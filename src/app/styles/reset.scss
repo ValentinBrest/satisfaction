@@ -11,3 +11,24 @@ select {
     margin: 0;
     font: inherit;
 }
+
+*::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    cursor: pointer;
+    background: var(--inverted-bg-color);
+}
+
+*::-webkit-scrollbar-thumb {
+    cursor: pointer;
+    background-color: var(--bg-color);
+    border: 3px solid var(--inverted-bg-color);
+    border-radius: 20px;
+}
+
+a {
+    text-decoration: none;
+}

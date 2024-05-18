@@ -105,6 +105,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                     articles={recommendations}
                     view={ArticleView.GRID}
                     className={cl.recommendations}
+                    target="_blank"
                 />
 
                 <Text title={t('kommentarii')} size={TextSize.L} />

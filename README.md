@@ -472,7 +472,7 @@
 - 2. create hook usethrottle
 
 
-## 59 Большой урок. Фильтры. Сортировка. Поиск. Tabs. useDebounce
+## 59 Фильтры. Сортировка. Поиск. Tabs. useDebounce
 
 1. refactor Select
 2. create ArticleSortSelector, add types and translations
@@ -482,3 +482,11 @@
 6. init params in first render
 7. create Tabs in shared
 8. update Card, ArticlePageFilters
+
+
+## 60 Список рекомендаций. Группируем редюсеры. Скроллбар
+
+1. add recommeandation list
+2. group reducers recommendation and comment
+3. styling scrollbar
+4. add target for link

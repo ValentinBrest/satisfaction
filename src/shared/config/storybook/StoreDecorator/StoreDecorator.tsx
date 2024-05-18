@@ -4,7 +4,7 @@ import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetai
 import { profileReducer } from 'entities/Profile';
 import { addCommentFormReducer } from 'features/addComentForm/model/slice/addCommentFormSlice';
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
-import { articleDetailsCommentsReducer } from 'pages/ArticleDetailsPage/model/slices/articleDetailsCommentSlice';
+import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slices';
 import { ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
 const defaultAsyncReducers: ReducerList = {
@@ -12,17 +12,17 @@ const defaultAsyncReducers: ReducerList = {
     profile: profileReducer,
     articleDetails: articleDetailsReducer,
     addCommentForm: addCommentFormReducer,
-    articleDetailsComments: articleDetailsCommentsReducer,
+    articleDetailsPage: articleDetailsPageReducer,
 };
 
-export const StoreDecorator = (
-    state: DeepPartial<StateSchema>, 
-    asyncReducers?: ReducerList,
-) => (StoryComponent: Story) => (
-    <StoreProvider 
-        initialState={state} 
-        asyncReducers={{...defaultAsyncReducers, ...asyncReducers}}
-    >
-        <StoryComponent/>
-    </StoreProvider>
-);
+export const StoreDecorator =
+    (state: DeepPartial<StateSchema>, asyncReducers?: ReducerList) =>
+        (StoryComponent: Story) =>
+            (
+                <StoreProvider
+                    initialState={state}
+                    asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}
+                >
+                    <StoryComponent />
+                </StoreProvider>
+            );

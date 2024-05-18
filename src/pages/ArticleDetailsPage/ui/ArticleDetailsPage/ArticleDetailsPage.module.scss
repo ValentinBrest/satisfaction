@@ -8,3 +8,14 @@
     top: 20px;
     left: 20px;
 }
+
+.recommendTitle {
+    margin-bottom: 10px;
+}
+
+.recommendations {
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+}

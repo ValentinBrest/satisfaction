@@ -490,3 +490,8 @@
 2. group reducers recommendation and comment
 3. styling scrollbar
 4. add target for link
+
+
+## 61 Создание и редактирование статей
+1. создал страницы создания и редактирования статей
+2. добавил кнопки создать и редактировать

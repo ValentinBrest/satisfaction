@@ -5,9 +5,9 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { RoutePath } from 'app/providers/router/routeConfig/routeConfig';
 import { ArticleDetails, ArticleList, ArticleView, getArticleDetailsData } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
+import { getUserAuthData } from 'entities/User';
 import { AddCommentForm } from 'features/addComentForm';
 import { getArticleRecommendations } from 'pages/ArticleDetailsPage/model/slices/articleDetailsRecommendationsSlice';
-
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
     DynamicModuleLoader,
@@ -30,10 +30,9 @@ import {
 import { fetchCommentsByArticleById } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { getArticleComments } from '../../model/slices/articleDetailsCommentSlice';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 import cl from './ArticleDetailsPage.module.scss';
-import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
-import { getUserAuthData } from 'entities/User';
 
 interface ArticleDetailsPageProps {
     className?: string;

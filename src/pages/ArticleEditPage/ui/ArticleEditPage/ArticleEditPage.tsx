@@ -13,7 +13,7 @@ const ArticleEditPage = memo((props: ArticleEditPageProps) => {
     const { className } = props;
     const { t } = useTranslation();
     const {id} = useParams<{id: string}>();
-    const isEdit = Boolean(id)
+    const isEdit = Boolean(id);
 
     return (
         <Page className={classNames('', {}, [className])}>

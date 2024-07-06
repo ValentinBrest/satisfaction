@@ -3,11 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { RoutePath } from 'app/providers/router/routeConfig/routeConfig';
-import { ArticleDetails, ArticleList, ArticleView } from 'entities/Article';
+import { ArticleDetails, ArticleList, ArticleView, getArticleDetailsData } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
 import { AddCommentForm } from 'features/addComentForm';
 import { getArticleRecommendations } from 'pages/ArticleDetailsPage/model/slices/articleDetailsRecommendationsSlice';
-import BackIcon from 'shared/assets/icons/back.svg';
+
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
     DynamicModuleLoader,
@@ -32,6 +32,8 @@ import { articleDetailsPageReducer } from '../../model/slices';
 import { getArticleComments } from '../../model/slices/articleDetailsCommentSlice';
 
 import cl from './ArticleDetailsPage.module.scss';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import { getUserAuthData } from 'entities/User';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -53,8 +55,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
         getArticleRecommendationsIsLoading,
     );
     const commentsError = useSelector(getArticleCommentsError);
-    const navigate = useNavigate();
-
+    
     const onSendComment = useCallback(
         (text: string) => {
             dispatch(addCommentForArticle(text));
@@ -67,9 +68,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
         dispatch(fetchArticleRecommendations());
     });
 
-    const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
-    }, [navigate]);
 
     if (!id) {
         return (
@@ -86,13 +84,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
             <Page
                 className={classNames(cl.ArticleDetailsPage, {}, [className])}
             >
-                <Button
-                    onClick={onBackToList}
-                    theme={ButtonTheme.CLEAR}
-                    className={cl.icon}
-                >
-                    <BackIcon />
-                </Button>
+                <ArticleDetailsPageHeader/>
                 <ArticleDetails id={id} />
 
                 <Text

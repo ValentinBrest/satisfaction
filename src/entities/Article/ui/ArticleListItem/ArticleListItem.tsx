@@ -65,7 +65,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                 )}
                 <div className={cl.footer}>
                     <AppLink
-                        to={RoutePath.articles_details + article.id}
+                        to={RoutePath.article_details + article.id}
                         target={target}
                     >
                         <Button>{t('chitat-dalee')}</Button>
@@ -77,7 +77,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     }
 
     return (
-        <AppLink to={RoutePath.articles_details + article.id} target={target}>
+        <AppLink to={RoutePath.article_details + article.id} target={target}>
             <Card className={classNames(cl.card, {}, [className, cl[view]])}>
                 <div className={cl.imageWrap}>
                     <img

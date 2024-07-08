@@ -1,4 +1,5 @@
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import webpack from 'webpack';
@@ -9,6 +10,8 @@ export function buildPlugins (
     isDev: boolean, 
     apiUrl: string, 
     project: string,
+    locales: string,
+    buildLocales: string,
 ): webpack.WebpackPluginInstance[] {
     const plugins = [
         new HtmlWebpackPlugin({
@@ -25,6 +28,11 @@ export function buildPlugins (
             __PROJECT__: JSON.stringify(project),
         }),
         new BundleAnalyzerPlugin({openAnalyzer: false}),
+        new CopyPlugin({
+            patterns: [
+                { from: locales, to: buildLocales },
+            ],
+        }),
     ];
 
     if (isDev) {

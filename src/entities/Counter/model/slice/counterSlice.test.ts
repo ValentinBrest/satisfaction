@@ -1,4 +1,5 @@
-import { CounterSchema } from 'entities/Counter/model/types/counterSchema';
+
+import { CounterSchema } from '../types/counterSchema';
 
 import { counterActions, counterReducer } from './counterSclice';
 

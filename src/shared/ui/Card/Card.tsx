@@ -1,5 +1,4 @@
 import { HTMLAttributes, ReactNode } from 'react';
-import { Normal } from 'entities/Article/ui/ArticleDetails/ArticleDetails.stories';
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import cl from './Card.module.scss';

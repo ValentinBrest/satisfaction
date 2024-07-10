@@ -1,9 +1,9 @@
 import React, { ReactNode, useCallback, useEffect } from 'react';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import { Button, ButtonSize, ButtonTheme } from 'shared/ui';
-import { Portal } from 'shared/ui/Portal/Portal';
 
 import CloseIcon from '../../assets/icons/sidebar/xmark.svg';
+import { Button, ButtonSize, ButtonTheme } from '../Button/Button';
+import { Portal } from '../Portal/Portal';
 
 import cl from './Modal.module.scss';
 

@@ -4,11 +4,12 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'app/providers/router/routeConfig/routeConfig';
 import { getArticleDetailsData } from 'entities/Article';
-import { getCanEditArticle } from 'pages/ArticleDetailsPage/model/selectors/article';
 import BackIcon from 'shared/assets/icons/back.svg';
 import EditIcon from 'shared/assets/icons/edit.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui';
+
+import { getCanEditArticle } from '../../model/selectors/article';
 
 import cl from './ArticleDetailsPageHeader.module.scss';
 
@@ -46,13 +47,15 @@ export const ArticleDetailsPageHeader = memo(
                     <BackIcon />
                 </Button>
 
-                {canEdit && <Button
-                    onClick={onEditArticle}
-                    theme={ButtonTheme.CLEAR}
-                    className={cl.edit}
-                >
-                    <EditIcon />
-                </Button>}
+                {canEdit && (
+                    <Button
+                        onClick={onEditArticle}
+                        theme={ButtonTheme.CLEAR}
+                        className={cl.edit}
+                    >
+                        <EditIcon />
+                    </Button>
+                )}
             </div>
         );
     },

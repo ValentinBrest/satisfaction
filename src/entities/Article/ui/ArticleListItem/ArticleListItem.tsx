@@ -1,7 +1,6 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { RoutePath } from 'app/providers/router/routeConfig/routeConfig';
-import { ArticleTextBlockComponent } from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
 import EyeIcon from 'shared/assets/icons/article/eye.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink, Avatar, Button, Card, Text, TextSize } from 'shared/ui';
@@ -12,6 +11,7 @@ import {
     ArticleBlockType,
     ArticleView,
 } from '../../model/types/article';
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 import cl from './ArticleListItem.module.scss';
 

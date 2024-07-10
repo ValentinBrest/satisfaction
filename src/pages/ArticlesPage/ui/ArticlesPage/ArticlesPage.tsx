@@ -34,7 +34,6 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
     const dispatch = useAppDispatch();
     const articles = useSelector(getArticles.selectAll);
     const isLoading = useSelector(getArticlesPageIsLoading);
-    const error = useSelector(getArticlesPageError);
     const view = useSelector(getArticlesPageView);
     const [searchParams] = useSearchParams();
 
@@ -44,20 +43,29 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
 
     useInitialEffect(() => {
         dispatch(initArticlesPage(searchParams));
-            
     });
 
-    return(
+    return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-            <Page className={classNames(cl.ArticlesPage, {}, [className])} onScrollEnd={onLoadNextPart}>
-                <Text title={t('articles')} size={TextSize.L} className={cl.title}/>
-                <ArticlesPageFilters/>
-                <ArticleList className={cl.list} articles={articles} isLoading={isLoading} view={view}/>
+            <Page
+                className={classNames(cl.ArticlesPage, {}, [className])}
+                onScrollEnd={onLoadNextPart}
+            >
+                <Text
+                    title={t('articles')}
+                    size={TextSize.L}
+                    className={cl.title}
+                />
+                <ArticlesPageFilters />
+                <ArticleList
+                    className={cl.list}
+                    articles={articles}
+                    isLoading={isLoading}
+                    view={view}
+                />
             </Page>
         </DynamicModuleLoader>
-    ) 
-    ;
+    );
 };
-
 
 export default memo(ArticlesPage);

@@ -20,6 +20,7 @@ module.exports = {
         'simple-import-sort',
         'i18next',
         'react-hooks',
+        'valk-plugin',
     ],
     settings: {
         react: {
@@ -27,6 +28,7 @@ module.exports = {
         },
     },
     rules: {
+        'valk-plugin/path-checker': 'error',
         'react/jsx-indent': [2, 4],
         indent: [2, 4],
         'react/jsx-filename-extension': [

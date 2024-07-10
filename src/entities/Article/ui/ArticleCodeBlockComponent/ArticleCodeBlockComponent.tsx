@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Code } from 'shared/ui/Code/Code';
 
@@ -15,7 +14,6 @@ export const ArticleCodeBlockComponent = (
     props: ArticleCodeBlockComponentProps,
 ) => {
     const { className, block } = props;
-    const { t } = useTranslation();
 
     return (
         <Code 

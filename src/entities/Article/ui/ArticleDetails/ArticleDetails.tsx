@@ -1,7 +1,6 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
 import CalendarIcon from 'shared/assets/icons/article/calendar.svg';
 import EyeIcon from 'shared/assets/icons/article/eye.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -21,6 +20,7 @@ import {
     getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
+import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 
 import cl from './ArticleDetails.module.scss';
 

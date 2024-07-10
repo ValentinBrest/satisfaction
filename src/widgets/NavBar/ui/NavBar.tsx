@@ -9,7 +9,6 @@ import {
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-    routeConfig,
     RoutePath,
 } from 'app/providers/router/routeConfig/routeConfig';
 import { getUserAuthData, userActions } from 'entities/User';

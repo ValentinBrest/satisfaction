@@ -507,3 +507,7 @@
 ## 64 ESlint. Пишем свой плагин. Анализ AST дерева
 1. создал свой плагин valk-plugun (https://www.npmjs.com/package/eslint-plugin-valk-plugin)
 2. отрефакторил пути
+
+
+## 65 Позиционирование элементов. Отступы по дизайн системе
+1. создал Flex, HStack, VStack 

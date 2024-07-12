@@ -8,6 +8,7 @@ import BackIcon from 'shared/assets/icons/back.svg';
 import EditIcon from 'shared/assets/icons/edit.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui';
+import { HStack } from 'shared/ui/Stack';
 
 import { getCanEditArticle } from '../../model/selectors/article';
 
@@ -34,10 +35,10 @@ export const ArticleDetailsPageHeader = memo(
         }, [navigate, article?.id]);
 
         return (
-            <div
-                className={classNames(cl.ArticleDetailsPageHeader, {}, [
-                    className,
-                ])}
+            <HStack
+                justify="between"
+                max
+                className={classNames('', {}, [className])}
             >
                 <Button
                     onClick={onBackToList}
@@ -56,7 +57,7 @@ export const ArticleDetailsPageHeader = memo(
                         <EditIcon />
                     </Button>
                 )}
-            </div>
+            </HStack>
         );
     },
 );

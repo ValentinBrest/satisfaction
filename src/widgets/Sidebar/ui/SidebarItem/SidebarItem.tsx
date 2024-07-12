@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/User';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from 'shared/ui';
+import { HStack } from 'shared/ui/Stack';
 
 import { SidebarItemType } from '../../model/types/sidebar';
 
@@ -14,8 +15,8 @@ interface SidebarItemProps {
     collapsed: boolean;
 }
 
-export const SidebarItem = memo(({item, collapsed}: SidebarItemProps) => {
-    const {t} = useTranslation();
+export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
+    const { t } = useTranslation();
 
     const isAuth = useSelector(getUserAuthData);
 
@@ -24,13 +25,15 @@ export const SidebarItem = memo(({item, collapsed}: SidebarItemProps) => {
     }
 
     return (
-        <AppLink 
-            theme={AppLinkTheme.INVERTED} 
+        <AppLink
+            theme={AppLinkTheme.INVERTED}
             to={item.path}
-            className={classNames(cl.item, {[cl.collapsed]: collapsed})}
+            className={classNames('', { [cl.collapsed]: collapsed })}
         >
-            <item.Icon className={cl.icon}/>
-            <span className={cl.link}>{t(item.text)}</span>
+            <HStack>
+                <item.Icon className={cl.icon} />
+                <span className={cl.link}>{t(item.text)}</span>
+            </HStack>
         </AppLink>
     );
 });

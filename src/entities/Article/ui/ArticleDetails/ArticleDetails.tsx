@@ -12,6 +12,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Avatar, Text, TextAlign, TextSize, TextTheme } from 'shared/ui';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { HStack, VStack } from 'shared/ui/Stack';
 
 import { renderBlock } from '../../helpers/renderBlock';
 import {
@@ -47,62 +48,66 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     if (error) {
         content = (
-            <Text 
+            <Text
                 theme={TextTheme.ERROR}
                 align={TextAlign.CENTER}
-                title={t('Произошла ошибка при загрузке страницы')}/>
+                title={t('Произошла ошибка при загрузке страницы')}
+            />
         );
     } else if (isLoading) {
         content = (
-            <>
-                <Skeleton className={cl.avatar} width={200} height={200} border="50%"/>
+            <VStack max>
+                <Skeleton
+                    width={200}
+                    height={200}
+                    border="50%"
+                    className={cl.avatar}
+                />
                 <Skeleton className={cl.title} width={300} height={32} />
                 <Skeleton className={cl.skeleton} width={600} height={24} />
-                <Skeleton className={cl.skeleton}width="100%" height={200} />
                 <Skeleton className={cl.skeleton} width="100%" height={200} />
-            </>
+                <Skeleton className={cl.skeleton} width="100%" height={200} />
+            </VStack>
         );
     } else {
         content = (
             <>
-                <div className={cl.avatarWrap}>
-                    <Avatar 
-                        className={cl.avatar} 
-                        size={200} src={article?.img} 
+                <HStack max justify="center" className={cl.avatarWrap}>
+                    <Avatar
+                        size={200}
+                        src={article?.img}
                         alt="ava"
                     />
-                </div>
-                <Text 
-                    className={cl.title} 
-                    title={article?.title} 
-                    text={article?.subtitle} 
-                    size={TextSize.L}
-                />
-                <div className={cl.articleInfo}>
-                    <EyeIcon className={cl.icon}/>
-                    <Text text={String(article?.views)}/>
-                </div>
-                <div className={cl.articleInfo}>
-                    <CalendarIcon className={cl.icon}/>
-                    <Text text={article?.createdAt}/>
-                </div>
-                <div className={cl.blockWrap}>
-                    {article?.blocks.map(renderBlock)}
-                </div>
-                
+                </HStack>
+                <VStack gap="8" max>
+                    <Text
+                        className={cl.title}
+                        title={article?.title}
+                        text={article?.subtitle}
+                        size={TextSize.L}
+                    />
+                    <HStack gap="8">
+                        <EyeIcon className={cl.icon} />
+                        <Text text={String(article?.views)} />
+                    </HStack>
+                    <HStack gap="8">
+                        <CalendarIcon className={cl.icon} />
+                        <Text text={article?.createdAt} />
+                    </HStack>
+                </VStack>
+                <VStack align="center">{article?.blocks.map(renderBlock)}</VStack>
             </>
         );
     }
 
     return (
-        <DynamicModuleLoader reducers={reducers} >
-            <div
+        <DynamicModuleLoader reducers={reducers}>
+            <VStack
+                gap="16"
                 className={classNames(cl.ArticleDetails, {}, [className])}
             >
                 {content}
-            </div>
+            </VStack>
         </DynamicModuleLoader>
     );
 });
-
-

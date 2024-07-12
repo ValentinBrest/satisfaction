@@ -5,6 +5,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, Input } from 'shared/ui';
+import { VStack } from 'shared/ui/Stack';
 
 import { getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors';
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slice/addCommentFormSlice';
@@ -38,7 +39,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} >
-            <div className={classNames(cl.AddCommentForm, {}, [className])}>
+            <VStack gap="8" max className={classNames(cl.AddCommentForm, {}, [className])}>
                 <Input 
                     onChange={onCommentTextChange}
                     value={text} 
@@ -46,7 +47,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
                     placeholder={t('vvedite-kommentarii')}
                 />
                 <Button onClick={onSendHandler} className={cl.button}>{t('otpravit')}</Button>
-            </div>
+            </VStack>
         </DynamicModuleLoader>
     );
 });

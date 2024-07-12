@@ -1,12 +1,6 @@
 .ArticleDetails {
-    min-height: 100%;
-    margin-bottom: 30px;
-}
-
-.avatarWrap {
-    display: flex;
-    justify-content: center;
     width: 100%;
+    min-height: 100%;
 }
 
 .avatar {
@@ -19,19 +13,6 @@
 
 .skeleton {
     margin-top: 15px;
-}
-
-.articleInfo {
-    display: flex;
-    align-items: center;
-}
-
-.icon {
-    margin-right: 10px;
-}
-
-.blockWrap {
-    padding: 0 15px;
 }
 
 .block {

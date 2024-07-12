@@ -13,6 +13,7 @@ import {
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Text, TextSize } from 'shared/ui';
+import { VStack } from 'shared/ui/Stack';
 import { Page } from 'widgets/Page/Page';
 
 import {
@@ -21,7 +22,7 @@ import {
 } from '../../model/selectors/comments';
 import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
-import {
+import { 
     fetchArticleRecommendations,
 } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { fetchCommentsByArticleById } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -52,7 +53,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
         getArticleRecommendationsIsLoading,
     );
     const commentsError = useSelector(getArticleCommentsError);
-    
+
     const onSendComment = useCallback(
         (text: string) => {
             dispatch(addCommentForArticle(text));
@@ -64,7 +65,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
         dispatch(fetchCommentsByArticleById(id));
         dispatch(fetchArticleRecommendations());
     });
-
 
     if (!id) {
         return (
@@ -81,28 +81,36 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
             <Page
                 className={classNames(cl.ArticleDetailsPage, {}, [className])}
             >
-                <ArticleDetailsPageHeader/>
-                <ArticleDetails id={id} />
+                <VStack gap="32">
+                    <VStack gap="4" max>
+                        <ArticleDetailsPageHeader />
+                        <ArticleDetails id={id} />
+                    </VStack>
 
-                <Text
-                    title={t('rekomenduem')}
-                    size={TextSize.L}
-                    className={cl.recommendTitle}
-                />
-                <ArticleList
-                    isLoading={recommendationsIsLoading}
-                    articles={recommendations}
-                    view={ArticleView.GRID}
-                    className={cl.recommendations}
-                    target="_blank"
-                />
+                    <VStack gap="8" max>
+                        <Text
+                            title={t('rekomenduem')}
+                            size={TextSize.L}
+                            className={cl.recommendTitle}
+                        />
+                        <ArticleList
+                            isLoading={recommendationsIsLoading}
+                            articles={recommendations}
+                            view={ArticleView.GRID}
+                            target="_blank"
+                            className={cl.recommendations}
+                        />
+                    </VStack>
 
-                <Text title={t('kommentarii')} size={TextSize.L} />
-                <AddCommentForm onSendComment={onSendComment} />
-                <CommentList
-                    isLoading={commentsIsLoading}
-                    comments={comments}
-                />
+                    <VStack gap="8" max>
+                        <Text title={t('kommentarii')} size={TextSize.L} />
+                        <AddCommentForm onSendComment={onSendComment} />
+                        <CommentList
+                            isLoading={commentsIsLoading}
+                            comments={comments}
+                        />
+                    </VStack>
+                </VStack>
             </Page>
         </DynamicModuleLoader>
     );

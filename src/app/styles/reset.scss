@@ -12,6 +12,10 @@ select {
     font: inherit;
 }
 
+li {
+    list-style-type: none;
+}
+
 *::-webkit-scrollbar {
     width: 12px;
     height: 12px;

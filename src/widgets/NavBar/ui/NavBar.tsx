@@ -8,20 +8,20 @@ import {
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-    RoutePath,
-} from 'app/providers/router/routeConfig/routeConfig';
+import { RoutePath } from 'app/providers/router/routeConfig/routeConfig';
 import { getUserAuthData, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
     AppLink,
     AppLinkTheme,
+    Avatar,
     Button,
     ButtonTheme,
     Text,
     TextTheme,
 } from 'shared/ui';
+import { Menu } from 'shared/ui/Menu/Menu';
 
 import cl from './NavBar.module.scss';
 
@@ -78,12 +78,26 @@ export const NavBar = memo(({ className }: NavBarProps) => {
             )}
             <div className={cl.links}>
                 {authData ? (
-                    <Button
-                        theme={ButtonTheme.CLEAR_INVERTED}
-                        onClick={onLogout}
-                    >
-                        {t('vyiti')}
-                    </Button>
+                    <Menu
+                        className={cl.menu}
+                        items={[
+                            {
+                                content: t('vyiti'),
+                                onCLick: onLogout,
+                            },
+                            {
+                                content: t('profil'),
+                                href: RoutePath.profile + authData.id,
+                            },
+                        ]}
+                        trigger={
+                            <Avatar
+                                size={30}
+                                src={authData.avatar}
+                                alt="avatar"
+                            />
+                        }
+                    />
                 ) : (
                     <Button
                         theme={ButtonTheme.CLEAR_INVERTED}

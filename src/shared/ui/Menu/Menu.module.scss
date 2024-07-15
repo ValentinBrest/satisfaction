@@ -1,8 +1,10 @@
-.Listbox {
+.Menu {
     position: relative;
 }
 
-.trigger {
+.btn {
+    cursor: pointer;
+
     margin: 0;
     padding: 0;
 
@@ -11,14 +13,14 @@
     outline-color: transparent;
 }
 
-.options {
+.menuItems {
     position: absolute;
     z-index: 1000;
 
     min-width: 100%;
 
     background-color: var(--listbox-bg);
-    border-radius: 12px;
+    border-radius: 10px;
     box-shadow: 4px 4px 8px rgb(80 80 80);
 
     &.topLeft {
@@ -44,18 +46,15 @@
 
 .item {
     cursor: pointer;
+
+    width: 100%;
     padding: 5px 10px;
+
+    border: none;
+
     transition: all 0.3s;
 }
 
 .active {
     background-color: var(--inverted-primary-color);
-}
-
-.selected {
-    background-color: var(--input-color-focus);
-}
-
-.disabled {
-    opacity: 0.85;
 }

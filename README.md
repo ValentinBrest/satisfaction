@@ -515,3 +515,8 @@
 
 ## 66 Семантика
 1. добавил семантические тэги
+
+
+# 67 67 Headless UI. React aria. Listbox
+1. использую библиотеку Headless UI
+2. создаю Listbox

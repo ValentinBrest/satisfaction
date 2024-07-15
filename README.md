@@ -517,6 +517,10 @@
 1. добавил семантические тэги
 
 
-# 67 67 Headless UI. React aria. Listbox
+# 67 Headless UI. React aria. Listbox
 1. использую библиотеку Headless UI
 2. создаю Listbox
+
+
+# 68 Dropdown. User avatar
+1. создаю Menu

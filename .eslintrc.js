@@ -82,7 +82,7 @@ module.exports = {
             },
         },
         {
-            files: ['scripts/*.js', 'json-server/*.js'],
+            files: ['scripts/**/*.js', 'json-server/*.js'],
             rules: {
                 '@typescript-eslint/no-var-requires': 'off',
             },

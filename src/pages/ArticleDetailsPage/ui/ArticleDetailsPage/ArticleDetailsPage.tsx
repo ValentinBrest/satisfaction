@@ -2,9 +2,10 @@ import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { ArticleDetails, ArticleList, ArticleView } from 'entities/Article';
+import { ArticleDetails } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
 import { AddCommentForm } from 'features/addComentForm';
+import { ArticleRecommendationsList } from 'features/articleRecommendationsList';
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
     DynamicModuleLoader,
@@ -16,19 +17,11 @@ import { Text, TextSize } from 'shared/ui';
 import { VStack } from 'shared/ui/Stack';
 import { Page } from 'widgets/Page/Page';
 
-import {
-    getArticleCommentsError,
-    getArticleCommentsIsLoading,
-} from '../../model/selectors/comments';
-import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
+import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
-import { 
-    fetchArticleRecommendations,
-} from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { fetchCommentsByArticleById } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { getArticleComments } from '../../model/slices/articleDetailsCommentSlice';
-import { getArticleRecommendations } from '../../model/slices/articleDetailsRecommendationsSlice';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 import cl from './ArticleDetailsPage.module.scss';
@@ -47,12 +40,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const { id } = useParams<{ id: string }>();
     const dispatch = useAppDispatch();
     const comments = useSelector(getArticleComments.selectAll);
-    const recommendations = useSelector(getArticleRecommendations.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
-    const recommendationsIsLoading = useSelector(
-        getArticleRecommendationsIsLoading,
-    );
-    const commentsError = useSelector(getArticleCommentsError);
 
     const onSendComment = useCallback(
         (text: string) => {
@@ -63,7 +51,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleById(id));
-        dispatch(fetchArticleRecommendations());
     });
 
     if (!id) {
@@ -87,20 +74,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                         <ArticleDetails id={id} />
                     </VStack>
 
-                    <VStack gap="8" max>
-                        <Text
-                            title={t('rekomenduem')}
-                            size={TextSize.L}
-                            className={cl.recommendTitle}
-                        />
-                        <ArticleList
-                            isLoading={recommendationsIsLoading}
-                            articles={recommendations}
-                            view={ArticleView.GRID}
-                            target="_blank"
-                            className={cl.recommendations}
-                        />
-                    </VStack>
+                    <ArticleRecommendationsList />
 
                     <VStack gap="8" max>
                         <Text title={t('kommentarii')} size={TextSize.L} />

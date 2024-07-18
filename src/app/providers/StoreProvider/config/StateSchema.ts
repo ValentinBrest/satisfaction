@@ -9,11 +9,13 @@ import { LoginSchema } from 'features/AuthByUsername';
 import { ScrollSchema } from 'features/saveScroll';
 import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { rtkApi } from 'shared/api/rtkApi';
 
 export interface StateSchema {
     counter: CounterSchema;
-    user: UserSchema
-    scroll: ScrollSchema
+    user: UserSchema;
+    scroll: ScrollSchema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
     // Асинхронные редьюсеры
     loginForm?: LoginSchema;
     profile?: ProfileSchema;

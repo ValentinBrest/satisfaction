@@ -9,6 +9,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
 import { SortOrder } from 'shared/types';
 import { Card, Input } from 'shared/ui';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
 
 import { 
@@ -93,8 +94,8 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
     }, [dispatch, fetchData]);
 
     return (
-        <div className={classNames(cl.ArticlesPageFilters, {}, [className])}>
-            <div className={cl.sortWrapper}>
+        <VStack gap="16" max>
+            <HStack justify="between" max>
                 <ArticleSortSelector 
                     sort={sort} 
                     order={order}
@@ -102,11 +103,11 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
                     onChangeSort={onChangeSort}
                 />
                 <ArticleViewSelector view={view} onViewClick={onViewChange}/>
-            </div>
+            </HStack>
             <Card className={cl.search}>
                 <Input placeholder={t('poisk')} onChange={onChangeSearch} value={search}/>
             </Card>
-            <Tabs tabs={typeTabs} value={type} onTabClick={onChangeType} className={cl.tabs}/>
-        </div>
+            <Tabs tabs={typeTabs} value={type} onTabClick={onChangeType}/>
+        </VStack>
     );
 });

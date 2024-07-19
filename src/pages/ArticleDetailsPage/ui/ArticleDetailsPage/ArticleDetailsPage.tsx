@@ -45,16 +45,12 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
             <Page
                 className={classNames(cl.ArticleDetailsPage, {}, [className])}
             >
-                <VStack gap="32">
-                    <VStack gap="4" max>
-                        <ArticleDetailsPageHeader />
-                        <ArticleDetails id={id} />
-                    </VStack>
-
-                    <ArticleRecommendationsList />
-
-                    <ArticleDetailsComments id={id} />
+                <VStack gap="4" max>
+                    <ArticleDetailsPageHeader />
+                    <ArticleDetails id={id} />
                 </VStack>
+                <ArticleRecommendationsList />
+                <ArticleDetailsComments id={id} />
             </Page>
         </DynamicModuleLoader>
     );

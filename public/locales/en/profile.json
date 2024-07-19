@@ -15,5 +15,6 @@
   "nekorrektnyi-vozrast": "Incorrect age",
   "nekorrektnyi-region": "Incorrect region",
   "imya-i-familiya-obyazatelny": "First and last name are required",
-  "dannye-ne-ukazany": "Data not specified"
+  "dannye-ne-ukazany": "Data not specified",
+  "profil-ne-naiden": "Profile is not defined"
 }

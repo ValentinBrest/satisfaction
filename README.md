@@ -529,3 +529,11 @@
 # 69 Генератор фичей сущностей страниц на node js
 1. добавил возможность созания структуры слайса с помощью FTTemplates
 2. добавил возможность созания структуры слайса с помощью node js
+
+
+# 70 RTK query. Начало большого рефакторинга
+1. создал Апи rtk
+2. создал ArticleRecommendationsList
+3. создал ArticleDetailsComents
+4. создал ArticleInfiniteList
+5. создал EditableProfileCard

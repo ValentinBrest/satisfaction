@@ -537,3 +537,7 @@
 3. создал ArticleDetailsComents
 4. создал ArticleInfiniteList
 5. создал EditableProfileCard
+
+
+# 71 HTML report для тестов
+1. добавил jest-html-repoters

@@ -758,14 +758,14 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "role": ["ADMIN", "USER"],
       "avatar": "https://visualpharm.com/assets/381/Admin-595b40b65ba036ed117d3b23.svg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER",
+      "role": ["USER"],
       "avatar": "https://visualpharm.com/assets/381/Admin-595b40b65ba036ed117d3b23.svg"
     }
   ],

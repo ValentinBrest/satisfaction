@@ -9,7 +9,8 @@ import {
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { RoutePath } from 'app/providers/router/routeConfig/routeConfig';
-import { getUserAuthData, userActions } from 'entities/User';
+import { getUserAuthData, isAdmin, userActions } from 'entities/User';
+import { getRoles } from 'entities/User/model/selectors/getRoles/getRoles';
 import { LoginModal } from 'features/AuthByUsername';
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
@@ -33,7 +34,8 @@ export const NavBar = memo(({ className }: NavBarProps) => {
     const { t } = useTranslation('main');
     const dispatch = useDispatch();
     const authData = useSelector(getUserAuthData);
-
+    const isAdminUser = useSelector(isAdmin);
+    
     const [isAuthModal, setIsAuthModal] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
 
@@ -81,13 +83,17 @@ export const NavBar = memo(({ className }: NavBarProps) => {
                     <Menu
                         className={cl.menu}
                         items={[
-                            {
-                                content: t('vyiti'),
-                                onCLick: onLogout,
-                            },
+                            ...(isAdminUser ? [{
+                                content: t('Админка'),
+                                href: RoutePath.admin_panel,
+                            }] : []),
                             {
                                 content: t('profil'),
                                 href: RoutePath.profile + authData.id,
+                            },
+                            {
+                                content: t('vyiti'),
+                                onCLick: onLogout,
                             },
                         ]}
                         trigger={

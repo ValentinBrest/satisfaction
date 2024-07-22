@@ -28,6 +28,8 @@ interface TextProps {
     theme?: TextTheme;
     align?: TextAlign;
     size?: TextSize;
+
+    'data-testid'?: string;
 }
 
 type HeaderTagType = 'h1' | 'h2' | 'h3'
@@ -46,6 +48,7 @@ export const Text = memo((props: TextProps) => {
         theme = TextTheme.PRIMARY,
         align = TextAlign.LEFT,
         size = TextSize.M,
+        'data-testid': dataTestId = 'Text',
     } = props;
 
     const mods: Mods = {
@@ -58,8 +61,8 @@ export const Text = memo((props: TextProps) => {
     
     return (
         <div className={classNames(cl.Text, mods, [className])}>
-            {title && <HeaderTag className={cl.title}>{title}</HeaderTag>}
-            {text && <p className={cl.text}>{text}</p>}
+            {title && <HeaderTag data-testid={`${dataTestId}.Header`} className={cl.title}>{title}</HeaderTag>}
+            {text && <p data-testid={`${dataTestId}.Paragraph`} className={cl.text}>{text}</p>}
         </div>
     );
 });

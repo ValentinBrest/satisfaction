@@ -23,7 +23,7 @@ export const ArticleRecommendationsList = memo(
             error,
         } = useArticleRecommendationList(3);
 
-        if (isLoading || error) return null;
+        if (isLoading || error || !articles) return null;
         return (
             <VStack gap="8" max className={classNames('', {}, [className])}>
                 <Text title={t('rekomenduem')} size={TextSize.L} />

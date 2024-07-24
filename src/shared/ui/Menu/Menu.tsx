@@ -1,5 +1,5 @@
 import { Fragment, ReactNode } from 'react';
-import { Menu as HMenu } from '@headlessui/react';
+import { Menu as HMenu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DropdownDirection } from 'shared/types/ui';
 
@@ -29,10 +29,10 @@ export function Menu(props: MenuProps) {
 
     return (
         <HMenu as={'div'} className={classNames(cl.Menu, {}, [className])}>
-            <HMenu.Button className={cl.btn}>
+            <MenuButton className={cl.btn}>
                 <Button>{trigger}</Button>
-            </HMenu.Button>
-            <HMenu.Items className={classNames(cl.menuItems, {}, menuClasses)}>
+            </MenuButton>
+            <MenuItems className={classNames(cl.menuItems, {}, menuClasses)}>
                 {items.map((item) => {
                     const content = ({ active }: { active: boolean }) => (
                         <button
@@ -49,22 +49,22 @@ export function Menu(props: MenuProps) {
 
                     if (item.href) {
                         return (
-                            <HMenu.Item
+                            <MenuItem
                                 as={AppLink}
                                 key={item.href}
                                 to={item.href}
                             >
                                 {content}
-                            </HMenu.Item>
+                            </MenuItem>
                         );
                     }
                     return (
-                        <HMenu.Item as={Fragment} key={item.href}>
+                        <MenuItem as={Fragment} key={item.href}>
                             {content}
-                        </HMenu.Item>
+                        </MenuItem>
                     );
                 })}
-            </HMenu.Items>
+            </MenuItems>
         </HMenu>
     );
 }

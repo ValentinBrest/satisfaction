@@ -1,4 +1,5 @@
-import { ArticleBlock, ArticleBlockType } from '../model/types/article';
+import { ArticleBlockType } from '../model/consts/articleConsts';
+import { ArticleBlock } from '../model/types/article';
 import { ArticleCodeBlockComponent } from '../ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ui/ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ui/ArticleTextBlockComponent/ArticleTextBlockComponent';

@@ -1,7 +1,3 @@
-import { AddCommentFormSchema } from './model/types/addCommentForms';
-import {AddCommentFormAsync as AddCommentForm} from './ui/AddCommentForm/AddCommentForm.async';
+export type { AddCommentFormSchema } from './model/types/addCommentForms';
+export {AddCommentFormAsync as AddCommentForm} from './ui/AddCommentForm/AddCommentForm.async';
 
-export {
-    AddCommentForm,
-    AddCommentFormSchema,
-}; 

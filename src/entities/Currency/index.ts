@@ -1,4 +1,4 @@
-import { Currency } from './model/types/currency';
+import { Currency } from './model/consts/currency';
 import { CurrencySelect } from './ui/CurrencySelect/CurrencySelect';
 
 export {Currency, CurrencySelect};

@@ -1,8 +1,7 @@
 import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { ArticleSortField, ArticleSortSelector, ArticleView } from 'entities/Article';
-import { ArticleType } from 'entities/Article/model/types/article';
+import { ArticleSortField, ArticleSortSelector, ArticleType, ArticleView } from 'entities/Article';
 import { ArticleViewSelector } from 'features/ArticleViewSelector/ArticleViewSelector';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';

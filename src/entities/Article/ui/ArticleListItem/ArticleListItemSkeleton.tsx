@@ -2,8 +2,9 @@ import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Card } from 'shared/ui';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { HStack } from 'shared/ui/Stack';
 
-import { ArticleView } from '../../model/types/article';
+import { ArticleView } from '../../model/consts/articleConsts';
 
 import cl from './ArticleListItem.module.scss';
 

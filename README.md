@@ -558,3 +558,7 @@
 
 # 76 TS isolatedModules. Рефакторинг. Подготовка к миграции на babel loader
 1. добавил isolatedModules в config.ts . Рефакторинг кода
+
+
+# 77 CircularDependency. Кольцевые зависимости
+1. добавил circular-dependency-plugin

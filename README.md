@@ -562,3 +562,8 @@
 
 # 77 CircularDependency. Кольцевые зависимости
 1. добавил circular-dependency-plugin
+
+
+# 78 Миграция на babel loader. Выносим проверку типов в отдельный процесс. Пишем свой babel plugin
+1. добавил плагины для babel 
+2. создал свой babel плагин babelRemovePropsPlugin

@@ -1,5 +1,7 @@
 import webpack from 'webpack';
 
+import babelRemovePropsPlugin from '../babel/babelRemovePropsPlugin';
+
 import { buildCssLoaders } from './loaders/buildCssLoaders';
 
 export function buildLoader (isDev: boolean): webpack.RuleSetRule[] {
@@ -15,7 +17,12 @@ export function buildLoader (isDev: boolean): webpack.RuleSetRule[] {
                     {isTsx},
                 ],
                 '@babel/plugin-transform-runtime',
-                ],
+                isTsx && [
+                    babelRemovePropsPlugin,
+                    {
+                        props: ['data-testid'],
+                    }, 
+                ]].filter(Boolean),
             },
         },
     });

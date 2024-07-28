@@ -3,10 +3,10 @@ import { Listbox as HListbox, ListboxButton, ListboxOption, ListboxOptions } fro
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DropdownDirection } from 'shared/types/ui';
 
-import { Button } from '../Button/Button';
-import { HStack } from '../Stack';
+import { Button } from '../../../Button/Button';
+import { HStack } from '../../../Stack';
 
-import cl from './Listbox.module.scss';
+import cl from '../../styles/popup.module.scss';
 
 export interface ListboxItem {
     value: string;
@@ -45,7 +45,7 @@ export function Listbox(props: ListboxProps) {
             <HListbox
                 disabled={readonly}
                 as={'div'}
-                className={classNames(cl.Listbox, {}, [className])}
+                className={classNames(cl.Popup, {}, [className])}
                 value={value}
                 onChange={onChange}
             >

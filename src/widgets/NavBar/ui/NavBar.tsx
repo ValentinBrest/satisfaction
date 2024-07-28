@@ -10,8 +10,8 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { RoutePath } from 'app/providers/router/routeConfig/routeConfig';
 import { getUserAuthData, isAdmin, userActions } from 'entities/User';
-import { getRoles } from 'entities/User/model/selectors/getRoles/getRoles';
 import { LoginModal } from 'features/AuthByUsername';
+import NotificationIcon from 'shared/assets/icons/notification.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
     AppLink,
@@ -22,7 +22,9 @@ import {
     Text,
     TextTheme,
 } from 'shared/ui';
-import { Menu } from 'shared/ui/Menu/Menu';
+import { Popover } from 'shared/ui/Popups';
+import { Menu } from 'shared/ui/Popups/ui/Menu/Menu';
+import { HStack } from 'shared/ui/Stack';
 
 import cl from './NavBar.module.scss';
 
@@ -35,7 +37,7 @@ export const NavBar = memo(({ className }: NavBarProps) => {
     const dispatch = useDispatch();
     const authData = useSelector(getUserAuthData);
     const isAdminUser = useSelector(isAdmin);
-    
+
     const [isAuthModal, setIsAuthModal] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
 
@@ -78,15 +80,27 @@ export const NavBar = memo(({ className }: NavBarProps) => {
                     {t('sozdat-statyu')}
                 </AppLink>
             )}
-            <div className={cl.links}>
+            <HStack max gap="8" justify="end">
+                {
+                    <Popover
+                        trigger={
+                            <Button theme={ButtonTheme.CLEAR}>
+                                <NotificationIcon className={cl.icon} />
+                            </Button>
+                        }
+                    >{t('sozdat-statyu')}</Popover>
+                }
                 {authData ? (
                     <Menu
-                        className={cl.menu}
                         items={[
-                            ...(isAdminUser ? [{
-                                content: t('Админка'),
-                                href: RoutePath.admin_panel,
-                            }] : []),
+                            ...(isAdminUser
+                                ? [
+                                    {
+                                        content: t('Админка'),
+                                        href: RoutePath.admin_panel,
+                                    },
+                                ]
+                                : []),
                             {
                                 content: t('profil'),
                                 href: RoutePath.profile + authData.id,
@@ -112,12 +126,13 @@ export const NavBar = memo(({ className }: NavBarProps) => {
                         {t('voiti')}
                     </Button>
                 )}
-                <LoginModal
-                    isOpen={isAuthModal}
-                    onClose={onCloseModal}
-                    isMounted={isMounted}
-                />
-            </div>
+            </HStack>
+
+            <LoginModal
+                isOpen={isAuthModal}
+                onClose={onCloseModal}
+                isMounted={isMounted}
+            />
         </header>
     );
 });

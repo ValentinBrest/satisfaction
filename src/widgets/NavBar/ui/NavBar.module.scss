@@ -9,11 +9,6 @@
     background: var(--inverted-bg-color);
 }
 
-.links,
-.menu {
-    margin-left: auto;
-}
-
 .mainLink {
     margin-right: 15px;
 }
@@ -21,4 +16,10 @@
 .appName {
     width: var(--sidebar-width);
     margin-left: 15px;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    fill: var(--inverted-primary-color);
 }

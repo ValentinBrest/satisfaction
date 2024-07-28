@@ -1,12 +1,17 @@
 import { Fragment, ReactNode } from 'react';
-import { Menu as HMenu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
+import {
+    Menu as HMenu,
+    MenuButton,
+    MenuItem,
+    MenuItems,
+} from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DropdownDirection } from 'shared/types/ui';
 
-import { AppLink } from '../AppLink/AppLink';
-import { Button } from '../Button/Button';
+import { AppLink } from '../../../AppLink/AppLink';
+import { Button, ButtonTheme } from '../../../Button/Button';
 
-import cl from './Menu.module.scss';
+import cl from '../../styles/popup.module.scss';
 
 export interface MenuItem {
     disabled?: boolean;
@@ -28,11 +33,11 @@ export function Menu(props: MenuProps) {
     const menuClasses = [cl[direction]];
 
     return (
-        <HMenu as={'div'} className={classNames(cl.Menu, {}, [className])}>
-            <MenuButton className={cl.btn}>
-                <Button>{trigger}</Button>
+        <HMenu as={'div'} className={classNames(cl.Popup, {}, [className])}>
+            <MenuButton className={cl.trigger}>
+                <Button theme={ButtonTheme.CLEAR}>{trigger}</Button>
             </MenuButton>
-            <MenuItems className={classNames(cl.menuItems, {}, menuClasses)}>
+            <MenuItems className={classNames(cl.options, {}, menuClasses)}>
                 {items.map((item) => {
                     const content = ({ active }: { active: boolean }) => (
                         <button

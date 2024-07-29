@@ -1,4 +1,19 @@
 {
+  "notifications": [
+    {
+      "id": "1",
+      "title": "уведомление",
+      "description": "Описание",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "уведомление 2",
+      "description": "Описание 2",
+      "userId": "2",
+      "href": "https://localhost:8080"
+    }
+  ],
   "posts": [
     {
       "id": "1",

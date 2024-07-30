@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RoutePath } from 'app/providers/router/routeConfig/routeConfig';
 import { getUserAuthData, isAdmin, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
-import NotificationIcon from 'shared/assets/icons/notification.svg';
+import { NotificationsButton } from 'features/NotificationsButton';
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
     AppLink,
@@ -22,7 +22,6 @@ import {
     Text,
     TextTheme,
 } from 'shared/ui';
-import { Popover } from 'shared/ui/Popups';
 import { Menu } from 'shared/ui/Popups/ui/Menu/Menu';
 import { HStack } from 'shared/ui/Stack';
 
@@ -81,15 +80,7 @@ export const NavBar = memo(({ className }: NavBarProps) => {
                 </AppLink>
             )}
             <HStack max gap="8" justify="end">
-                {
-                    <Popover
-                        trigger={
-                            <Button theme={ButtonTheme.CLEAR}>
-                                <NotificationIcon className={cl.icon} />
-                            </Button>
-                        }
-                    >{t('sozdat-statyu')}</Popover>
-                }
+                <NotificationsButton />
                 {authData ? (
                     <Menu
                         items={[

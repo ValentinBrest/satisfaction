@@ -567,3 +567,7 @@
 # 78 Миграция на babel loader. Выносим проверку типов в отдельный процесс. Пишем свой babel plugin
 1. добавил плагины для babel 
 2. создал свой babel плагин babelRemovePropsPlugin
+
+
+# 79 Popover. NotificationList. RTK query. Polling
+1. создал Popever, Notifications

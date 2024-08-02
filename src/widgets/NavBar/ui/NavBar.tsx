@@ -80,35 +80,37 @@ export const NavBar = memo(({ className }: NavBarProps) => {
                 </AppLink>
             )}
             <HStack max gap="8" justify="end">
-                <NotificationsButton />
                 {authData ? (
-                    <Menu
-                        items={[
-                            ...(isAdminUser
-                                ? [
-                                    {
-                                        content: t('Админка'),
-                                        href: RoutePath.admin_panel,
-                                    },
-                                ]
-                                : []),
-                            {
-                                content: t('profil'),
-                                href: RoutePath.profile + authData.id,
-                            },
-                            {
-                                content: t('vyiti'),
-                                onCLick: onLogout,
-                            },
-                        ]}
-                        trigger={
-                            <Avatar
-                                size={30}
-                                src={authData.avatar}
-                                alt="avatar"
-                            />
-                        }
-                    />
+                    <>
+                        <NotificationsButton />
+                        <Menu
+                            items={[
+                                ...(isAdminUser
+                                    ? [
+                                        {
+                                            content: t('Админка'),
+                                            href: RoutePath.admin_panel,
+                                        },
+                                    ]
+                                    : []),
+                                {
+                                    content: t('profil'),
+                                    href: RoutePath.profile + authData.id,
+                                },
+                                {
+                                    content: t('vyiti'),
+                                    onCLick: onLogout,
+                                },
+                            ]}
+                            trigger={
+                                <Avatar
+                                    size={30}
+                                    src={authData.avatar}
+                                    alt="avatar"
+                                />
+                            }
+                        />
+                    </>
                 ) : (
                     <Button
                         theme={ButtonTheme.CLEAR_INVERTED}

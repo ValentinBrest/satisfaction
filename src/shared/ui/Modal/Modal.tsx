@@ -3,6 +3,7 @@ import { classNames, Mods } from 'shared/lib/classNames/classNames';
 
 import CloseIcon from '../../assets/icons/sidebar/xmark.svg';
 import { Button, ButtonSize, ButtonTheme } from '../Button/Button';
+import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 
 import cl from './Modal.module.scss';
@@ -17,14 +18,7 @@ interface ModalProps {
 }
 
 export const Modal = (props: ModalProps) => {
-    const { 
-        className, 
-        children, 
-        isOpen, 
-        onClose, 
-        lazy, 
-        isMounted,
-    } = props;
+    const { className, children, isOpen, onClose, lazy, isMounted } = props;
 
     const mods: Mods = {
         [cl.opened]: isOpen,
@@ -35,10 +29,6 @@ export const Modal = (props: ModalProps) => {
             onClose();
         }
     }, [onClose]);
-
-    const onContentClick = (e: React.MouseEvent) => {
-        e.stopPropagation();
-    };
 
     const onKeyDown = useCallback(
         (e: KeyboardEvent) => {
@@ -66,19 +56,18 @@ export const Modal = (props: ModalProps) => {
     return (
         <Portal>
             <div className={classNames(cl.Modal, mods, [className])}>
-                <div className={cl.overlay} onClick={closeHandler}>
-                    <div className={cl.content} onClick={onContentClick}>
-                        <Button
-                            onClick={closeHandler}
-                            square
-                            size={ButtonSize.M}
-                            theme={ButtonTheme.CLEAR}
-                            className={cl.close}
-                        >
-                            <CloseIcon className={cl.icon} />
-                        </Button>
-                        {children}
-                    </div>
+                <Overlay onClick={closeHandler} />
+                <div className={cl.content}>
+                    <Button
+                        onClick={closeHandler}
+                        square
+                        size={ButtonSize.M}
+                        theme={ButtonTheme.CLEAR}
+                        className={cl.close}
+                    >
+                        <CloseIcon className={cl.icon} />
+                    </Button>
+                    {children}
                 </div>
             </div>
         </Portal>

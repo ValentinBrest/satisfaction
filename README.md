@@ -576,3 +576,7 @@
 # 80 Drawer. Overlay. React-device-detect. Мобилки и десктоп
 1. установил react-device-detect
 2. создал Drawer, Overlay
+
+
+# 81 useModal. Рефакторинг Modal и Drawer
+1. создал хук useModal. Рефакторинг

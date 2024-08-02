@@ -571,3 +571,8 @@
 
 # 79 Popover. NotificationList. RTK query. Polling
 1. создал Popever, Notifications
+
+
+# 80 Drawer. Overlay. React-device-detect. Мобилки и десктоп
+1. установил react-device-detect
+2. создал Drawer, Overlay

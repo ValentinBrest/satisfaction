@@ -38,30 +38,19 @@ export const NavBar = memo(({ className }: NavBarProps) => {
     const isAdminUser = useSelector(isAdmin);
 
     const [isAuthModal, setIsAuthModal] = useState(false);
-    const [isMounted, setIsMounted] = useState(false);
-
-    const timeRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
 
     const onCloseModal = useCallback(() => {
         setIsAuthModal(false);
     }, []);
 
     const onShowModal = useCallback(() => {
-        setIsMounted(true);
-        timeRef.current = setTimeout(() => {
-            setIsAuthModal(true);
-        }, 100);
+        setIsAuthModal(true);
     }, []);
 
     const onLogout = useCallback(() => {
         dispatch(userActions.logout());
     }, [dispatch]);
 
-    useEffect(() => {
-        return () => {
-            clearInterval(timeRef.current);
-        };
-    }, []);
 
     return (
         <header className={classNames(cl.NavBar, {}, [className])}>
@@ -124,7 +113,6 @@ export const NavBar = memo(({ className }: NavBarProps) => {
             <LoginModal
                 isOpen={isAuthModal}
                 onClose={onCloseModal}
-                isMounted={isMounted}
             />
         </header>
     );

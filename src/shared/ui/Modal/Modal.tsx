@@ -15,13 +15,12 @@ interface ModalProps {
     isOpen?: boolean;
     onClose?: () => void;
     lazy?: boolean;
-    isMounted: boolean;
 }
 
 export const Modal = (props: ModalProps) => {
-    const { className, children, isOpen, onClose, lazy, isMounted } = props;
+    const { className, children, isOpen, onClose, lazy } = props;
 
-    const {close} = useModal({
+    const {close, isMounted} = useModal({
         animationDelay: 100,
         isOpen,
         onClose,

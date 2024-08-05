@@ -11,7 +11,6 @@ interface LoginModalProps {
     className?: string;
     isOpen: boolean;
     onClose: () => void;
-    isMounted: boolean;
 }
 
 export const LoginModal = (props: LoginModalProps) => {
@@ -21,7 +20,6 @@ export const LoginModal = (props: LoginModalProps) => {
         className, 
         isOpen, 
         onClose, 
-        isMounted,
     } = props;
 
     return (
@@ -29,7 +27,6 @@ export const LoginModal = (props: LoginModalProps) => {
             className={classNames('', {}, [className])}
             isOpen={isOpen}
             onClose={onClose}
-            isMounted={isMounted}
             lazy
         >
             <Text title={t('avtorizaciya')} className={cl.title}/>

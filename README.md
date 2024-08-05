@@ -580,3 +580,7 @@
 
 # 81 useModal. Рефакторинг Modal и Drawer
 1. создал хук useModal. Рефакторинг
+
+# 82 Динамический импорт. Lazy библиотеки. Провайдер. Gesture, React spring
+1. установил библиотеки Gesture, React spring
+2. создал AnimationProvider с асинхр. подрузкой библиотек

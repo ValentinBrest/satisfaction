@@ -589,3 +589,7 @@
 
 # 83 Алиасы. Ts Morph. Автоматизация рефакторинга 
 1. установил ts-morph для рефакторинга путей
+
+
+# 84 BrowserList. Размер бандла. Исправляем Drawer animation provider
+1. добавил .browserslistrc

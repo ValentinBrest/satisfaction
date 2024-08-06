@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import { useModal } from 'shared/lib/hooks/useModal/useModal';
+
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import { useModal } from '@/shared/lib/hooks/useModal/useModal';
 
 import CloseIcon from '../../assets/icons/sidebar/xmark.svg';
 import { Button, ButtonSize, ButtonTheme } from '../Button/Button';

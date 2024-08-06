@@ -1,16 +1,17 @@
 import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
-import { ArticleInfiniteList } from 'pages/ArticleInfiniteList/ArticleInfiniteList';
+
+import { ArticleInfiniteList } from '@/pages/ArticleInfiniteList/ArticleInfiniteList';
 import {
     DynamicModuleLoader,
     ReducerList,
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Text, TextSize } from 'shared/ui';
-import { VStack } from 'shared/ui/Stack';
-import { Page } from 'widgets/Page/Page';
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { Text, TextSize } from '@/shared/ui';
+import { VStack } from '@/shared/ui/Stack';
+import { Page } from '@/widgets/Page/Page';
 
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';

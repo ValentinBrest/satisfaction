@@ -1,9 +1,10 @@
 import { useTranslation } from 'react-i18next';
-import { Country, CountrySelect } from 'entities/Country';
-import { Currency, CurrencySelect } from 'entities/Currency';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Avatar, Input, Loader, Text, TextAlign, TextTheme } from 'shared/ui';
-import { HStack, VStack } from 'shared/ui/Stack';
+
+import { Country, CountrySelect } from '@/entities/Country';
+import { Currency, CurrencySelect } from '@/entities/Currency';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Avatar, Input, Loader, Text, TextAlign, TextTheme } from '@/shared/ui';
+import { HStack, VStack } from '@/shared/ui/Stack';
 
 import { Profile } from '../../model/types/profile';
 

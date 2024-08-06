@@ -1,9 +1,10 @@
 import { memo } from 'react';
-import { ArticleView } from 'entities/Article';
-import GridIcon from 'shared/assets/icons/article/grid.svg';
-import ListIcon from 'shared/assets/icons/article/list.svg';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from 'shared/ui';
+
+import { ArticleView } from '@/entities/Article';
+import GridIcon from '@/shared/assets/icons/article/grid.svg';
+import ListIcon from '@/shared/assets/icons/article/list.svg';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button, ButtonTheme } from '@/shared/ui';
 
 import cl from './ArticleViewSelector.module.scss';
 

@@ -1,7 +1,8 @@
 import { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Card, Text, TextSize } from 'shared/ui';
-import { CardTheme } from 'shared/ui/Card/Card';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Card, Text, TextSize } from '@/shared/ui';
+import { CardTheme } from '@/shared/ui/Card/Card';
 
 import type { Notification } from '../../types/notification';
 

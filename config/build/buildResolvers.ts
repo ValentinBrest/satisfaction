@@ -6,6 +6,8 @@ export function buildResolvers (src: string): ResolveOptions {
         preferAbsolute: true, //  абсолютные пути в приоритете
         modules: [src, 'node_modules'],
         mainFiles: ['index'],
-        alias: {},
+        alias: {
+            '@': src,
+        },
     };
 }

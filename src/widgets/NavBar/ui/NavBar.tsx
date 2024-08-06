@@ -1,18 +1,16 @@
 import {
     memo,
-    MutableRefObject,
     useCallback,
-    useEffect,
-    useRef,
     useState,
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { RoutePath } from 'app/providers/router/routeConfig/routeConfig';
-import { getUserAuthData, isAdmin, userActions } from 'entities/User';
-import { LoginModal } from 'features/AuthByUsername';
-import { NotificationsButton } from 'features/NotificationsButton';
-import { classNames } from 'shared/lib/classNames/classNames';
+
+import { RoutePath } from '@/app/providers/router/routeConfig/routeConfig';
+import { getUserAuthData, isAdmin, userActions } from '@/entities/User';
+import { LoginModal } from '@/features/AuthByUsername';
+import { NotificationsButton } from '@/features/NotificationsButton';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     AppLink,
     AppLinkTheme,
@@ -21,9 +19,9 @@ import {
     ButtonTheme,
     Text,
     TextTheme,
-} from 'shared/ui';
-import { Menu } from 'shared/ui/Popups/ui/Menu/Menu';
-import { HStack } from 'shared/ui/Stack';
+} from '@/shared/ui';
+import { Menu } from '@/shared/ui/Popups/ui/Menu/Menu';
+import { HStack } from '@/shared/ui/Stack';
 
 import cl from './NavBar.module.scss';
 

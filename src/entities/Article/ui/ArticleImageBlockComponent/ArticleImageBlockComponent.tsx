@@ -1,7 +1,8 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Text, TextAlign } from 'shared/ui';
-import { VStack } from 'shared/ui/Stack';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text, TextAlign } from '@/shared/ui';
+import { VStack } from '@/shared/ui/Stack';
 
 import { ArcticleImageBlock } from '../../model/types/article';
 

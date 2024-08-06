@@ -1,9 +1,10 @@
 import { memo } from 'react';
-import { RoutePath } from 'app/providers/router/routeConfig/routeConfig';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink, Avatar, Text } from 'shared/ui';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import { VStack } from 'shared/ui/Stack';
+
+import { RoutePath } from '@/app/providers/router/routeConfig/routeConfig';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppLink, Avatar, Text } from '@/shared/ui';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { VStack } from '@/shared/ui/Stack';
 
 import { Comment } from '../../model/types/comment';
 

@@ -1,14 +1,14 @@
 import { memo, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { RoutePath } from 'app/providers/router/routeConfig/routeConfig';
-import { getArticleDetailsData } from 'entities/Article';
-import BackIcon from 'shared/assets/icons/back.svg';
-import EditIcon from 'shared/assets/icons/edit.svg';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from 'shared/ui';
-import { HStack } from 'shared/ui/Stack';
+
+import { RoutePath } from '@/app/providers/router/routeConfig/routeConfig';
+import { getArticleDetailsData } from '@/entities/Article';
+import BackIcon from '@/shared/assets/icons/back.svg';
+import EditIcon from '@/shared/assets/icons/edit.svg';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button, ButtonTheme } from '@/shared/ui';
+import { HStack } from '@/shared/ui/Stack';
 
 import { getCanEditArticle } from '../../model/selectors/article';
 
@@ -21,7 +21,6 @@ interface ArticleDetailsPageHeaderProps {
 export const ArticleDetailsPageHeader = memo(
     (props: ArticleDetailsPageHeaderProps) => {
         const { className } = props;
-        const { t } = useTranslation();
         const navigate = useNavigate();
         const canEdit = useSelector(getCanEditArticle);
         const article = useSelector(getArticleDetailsData);

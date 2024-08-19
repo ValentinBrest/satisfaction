@@ -593,3 +593,7 @@
 
 # 84 BrowserList. Размер бандла. Исправляем Drawer animation provider
 1. добавил .browserslistrc
+
+
+# 85 Настраиваем Vite. Быстрая сборка для dev
+1. добавил vite

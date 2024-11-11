@@ -35,11 +35,11 @@ export function Menu(props: MenuProps) {
 
     return (
         <HMenu as={'div'} className={classNames(cl.Popup, {}, [className])}>
-            <MenuButton className={cl.trigger}>
+            <MenuButton as={'div'} className={cl.trigger}>
                 <Button theme={ButtonTheme.CLEAR}>{trigger}</Button>
             </MenuButton>
             <MenuItems className={classNames(cl.options, {}, menuClasses)}>
-                {items.map((item) => {
+                {items.map((item, index) => {
                     const content = ({ active }: { active: boolean }) => (
                         <button
                             type="button"
@@ -57,7 +57,7 @@ export function Menu(props: MenuProps) {
                         return (
                             <MenuItem
                                 as={AppLink}
-                                key={item.href}
+                                key={index}
                                 to={item.href}
                             >
                                 {content}
@@ -65,7 +65,7 @@ export function Menu(props: MenuProps) {
                         );
                     }
                     return (
-                        <MenuItem as={Fragment} key={item.href}>
+                        <MenuItem as={Fragment} key={index}>
                             {content}
                         </MenuItem>
                     );

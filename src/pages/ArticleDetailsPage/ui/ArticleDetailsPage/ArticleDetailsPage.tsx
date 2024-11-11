@@ -17,6 +17,7 @@ import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetails
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 import cl from './ArticleDetailsPage.module.scss';
+import { ArticleRating } from '@/features/articleRating';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -51,6 +52,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                     <ArticleDetails id={id} />
                 </VStack>
                 <ArticleRecommendationsList />
+                <ArticleRating articleId={id}/>
                 <ArticleDetailsComments id={id} />
             </Page>
         </DynamicModuleLoader>

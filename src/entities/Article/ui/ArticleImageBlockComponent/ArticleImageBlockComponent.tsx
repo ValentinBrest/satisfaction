@@ -1,5 +1,3 @@
-import { useTranslation } from 'react-i18next';
-
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text, TextAlign } from '@/shared/ui';
 import { VStack } from '@/shared/ui/Stack';
@@ -17,7 +15,6 @@ export const ArticleImageBlockComponent = (
     props: ArticleImageBlockComponentProps,
 ) => {
     const { className, block } = props;
-    const { t } = useTranslation();
 
     return (
         <VStack gap="8" align="center" className={classNames('', {}, [className])}>

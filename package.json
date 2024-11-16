@@ -81,7 +81,7 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-storybook": "^0.6.10",
-    "eslint-plugin-valk-plugin": "^0.0.4",
+    "eslint-plugin-valk-plugin": "^0.0.5",
     "file-loader": "^6.2.0",
     "fork-ts-checker-webpack-plugin": "^9.0.2",
     "html-webpack-plugin": "^5.5.0",

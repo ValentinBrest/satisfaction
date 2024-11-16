@@ -2,7 +2,7 @@ import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import { RoutePath } from '@/app/providers/router/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/router';
 import { getArticleDetailsData } from '@/entities/Article';
 import BackIcon from '@/shared/assets/icons/back.svg';
 import EditIcon from '@/shared/assets/icons/edit.svg';
@@ -35,7 +35,7 @@ export const ArticleDetailsPageHeader = memo(
 
         return (
             <HStack
-                justify="between"
+                justify='between'
                 max
                 className={classNames('', {}, [className])}
             >
@@ -58,5 +58,5 @@ export const ArticleDetailsPageHeader = memo(
                 )}
             </HStack>
         );
-    },
+    }
 );

@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
-import { article } from '../../mocks/data';
+import { articleMockData } from '../../mocks/data';
 
 import { ArticleDetails } from './ArticleDetails';
 
@@ -22,7 +22,7 @@ export const Normal = Template.bind({});
 Normal.args = {};
 Normal.decorators = [StoreDecorator({
     articleDetails: {
-        data: article,
+        data: articleMockData,
     },
 })];
 export const Loading = Template.bind({});

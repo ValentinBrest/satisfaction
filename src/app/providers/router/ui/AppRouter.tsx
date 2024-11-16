@@ -3,9 +3,10 @@ import { Route, Routes } from 'react-router-dom';
 
 import { PageLoader } from '@/widgets/PageLoader';
 
-import { AppRoutesProps, routeConfig } from '../routeConfig/routeConfig';
+import { routeConfig } from '../config/routeConfig';
 
 import { RequireAuth } from './RequireAuth';
+import { AppRoutesProps } from '@/shared/types/router';
 
 const AppRouter = () => {
     const renderWithWrapper = useCallback((route: AppRoutesProps) => {
@@ -15,16 +16,20 @@ const AppRouter = () => {
             <Route
                 key={route.path}
                 path={route.path}
-                element={route.authOnly ? <RequireAuth roles={route.roles}>{el}</RequireAuth>: el}
+                element={
+                    route.authOnly ? (
+                        <RequireAuth roles={route.roles}>{el}</RequireAuth>
+                    ) : (
+                        el
+                    )
+                }
             />
         );
     }, []);
 
     return (
         <Suspense fallback={<PageLoader />}>
-            <Routes>
-                {routeConfig.map(renderWithWrapper)}
-            </Routes>
+            <Routes>{routeConfig.map(renderWithWrapper)}</Routes>
         </Suspense>
     );
 };

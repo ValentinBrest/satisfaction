@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { article } from '../../mocks/data';
+import { articleMockData } from '../../mocks/data';
 import { ArticleView } from '../../model/consts/articleConsts';
 
 import { ArticleListItem } from './ArticleListItem';
@@ -19,12 +19,12 @@ const Template: ComponentStory<typeof ArticleListItem> = (args) => (
 
 export const LIST = Template.bind({});
 LIST.args = {
-    article,
+    article: articleMockData,
     view: ArticleView.LIST,
 };
 
 export const GRID = Template.bind({});
 GRID.args = {
-    article,
+    article: articleMockData,
     view: ArticleView.GRID,
 };

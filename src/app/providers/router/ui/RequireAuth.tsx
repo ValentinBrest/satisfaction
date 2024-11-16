@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
 
 import { getRoles, getUserAuthData, UserRole } from '@/entities/User';
+import { RoutePath } from '@/shared/const/router';
 
-import { RoutePath } from '../routeConfig/routeConfig';
 
 type RequireAuthType = {
     children: JSX.Element;
@@ -20,8 +20,8 @@ export function RequireAuth({ children, roles }: RequireAuthType) {
             return true;
         }
 
-        return roles.some(requiredRole => {
-            return userRoles?.includes(requiredRole); 
+        return roles.some((requiredRole) => {
+            return userRoles?.includes(requiredRole);
         });
     }, [roles, userRoles]);
 

@@ -75,4 +75,4 @@ export const articleMockData: Article = {
     ],
 };
 
-export const articles = new Array(5).fill(0).map((item, index) => ({...article, id: String(index)}));
+export const articles = new Array(5).fill(0).map((item, index) => ({...articleMockData, id: String(index)}));

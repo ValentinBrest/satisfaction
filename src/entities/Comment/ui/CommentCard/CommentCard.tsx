@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import { RoutePath } from '@/app/providers/router/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink, Avatar, Text } from '@/shared/ui';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
@@ -11,9 +11,9 @@ import { Comment } from '../../model/types/comment';
 import cl from './CommentCard.module.scss';
 
 interface CommentCardProps {
-   className?: string;
-   comment?: Comment;
-   isLoading?: boolean;
+    className?: string;
+    comment?: Comment;
+    isLoading?: boolean;
 }
 
 export const CommentCard = memo((props: CommentCardProps) => {
@@ -21,9 +21,19 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(cl.CommentCard, {}, [className, cl.loading])}>
+            <div
+                className={classNames(cl.CommentCard, {}, [
+                    className,
+                    cl.loading,
+                ])}
+            >
                 <div className={cl.wrap}>
-                    <Skeleton className={cl.avatar} width={40} height={40} border="50%"/>
+                    <Skeleton
+                        className={cl.avatar}
+                        width={40}
+                        height={40}
+                        border='50%'
+                    />
                     <Skeleton className={cl.username} width={100} height={32} />
                 </div>
                 <Skeleton width={'100%'} height={50} />
@@ -31,28 +41,36 @@ export const CommentCard = memo((props: CommentCardProps) => {
         );
     }
 
-    if(!comment) {
+    if (!comment) {
         return null;
     }
 
     return (
-        <VStack gap="8" max className={classNames(cl.CommentCard, {}, [className])}>
+        <VStack
+            gap='8'
+            max
+            className={classNames(cl.CommentCard, {}, [className])}
+        >
             <div className={cl.wrap}>
                 <AppLink to={`${RoutePath.profile}${comment.user.id}`}>
-                    <Avatar 
+                    <Avatar
                         src={
-                            comment.user.avatar || 
+                            comment.user.avatar ||
                             'https://visualpharm.com/assets/381/Admin-595b40b65ba036ed117d3b23.svg'
-                        } 
-                        size={40} 
-                        alt="avatar"/>
+                        }
+                        size={40}
+                        alt='avatar'
+                    />
                 </AppLink>
-                <AppLink className={cl.username} to={`${RoutePath.profile}${comment.user.id}`}>
-                    <Text title={comment.user.username}/>
+                <AppLink
+                    className={cl.username}
+                    to={`${RoutePath.profile}${comment.user.id}`}
+                >
+                    <Text title={comment.user.username} />
                 </AppLink>
             </div>
-            
-            <Text className={cl.comment} text={comment.text}/>
+
+            <Text className={cl.comment} text={comment.text} />
         </VStack>
     );
 });

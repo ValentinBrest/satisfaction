@@ -612,3 +612,7 @@
 
 # 89 Опции в линтере. Добавляем поддержку алисов в наш eslint плагин
 1. upgrade eslint-plugin-valk-plugin
+
+
+# 90 Ограничиваем доступ к внутренностям модуля. Public api imports
+1. add new rule: public-api-imports

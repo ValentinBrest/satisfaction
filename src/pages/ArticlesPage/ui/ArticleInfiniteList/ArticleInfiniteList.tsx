@@ -2,11 +2,12 @@ import { memo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { ArticleList } from '@/entities/Article';
+
 import {
     getArticlesPageIsLoading,
     getArticlesPageView,
-} from '@/pages/ArticlesPage/model/selectors/articlePageSelectors';
-import { getArticles } from '@/pages/ArticlesPage/model/slices/articlePageSlice';
+} from '../../model/selectors/articlePageSelectors';
+import { getArticles } from '../../model/slices/articlePageSlice';
 
 
 interface ArticleInfiniteListProps {

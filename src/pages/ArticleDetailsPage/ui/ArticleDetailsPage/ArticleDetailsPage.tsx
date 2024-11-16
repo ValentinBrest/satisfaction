@@ -11,7 +11,7 @@ import {
     ReducerList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { VStack } from '@/shared/ui/Stack';
-import { Page } from '@/widgets/Page/Page';
+import { Page } from '@/widgets/Page';
 
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
@@ -52,7 +52,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                     <ArticleDetails id={id} />
                 </VStack>
                 <ArticleRecommendationsList />
-                <ArticleRating articleId={id}/>
+                <ArticleRating articleId={id} />
                 <ArticleDetailsComments id={id} />
             </Page>
         </DynamicModuleLoader>

@@ -1,7 +1,7 @@
 import { ArticleBlockType, ArticleType } from '../model/consts/articleConsts';
 import { Article } from '../model/types/article';
 
-export const article: Article = {
+export const articleMockData: Article = {
     'id': '1',
     'title': 'Javascript news',
     'subtitle': 'Что нового в JS за 2022 год?',

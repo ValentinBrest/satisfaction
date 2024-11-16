@@ -616,3 +616,7 @@
 
 # 90 Ограничиваем доступ к внутренностям модуля. Public api imports
 1. add new rule: public-api-imports
+
+
+# 91 Testing public api. Micromatch. Тесты на eslint плагин
+1. add new rule for test imports

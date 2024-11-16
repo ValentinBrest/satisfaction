@@ -29,6 +29,7 @@ module.exports = {
     },
     rules: {
         'valk-plugin/path-checker': ['error', {alias: '@'}],
+        'valk-plugin/public-api-imports': ['error', {alias: '@'}],
         'react/jsx-indent': [2, 4],
         indent: [2, 4],
         'react/jsx-filename-extension': [

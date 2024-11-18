@@ -624,3 +624,7 @@
 
 # 93 Layer imports. Улучшаем правила арх-ры. Запрещаем импорт из верхних слоев
 1. add new rule "layer-imports" + refactoring
+
+
+# 95 ESLINT Плагин на неиспользуемые импорты
+1. add new rule eslint-plugin-unused-imports

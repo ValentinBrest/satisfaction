@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, isAdmin, userActions } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { NotificationsButton } from '@/features/NotificationsButton';
+import { RoutePath } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     AppLink,
@@ -19,7 +20,6 @@ import { Menu } from '@/shared/ui/Popups/ui/Menu/Menu';
 import { HStack } from '@/shared/ui/Stack';
 
 import cl from './NavBar.module.scss';
-import { RoutePath } from '@/shared/const/router';
 
 interface NavBarProps {
     className?: string;
@@ -61,7 +61,7 @@ export const NavBar = memo(({ className }: NavBarProps) => {
                     {t('sozdat-statyu')}
                 </AppLink>
             )}
-            <HStack max gap='8' justify='end'>
+            <HStack max gap="8" justify="end">
                 {authData ? (
                     <>
                         <NotificationsButton />
@@ -69,11 +69,11 @@ export const NavBar = memo(({ className }: NavBarProps) => {
                             items={[
                                 ...(isAdminUser
                                     ? [
-                                          {
-                                              content: t('Админка'),
-                                              href: RoutePath.admin_panel,
-                                          },
-                                      ]
+                                        {
+                                            content: t('Админка'),
+                                            href: RoutePath.admin_panel,
+                                        },
+                                    ]
                                     : []),
                                 {
                                     content: t('profil'),
@@ -88,7 +88,7 @@ export const NavBar = memo(({ className }: NavBarProps) => {
                                 <Avatar
                                     size={30}
                                     src={authData.avatar}
-                                    alt='avatar'
+                                    alt="avatar"
                                 />
                             }
                         />

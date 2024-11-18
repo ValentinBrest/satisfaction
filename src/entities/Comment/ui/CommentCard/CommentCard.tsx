@@ -32,7 +32,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
                         className={cl.avatar}
                         width={40}
                         height={40}
-                        border='50%'
+                        border="50%"
                     />
                     <Skeleton className={cl.username} width={100} height={32} />
                 </div>
@@ -47,7 +47,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
     return (
         <VStack
-            gap='8'
+            gap="8"
             max
             className={classNames(cl.CommentCard, {}, [className])}
         >
@@ -59,7 +59,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
                             'https://visualpharm.com/assets/381/Admin-595b40b65ba036ed117d3b23.svg'
                         }
                         size={40}
-                        alt='avatar'
+                        alt="avatar"
                     />
                 </AppLink>
                 <AppLink

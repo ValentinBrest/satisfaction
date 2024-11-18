@@ -21,6 +21,7 @@ module.exports = {
         'i18next',
         'react-hooks',
         'valk-plugin',
+        'unused-imports',
     ],
     settings: {
         react: {
@@ -28,21 +29,6 @@ module.exports = {
         },
     },
     rules: {
-        'valk-plugin/path-checker': ['error', {alias: '@'}],
-        'valk-plugin/public-api-imports': [
-            'error', 
-            {
-                alias: '@',
-                testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx']
-            }
-        ],
-        'valk-plugin/layer-imports': [
-            'error',
-            {
-                alias: '@',
-                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
-            },
-        ],
         'react/jsx-indent': [2, 4],
         indent: [2, 4],
         'react/jsx-filename-extension': [
@@ -67,6 +53,22 @@ module.exports = {
         'react/display-name': 'off',
         'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
         'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
+        'unused-imports/no-unused-imports': 'error',
+        'valk-plugin/path-checker': ['error', {alias: '@'}],
+        'valk-plugin/public-api-imports': [
+            'error', 
+            {
+                alias: '@',
+                testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
+            },
+        ],
+        'valk-plugin/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            },
+        ],
         'simple-import-sort/imports': [
             'error',
             {

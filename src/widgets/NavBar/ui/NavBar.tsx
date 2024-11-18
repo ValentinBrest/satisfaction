@@ -16,7 +16,7 @@ import {
     Text,
     TextTheme,
 } from '@/shared/ui';
-import { Menu } from '@/shared/ui/Popups/ui/Menu/Menu';
+import { Menu } from '@/shared/ui/Popups';
 import { HStack } from '@/shared/ui/Stack';
 
 import cl from './NavBar.module.scss';

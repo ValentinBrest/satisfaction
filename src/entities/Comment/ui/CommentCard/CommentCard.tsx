@@ -3,7 +3,7 @@ import { memo } from 'react';
 import { RoutePath } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink, Avatar, Text } from '@/shared/ui';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import { VStack } from '@/shared/ui/Stack';
 
 import { Comment } from '../../model/types/comment';

@@ -36,6 +36,13 @@ module.exports = {
                 testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx']
             }
         ],
+        'valk-plugin/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            },
+        ],
         'react/jsx-indent': [2, 4],
         indent: [2, 4],
         'react/jsx-filename-extension': [

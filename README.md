@@ -620,3 +620,7 @@
 
 # 91 Testing public api. Micromatch. Тесты на eslint плагин
 1. add new rule for test imports
+
+
+# 93 Layer imports. Улучшаем правила арх-ры. Запрещаем импорт из верхних слоев
+1. add new rule "layer-imports" + refactoring

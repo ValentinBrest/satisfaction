@@ -632,5 +632,10 @@
 
 # 96 Делаем автофикс для public api линтера
 
-
 # 97 Документация проекта [!!!ПРОПУЩЕН]
+
+
+# 98 Алиасы в jest. Fullscreen mode storybook
+1. Добавил алиасы в jest
+
+# 98 Алиасы в jest. Fullscreen mode storybook [!!!ПРОПУЩЕН]

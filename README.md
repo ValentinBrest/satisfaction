@@ -638,4 +638,14 @@
 # 98 Алиасы в jest. Fullscreen mode storybook
 1. Добавил алиасы в jest
 
-# 98 Алиасы в jest. Fullscreen mode storybook [!!!ПРОПУЩЕН]
+
+# 99 Алиасы в jest. Fullscreen mode storybook [!!!ПРОПУЩЕН]
+
+
+# 100 Generic components
+
+# 101 Однозначное сопоставление типов в ReducersList
+
+
+# 102 Улучшаем и стандартизируем работу с роутером
+1. рефакторинг роутинга

@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import { RoutePath } from '@/shared/const/router';
+import { getRouteProfile } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink, Avatar, Text } from '@/shared/ui';
 import { Skeleton } from '@/shared/ui/Skeleton';
@@ -52,7 +52,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
             className={classNames(cl.CommentCard, {}, [className])}
         >
             <div className={cl.wrap}>
-                <AppLink to={`${RoutePath.profile}${comment.user.id}`}>
+                <AppLink to={getRouteProfile(comment.user.id)}>
                     <Avatar
                         src={
                             comment.user.avatar ||
@@ -64,7 +64,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
                 </AppLink>
                 <AppLink
                     className={cl.username}
-                    to={`${RoutePath.profile}${comment.user.id}`}
+                    to={getRouteProfile(comment.user.id)}
                 >
                     <Text title={comment.user.username} />
                 </AppLink>

@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { RatingCard } from '@/entities/Rating';
+import { Counter } from '@/entities/Counter';
 import { Page } from '@/widgets/Page';
 
 const MainPage = memo(() => {
@@ -10,7 +10,7 @@ const MainPage = memo(() => {
     return (
         <Page>
             <div>{t('glavnaya-stranica')}</div>
-            <RatingCard hasFeedback={true} />
+            <Counter /> 
         </Page>
     );
 });

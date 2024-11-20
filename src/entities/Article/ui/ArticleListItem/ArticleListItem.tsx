@@ -5,6 +5,8 @@ import EyeIcon from '@/shared/assets/icons/article/eye.svg';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink, Avatar, Button, Card, Text, TextSize } from '@/shared/ui';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 import {
     ArticleBlockType,
@@ -56,7 +58,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     size={TextSize.L}
                 />
                 {types}
-                <img src={article.img} alt={article.title} className={cl.img} />
+                <AppImage 
+                    fallback={<Skeleton width="100%" height={250} />}
+                    src={article.img} 
+                    alt={article.title} 
+                    className={cl.img} 
+                />
                 {textBlock && (
                     <ArticleTextBlockComponent
                         block={textBlock}
@@ -80,7 +87,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         <AppLink to={getRouteArticleDetails(article.id)} target={target}>
             <Card className={classNames(cl.card, {}, [className, cl[view]])}>
                 <div className={cl.imageWrap}>
-                    <img
+                    <AppImage
+                        fallback={<Skeleton width={'100%'} height={200} />}
                         src={article.img}
                         alt={article.title}
                         className={cl.img}

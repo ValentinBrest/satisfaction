@@ -89,6 +89,7 @@ export const NavBar = memo(({ className }: NavBarProps) => {
                                     size={30}
                                     src={authData.avatar}
                                     alt="avatar"
+                                    fallbackInverted={true}
                                 />
                             }
                         />

@@ -1,31 +1,10 @@
 import webpack from 'webpack';
+import { babelLoader } from './loaders/buildBabelLoader';
 
-import babelRemovePropsPlugin from '../babel/babelRemovePropsPlugin';
-
-import { buildCssLoaders } from './loaders/buildCssLoaders';
+import { buildCssLoader } from './loaders/buildCssLoader';
 
 export function buildLoader (isDev: boolean): webpack.RuleSetRule[] {
-    const babelLoader = (isTsx: boolean) => ({
-        test: isTsx ? /\.(jsx|tsx)$/: /\.(js|ts)$/,
-        exclude: /node_modules/,
-        use: {
-            loader: 'babel-loader',
-            options: {
-                presets: ['@babel/preset-env'],
-                plugins: [[
-                    '@babel/plugin-transform-typescript',
-                    {isTsx},
-                ],
-                '@babel/plugin-transform-runtime',
-                isTsx && [
-                    babelRemovePropsPlugin,
-                    {
-                        props: ['data-testid'],
-                    }, 
-                ]].filter(Boolean),
-            },
-        },
-    });
+    const isProd = !isDev;
   
     const svgLoader = {
         test: /\.svg$/,
@@ -41,9 +20,9 @@ export function buildLoader (isDev: boolean): webpack.RuleSetRule[] {
         ],
     };
   
-    const cssLoader = buildCssLoaders(isDev);
-    const codeBabelLoader = babelLoader(false);
-    const tsxCodeBabelLoader = babelLoader(true);
+    const cssLoader = buildCssLoader(isDev);
+    const codeBabelLoader = babelLoader(false, isProd);
+    const tsxCodeBabelLoader = babelLoader(true, isProd);
   
     // const tsLoader = {
     //     test: /\.tsx?$/,

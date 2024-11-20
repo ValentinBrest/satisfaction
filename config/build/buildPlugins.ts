@@ -55,14 +55,14 @@ export function buildPlugins (
                 filename: 'css/[name].[contenthash:8].css',
                 chunkFilename: 'css/[name].[contenthash:8].css',
             }),
-        )
+        );
         plugins.push(
             new CopyPlugin({
                 patterns: [
                     { from: locales, to: buildLocales },
                 ],
             }),
-        )
+        );
     }
     
     return plugins;

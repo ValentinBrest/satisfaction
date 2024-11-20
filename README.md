@@ -663,3 +663,7 @@
 # 105 BuildSlice. BuildSelector. Улучшаем работу со state. useActions
 1. BuildSlice - чтобы не использовать dispatch в компонентах
 2. BuildSelector - чтобы не использовать useSelector
+
+
+# 106 Работа с изображенями. AppImage, Preload, lazy
+1. создал AppImage

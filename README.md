@@ -650,5 +650,11 @@
 # 102 Улучшаем и стандартизируем работу с роутером
 1. рефакторинг роутинга
 
+
 # 103 Рефакторинг entities и features
 1. перенес ArticleSortSelector в features
+
+
+# 104 Улучшаем сборку. Babel loader cache. Postinstall hooks
+1. рефакторинг лоадеров и конфига
+2. создал removeCacheNodeModules

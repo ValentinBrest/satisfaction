@@ -658,3 +658,8 @@
 # 104 Улучшаем сборку. Babel loader cache. Postinstall hooks
 1. рефакторинг лоадеров и конфига
 2. создал removeCacheNodeModules
+
+
+# 105 BuildSlice. BuildSelector. Улучшаем работу со state. useActions
+1. BuildSlice - чтобы не использовать dispatch в компонентах
+2. BuildSelector - чтобы не использовать useSelector

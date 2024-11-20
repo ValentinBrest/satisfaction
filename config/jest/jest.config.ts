@@ -43,6 +43,7 @@ export default {
         '\\.s?css$': 'identity-obj-proxy',
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
         'axios': 'axios/dist/node/axios.cjs',
+        '^@/(.*)$': '<rootDir>/src/$1',
     },
     testMatch: [
         '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',

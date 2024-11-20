@@ -624,3 +624,31 @@
 
 # 93 Layer imports. Улучшаем правила арх-ры. Запрещаем импорт из верхних слоев
 1. add new rule "layer-imports" + refactoring
+
+
+# 95 ESLINT Плагин на неиспользуемые импорты
+1. add new rule eslint-plugin-unused-imports
+
+
+# 96 Делаем автофикс для public api линтера
+
+# 97 Документация проекта [!!!ПРОПУЩЕН]
+
+
+# 98 Алиасы в jest. Fullscreen mode storybook
+1. Добавил алиасы в jest
+
+
+# 99 Алиасы в jest. Fullscreen mode storybook [!!!ПРОПУЩЕН]
+
+
+# 100 Generic components
+
+# 101 Однозначное сопоставление типов в ReducersList
+
+
+# 102 Улучшаем и стандартизируем работу с роутером
+1. рефакторинг роутинга
+
+# 103 Рефакторинг entities и features
+1. перенес ArticleSortSelector в features

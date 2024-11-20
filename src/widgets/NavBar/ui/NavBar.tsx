@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, isAdmin, userActions } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { NotificationsButton } from '@/features/NotificationsButton';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteAdmin, getRouteArticleCreate, getRouteProfile } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     AppLink,
@@ -16,7 +16,7 @@ import {
     Text,
     TextTheme,
 } from '@/shared/ui';
-import { Menu } from '@/shared/ui/Popups/ui/Menu/Menu';
+import { Menu } from '@/shared/ui/Popups';
 import { HStack } from '@/shared/ui/Stack';
 
 import cl from './NavBar.module.scss';
@@ -55,7 +55,7 @@ export const NavBar = memo(({ className }: NavBarProps) => {
             {authData && (
                 <AppLink
                     theme={AppLinkTheme.INVERTED}
-                    to={RoutePath.article_create}
+                    to={getRouteArticleCreate()}
                     className={cl.new}
                 >
                     {t('sozdat-statyu')}
@@ -71,13 +71,13 @@ export const NavBar = memo(({ className }: NavBarProps) => {
                                     ? [
                                         {
                                             content: t('Админка'),
-                                            href: RoutePath.admin_panel,
+                                            href: getRouteAdmin(),
                                         },
                                     ]
                                     : []),
                                 {
                                     content: t('profil'),
-                                    href: RoutePath.profile + authData.id,
+                                    href: getRouteProfile(authData.id),
                                 },
                                 {
                                     content: t('vyiti'),

@@ -672,3 +672,7 @@
 # 107 Тесты на роутер. Обновляем RTL 
 1. обновил RTL
 2. добавил тесты AppRouter
+
+
+# 108 Lint staged и pre commit хуки
+1. добавил Lint staged для pre-commit

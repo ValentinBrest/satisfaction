@@ -7,16 +7,16 @@ import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { ArticleViewSelector } from '@/features/ArticleViewSelector';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
-import { SortOrder } from '@/shared/types';
+import { SortOrder } from '@/shared/types/sort';
 import { Card, Input } from '@/shared/ui';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { TabItem, Tabs } from '@/shared/ui/Tabs';
 
-import { 
-    getArticlesPageOrder, 
-    getArticlesPageSearch, 
-    getArticlesPageSort, 
-    getArticlesPageType, 
+import {
+    getArticlesPageOrder,
+    getArticlesPageSearch,
+    getArticlesPageSort,
+    getArticlesPageType,
     getArticlesPageView,
 } from '../../model/selectors/articlePageSelectors';
 import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArticleList';
@@ -25,7 +25,7 @@ import { articlesPageActions } from '../../model/slices/articlePageSlice';
 import cl from './ArticlesPageFilters.module.scss';
 
 interface ArticlesPageFiltersProps {
-   className?: string;
+    className?: string;
 }
 
 export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
@@ -38,76 +38,98 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
     const search = useSelector(getArticlesPageSearch);
     const type = useSelector(getArticlesPageType);
 
-    const typeTabs = useMemo<TabItem[]>(() => [
-        {
-            value: ArticleType.ALL,
-            content: t('Все'),
-        },
-        {
-            value: ArticleType.SCIENCE,
-            content: t('Наука'),
-        },
-        {
-            value: ArticleType.ECONOMICS,
-            content: t('Экономика'),
-        },
-        {
-            value: ArticleType.IT,
-            content: t('IT'),
-        },
-    ], [t]);
+    const typeTabs = useMemo<TabItem[]>(
+        () => [
+            {
+                value: ArticleType.ALL,
+                content: t('Все'),
+            },
+            {
+                value: ArticleType.SCIENCE,
+                content: t('Наука'),
+            },
+            {
+                value: ArticleType.ECONOMICS,
+                content: t('Экономика'),
+            },
+            {
+                value: ArticleType.IT,
+                content: t('IT'),
+            },
+        ],
+        [t],
+    );
 
     const fetchData = useCallback(() => {
-        dispatch(fetchArticleList({replace: true}));
+        dispatch(fetchArticleList({ replace: true }));
     }, [dispatch]);
 
     const debouncedFetchData = useDebounce(fetchData, 500);
 
-    const onViewChange = useCallback((view: ArticleView) => {
-        dispatch(articlesPageActions.setView(view));
-        dispatch(articlesPageActions.setPage(1));
-        fetchData();
-    }, [dispatch, fetchData]);
+    const onViewChange = useCallback(
+        (view: ArticleView) => {
+            dispatch(articlesPageActions.setView(view));
+            dispatch(articlesPageActions.setPage(1));
+            fetchData();
+        },
+        [dispatch, fetchData],
+    );
 
-    const onChangeOrder = useCallback((newOrder: SortOrder) => {
-        dispatch(articlesPageActions.setOrder(newOrder));
-        dispatch(articlesPageActions.setPage(1));
-        fetchData();
-    }, [dispatch, fetchData]);
+    const onChangeOrder = useCallback(
+        (newOrder: SortOrder) => {
+            dispatch(articlesPageActions.setOrder(newOrder));
+            dispatch(articlesPageActions.setPage(1));
+            fetchData();
+        },
+        [dispatch, fetchData],
+    );
 
-    const onChangeSort = useCallback((newSort: ArticleSortField) => {
-        dispatch(articlesPageActions.setSort(newSort));
-        dispatch(articlesPageActions.setPage(1));
-        fetchData();
-    }, [dispatch, fetchData]);
+    const onChangeSort = useCallback(
+        (newSort: ArticleSortField) => {
+            dispatch(articlesPageActions.setSort(newSort));
+            dispatch(articlesPageActions.setPage(1));
+            fetchData();
+        },
+        [dispatch, fetchData],
+    );
 
-    const onChangeSearch = useCallback((search: string) => {
-        dispatch(articlesPageActions.setSearch(search));
-        dispatch(articlesPageActions.setPage(1));
-        debouncedFetchData();
-    }, [dispatch, debouncedFetchData]);
+    const onChangeSearch = useCallback(
+        (search: string) => {
+            dispatch(articlesPageActions.setSearch(search));
+            dispatch(articlesPageActions.setPage(1));
+            debouncedFetchData();
+        },
+        [dispatch, debouncedFetchData],
+    );
 
-    const onChangeType = useCallback((tab : TabItem) => {
-        dispatch(articlesPageActions.setType(tab.value as ArticleType));
-        dispatch(articlesPageActions.setPage(1));
-        fetchData();
-    }, [dispatch, fetchData]);
+    const onChangeType = useCallback(
+        (tab: TabItem) => {
+            dispatch(articlesPageActions.setType(tab.value as ArticleType));
+            dispatch(articlesPageActions.setPage(1));
+            fetchData();
+        },
+        [dispatch, fetchData],
+    );
 
     return (
         <VStack gap="16" max>
             <HStack justify="between" max>
-                <ArticleSortSelector 
-                    sort={sort} 
+                <ArticleSortSelector
+                    sort={sort}
                     order={order}
                     onChangeOrder={onChangeOrder}
                     onChangeSort={onChangeSort}
                 />
-                <ArticleViewSelector view={view} onViewClick={onViewChange}/>
+                <ArticleViewSelector view={view} onViewClick={onViewChange} />
             </HStack>
             <Card className={cl.search}>
-                <Input placeholder={t('poisk')} onChange={onChangeSearch} value={search}/>
+                <Input
+                    placeholder={t('poisk')}
+                    onChange={onChangeSearch}
+                    value={search}
+                />
             </Card>
-            <Tabs tabs={typeTabs} value={type} onTabClick={onChangeType}/>
+            <Tabs tabs={typeTabs} value={type} onTabClick={onChangeType} />
         </VStack>
     );
 });

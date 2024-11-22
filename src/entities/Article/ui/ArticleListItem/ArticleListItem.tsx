@@ -41,7 +41,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         ) as ArcticleTextBlock;
 
         return (
-            <Card className={classNames(cl.card, {}, [className, cl[view]])}>
+            <Card className={classNames(cl.card, {}, [className, cl[view]])} data-testid="ArticleListItem">
                 <div className={cl.header}>
                     <Avatar
                         size={30}
@@ -84,7 +84,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     }
 
     return (
-        <AppLink to={getRouteArticleDetails(article.id)} target={target}>
+        <AppLink to={getRouteArticleDetails(article.id)} target={target} data-testid={'ArticleListItem'}>
             <Card className={classNames(cl.card, {}, [className, cl[view]])}>
                 <div className={cl.imageWrap}>
                     <AppImage

@@ -40,14 +40,19 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} >
-            <VStack gap="8" max className={classNames(cl.AddCommentForm, {}, [className])}>
+            <VStack gap="8" max className={classNames(cl.AddCommentForm, {}, [className])} data-testid="AddCommentForm">
                 <Input 
                     onChange={onCommentTextChange}
                     value={text} 
                     className={cl.input} 
                     placeholder={t('vvedite-kommentarii')}
+                    data-testId="AddCommentForm.Input"
                 />
-                <Button onClick={onSendHandler} className={cl.button}>{t('otpravit')}</Button>
+                <Button 
+                    onClick={onSendHandler} 
+                    className={cl.button}
+                    data-testId="AddCommentForm.Button"
+                >{t('otpravit')}</Button>
             </VStack>
         </DynamicModuleLoader>
     );

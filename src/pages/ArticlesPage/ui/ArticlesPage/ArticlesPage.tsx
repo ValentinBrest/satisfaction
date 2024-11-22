@@ -43,7 +43,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-            <Page className={className} onScrollEnd={onLoadNextPart}>
+            <Page data-testid="ArticlesPage" className={className} onScrollEnd={onLoadNextPart}>
                 <VStack gap="24" max>
                     <Text title={t('articles')} size={TextSize.L} />
                     <ArticlesPageFilters />

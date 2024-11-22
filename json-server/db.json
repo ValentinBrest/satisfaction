@@ -787,6 +787,15 @@
         "USER"
       ],
       "avatar": "https://visualpharm.com/assets/381/Admin-595b40b65ba036ed117d3b23.svg"
+    },
+    {
+      "id": "usertest",
+      "username": "usertest",
+      "password": "123",
+      "role": [
+        "USER"
+      ],
+      "avatar": "https://visualpharm.com/assets/381/Admin-595b40b65ba036ed117d3b23.svg"
     }
   ],
   "profile": [
@@ -810,6 +819,17 @@
       "country": "Belarus",
       "city": "Brest",
       "username": "user",
+      "avatar": "https://visualpharm.com/assets/381/Admin-595b40b65ba036ed117d3b23.svg"
+    },
+    {
+      "id": "usertest",
+      "first": "usertest",
+      "lastname": "usertest",
+      "age": 99,
+      "currency": "BYN",
+      "country": "Belarus",
+      "city": "Brest",
+      "username": "usertest",
       "avatar": "https://visualpharm.com/assets/381/Admin-595b40b65ba036ed117d3b23.svg"
     }
   ],

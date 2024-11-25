@@ -777,7 +777,10 @@
         "ADMIN",
         "USER"
       ],
-      "avatar": "https://visualpharm.com/assets/381/Admin-595b40b65ba036ed117d3b23.svg"
+      "avatar": "https://visualpharm.com/assets/381/Admin-595b40b65ba036ed117d3b23.svg",
+      "jsonSettings": {
+        "theme": "dark"
+      }
     },
     {
       "id": "2",
@@ -786,7 +789,10 @@
       "role": [
         "USER"
       ],
-      "avatar": "https://visualpharm.com/assets/381/Admin-595b40b65ba036ed117d3b23.svg"
+      "avatar": "https://visualpharm.com/assets/381/Admin-595b40b65ba036ed117d3b23.svg",
+      "jsonSettings": {
+        "theme": "dark"
+      }
     },
     {
       "id": "usertest",

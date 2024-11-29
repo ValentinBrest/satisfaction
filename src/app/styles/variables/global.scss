@@ -25,12 +25,13 @@
 
     // Размеры
     --navbar-height: 50px;
-    --sidebar-width: 300px;
+    --sidebar-width: 200px;
     --sidebar-width-collapsed: 80px;
+    --navbar-width: 100px;
 
     // Цвета
-    --light-color: #eff0ef;
-    --dark-color: #1b0064;
+    --light-color: #e7efc5;
+    --dark-color: #413c58;
     --orange-color: #ba7d01;
     --text-color: #091547ef;
     --inverted-text-color: #e3f5f5;
@@ -50,4 +51,17 @@
 
     // Z-index
     --modal-z-index: 10;
+
+    // Padding
+    --padding-s: 10px;
+    --padding-m: 20px;
+    --padding-l: 30px;
+    --padding-x: 40px;
+
+    // margin
+    --margin-s: 10px;
+    --margin-xs: 15px;
+    --margin-m: 20px;
+    --margin-l: 30px;
+    --margin-x: 40px;
 }

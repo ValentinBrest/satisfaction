@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, isAdmin, userActions } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { NotificationsButton } from '@/features/NotificationsButton';
-import { getRouteAdmin, getRouteArticleCreate, getRouteProfile } from '@/shared/const/router';
+import { getRouteArticleCreate } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     AppLink,
@@ -13,11 +13,11 @@ import {
     Avatar,
     Button,
     ButtonTheme,
-    Text,
-    TextTheme,
 } from '@/shared/ui';
 import { Menu } from '@/shared/ui/Popups';
-import { HStack } from '@/shared/ui/Stack';
+import { VStack } from '@/shared/ui/Stack';
+
+import menuConfig from './configMenu';
 
 import cl from './NavBar.module.scss';
 
@@ -26,7 +26,7 @@ interface NavBarProps {
 }
 
 export const NavBar = memo(({ className }: NavBarProps) => {
-    const { t } = useTranslation('main');
+    const { t } = useTranslation();
     const dispatch = useDispatch();
     const authData = useSelector(getUserAuthData);
     const isAdminUser = useSelector(isAdmin);
@@ -47,43 +47,13 @@ export const NavBar = memo(({ className }: NavBarProps) => {
 
     return (
         <header className={classNames(cl.NavBar, {}, [className])}>
-            <Text
-                theme={TextTheme.INVERTED}
-                title={'Valk'}
-                className={cl.appName}
-            />
-            {authData && (
-                <AppLink
-                    theme={AppLinkTheme.INVERTED}
-                    to={getRouteArticleCreate()}
-                    className={cl.new}
-                >
-                    {t('sozdat-statyu')}
-                </AppLink>
-            )}
-            <HStack max gap="8" justify="end">
+            
+            
+            <VStack max gap="8" align="center">
                 {authData ? (
                     <>
-                        <NotificationsButton />
                         <Menu
-                            items={[
-                                ...(isAdminUser
-                                    ? [
-                                        {
-                                            content: t('Админка'),
-                                            href: getRouteAdmin(),
-                                        },
-                                    ]
-                                    : []),
-                                {
-                                    content: t('profil'),
-                                    href: getRouteProfile(authData.id),
-                                },
-                                {
-                                    content: t('vyiti'),
-                                    onCLick: onLogout,
-                                },
-                            ]}
+                            items={menuConfig(isAdminUser, authData.id, onLogout)}
                             trigger={
                                 <Avatar
                                     size={30}
@@ -93,6 +63,7 @@ export const NavBar = memo(({ className }: NavBarProps) => {
                                 />
                             }
                         />
+                        <NotificationsButton />
                     </>
                 ) : (
                     <Button
@@ -102,7 +73,16 @@ export const NavBar = memo(({ className }: NavBarProps) => {
                         {t('voiti')}
                     </Button>
                 )}
-            </HStack>
+            </VStack>
+            {authData && (
+                <AppLink
+                    theme={AppLinkTheme.INVERTED}
+                    to={getRouteArticleCreate()}
+                    className={cl.new}
+                >
+                    {t('createArticle')}
+                </AppLink>
+            )}
 
             <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
         </header>

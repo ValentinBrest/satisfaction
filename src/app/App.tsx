@@ -24,10 +24,10 @@ function App() {
     return (
         <div className="app">
             <Suspense fallback="">
-                <NavBar />
                 <div className="content-page">
                     <Sidebar />
                     {inited && <AppRouter />}
+                    <NavBar />
                 </div>
             </Suspense>
         </div>

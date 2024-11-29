@@ -1,4 +1,5 @@
 import { Fragment, ReactNode } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
     Menu as HMenu,
     MenuButton,
@@ -30,7 +31,7 @@ interface MenuProps {
 
 export function Menu(props: MenuProps) {
     const { className, items, trigger, direction = 'bottomLeft' } = props;
-
+    const { t } = useTranslation('menu');
     const menuClasses = [cl[direction]];
 
     return (
@@ -49,7 +50,7 @@ export function Menu(props: MenuProps) {
                                 [cl.active]: active,
                             })}
                         >
-                            {item.content}
+                            {t(`${item.content}`)}
                         </button>
                     );
 

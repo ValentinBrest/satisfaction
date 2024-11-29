@@ -1,19 +1,15 @@
 .NavBar {
     display: flex;
+    flex-direction: column;
     align-items: center;
 
-    width: 100%;
-    height: var(--navbar-height);
-    padding: 20px;
+    width: var(--navbar-width);
+    height: 100vh;
+    padding: var(--padding-m);
 
     background: var(--inverted-bg-color);
 }
 
-.mainLink {
-    margin-right: 15px;
-}
-
-.appName {
-    width: var(--sidebar-width);
-    margin-left: 15px;
+.new {
+    text-align: center;
 }

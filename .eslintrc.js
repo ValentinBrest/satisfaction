@@ -55,7 +55,7 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
         'unused-imports/no-unused-imports': 'error',
         'valk-plugin/path-checker': ['error', {alias: '@'}],
-        "@typescript-eslint/no-namespace": "off",
+        '@typescript-eslint/no-namespace': 'off',
         'valk-plugin/public-api-imports': [
             'error', 
             {

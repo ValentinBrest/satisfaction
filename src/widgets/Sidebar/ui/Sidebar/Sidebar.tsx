@@ -6,7 +6,8 @@ import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import OpenMenu from '@/shared/assets/icons/sidebar/menu.svg';
 import CloseMenu from '@/shared/assets/icons/sidebar/xmark.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonSize, ButtonTheme } from '@/shared/ui';
+import { Button, ButtonSize, ButtonTheme, Text,TextTheme } from '@/shared/ui';
+import { Icon } from '@/shared/ui/Icon';
 import { VStack } from '@/shared/ui/Stack';
 
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
@@ -31,6 +32,11 @@ export const Sidebar = memo(({className}: SidebarProps) => {
             data-testid="sidebar" 
             className={classNames(cl.Sidebar, {[cl.collapsed]: collapsed}, [className])}
         >
+            <Text
+                theme={TextTheme.INVERTED}
+                title={'VALK'}
+                className={cl.appName}
+            />
             <Button 
                 data-testid="sidebar-toggle" 
                 theme={ButtonTheme.CLEAR}
@@ -38,7 +44,7 @@ export const Sidebar = memo(({className}: SidebarProps) => {
                 square
                 size={ButtonSize.M}
             >
-                {collapsed ? <OpenMenu className={cl.icon}/> : <CloseMenu className={cl.icon}/>}
+                {<Icon inverted Svg={collapsed ? OpenMenu: CloseMenu} width={20} height={20}/>}
             </Button>
             <VStack role={'navigation'} gap="16" className={cl.items}>
                 {sidebarItemsList.map(item => (

@@ -23,6 +23,6 @@
   "city": "City",
   "role": "Role",
   "username": "Username",
-  "ukazhite-valyutu": "Specify currency",
-  "ukazhite-stranu": "Specify country"
+  "ukazhite-valyutu": "Currency",
+  "ukazhite-stranu": "Country"
 }

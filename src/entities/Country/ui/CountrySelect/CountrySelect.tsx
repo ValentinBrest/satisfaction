@@ -35,7 +35,7 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
     return (
         <Listbox
             className={classNames('', {}, [className])}
-            label={t('ukazhite-stranu')}
+            label={`${t('ukazhite-stranu')}:`}
             items={options}
             value={value}
             onChange={onChangeHandler}

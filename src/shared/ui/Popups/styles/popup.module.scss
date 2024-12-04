@@ -64,3 +64,13 @@
 .disabled {
     opacity: 0.85;
 }
+
+.iconDown {
+    align-self: center;
+    margin-left: var(--margin-m);
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+}

@@ -1,10 +1,17 @@
 import { ReactNode } from 'react';
-import { Listbox as HListbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react';
+import {
+    Listbox as HListbox,
+    ListboxButton,
+    ListboxOption,
+    ListboxOptions,
+} from '@headlessui/react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropdownDirection } from '@/shared/types/ui';
 
+import IconDown from '../../../../assets/icons/down.svg';
 import { Button } from '../../../Button/Button';
+import { Icon } from '../../../Icon';
 import { HStack } from '../../../Stack';
 
 import cl from '../../styles/popup.module.scss';
@@ -42,7 +49,7 @@ export function Listbox(props: ListboxProps) {
 
     return (
         <HStack gap="4">
-            {label && <span>{`${label}>`}</span>}
+            {label && <span style={{width: '98px'}}>{label}</span>}
             <HListbox
                 disabled={readonly}
                 as={'div'}
@@ -51,7 +58,10 @@ export function Listbox(props: ListboxProps) {
                 onChange={onChange}
             >
                 <ListboxButton className={cl.trigger}>
-                    <Button disabled={readonly}>{defaultValue ?? value}</Button>
+                    <Button disabled={readonly} className={cl.btn}>
+                        {defaultValue ?? value}
+                        <Icon Svg={IconDown} className={cl.iconDown}/>
+                    </Button>
                 </ListboxButton>
                 <ListboxOptions
                     className={classNames(cl.options, {}, optionsClasses)}

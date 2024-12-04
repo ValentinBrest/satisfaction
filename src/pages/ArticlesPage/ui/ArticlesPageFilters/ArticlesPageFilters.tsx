@@ -42,15 +42,15 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
         () => [
             {
                 value: ArticleType.ALL,
-                content: t('All'),
+                content: t('all'),
             },
             {
                 value: ArticleType.SCIENCE,
-                content: t('Science'),
+                content: t('science'),
             },
             {
                 value: ArticleType.ECONOMICS,
-                content: t('Economics'),
+                content: t('economics'),
             },
             {
                 value: ArticleType.IT,

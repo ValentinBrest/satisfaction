@@ -1,16 +1,16 @@
 import { memo } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { Counter } from '@/entities/Counter';
+import { Card, Text } from '@/shared/ui';
 import { Page } from '@/widgets/Page';
 
 const MainPage = memo(() => {
-    const { t } = useTranslation('main');
-
     return (
         <Page data-testid="MainPage">
-            <div>{t('glavnaya-stranica')}</div>
-            <Counter /> 
+            <Text title={'mainPage'} />
+            <Card>
+                <Counter />
+            </Card>
         </Page>
     );
 });

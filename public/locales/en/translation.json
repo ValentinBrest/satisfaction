@@ -18,5 +18,7 @@
   "profil": "Profile",
   "main": "Main Page",
   "about": "About site",
-  "articles": "Articles"
+  "articles": "Articles",
+  "mainPage": "Main page",
+  "counter": "Counter"
 }

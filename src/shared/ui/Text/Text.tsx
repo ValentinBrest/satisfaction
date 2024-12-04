@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 
@@ -42,6 +43,7 @@ const mapSizaToHEaderTag: Record<TextSize, HeaderTagType> = {
 };
 
 export const Text = memo((props: TextProps) => {
+    const { t } = useTranslation();
     const {
         className,
         title,
@@ -62,8 +64,8 @@ export const Text = memo((props: TextProps) => {
     
     return (
         <div className={classNames(cl.Text, mods, [className])}>
-            {title && <HeaderTag data-testid={`${dataTestId}.Header`} className={cl.title}>{title}</HeaderTag>}
-            {text && <p data-testid={`${dataTestId}.Paragraph`} className={cl.text}>{text}</p>}
+            {title && <HeaderTag data-testid={`${dataTestId}.Header`} className={cl.title}>{t(title)}</HeaderTag>}
+            {text && <p data-testid={`${dataTestId}.Paragraph`} className={cl.text}>{t(text)}</p>}
         </div>
     );
 });

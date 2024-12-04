@@ -3,9 +3,9 @@
     z-index: 1000;
 
     min-width: 100%;
-    padding: 5px 10px;
+    padding: var(--padding-xs) var(--padding-s);
 
     background-color: var(--listbox-bg);
-    border-radius: 12px;
+    border-radius: var(--popover-radius);
     box-shadow: 4px 4px 8px rgb(80 80 80);
 }

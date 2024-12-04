@@ -1,6 +1,7 @@
 .ProfileCard {
-    padding: 10px;
-    border: 1px solid var(--inverted-bg-color);
+    padding: var(--padding-lx);
+    border-radius: var(--profile-card-radius);
+    box-shadow: 0 0 20px 0 var(--inverted-bg-color);
 }
 
 .loading,
@@ -9,5 +10,9 @@
 }
 
 .profileInput {
-    padding-left: 15px;
+    padding-left: var(--padding-sm);
+}
+
+.inputWrap {
+    margin-left: var(--margin-xl);
 }

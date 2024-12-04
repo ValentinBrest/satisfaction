@@ -7,7 +7,7 @@ export default (isAdminUser: boolean, authDataId: string, onLogout: () => void) 
         security: isAdminUser,
     },
     {
-        content: 'profil',
+        content: 'profile',
         href: getRouteProfile(authDataId),
     },
     {

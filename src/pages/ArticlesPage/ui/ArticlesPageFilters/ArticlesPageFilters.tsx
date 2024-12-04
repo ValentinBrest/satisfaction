@@ -30,7 +30,7 @@ interface ArticlesPageFiltersProps {
 
 export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
     const { className } = props;
-    const { t } = useTranslation('');
+    const { t } = useTranslation('articles');
     const dispatch = useAppDispatch();
     const view = useSelector(getArticlesPageView);
     const order = useSelector(getArticlesPageOrder);
@@ -42,15 +42,15 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
         () => [
             {
                 value: ArticleType.ALL,
-                content: t('Все'),
+                content: t('All'),
             },
             {
                 value: ArticleType.SCIENCE,
-                content: t('Наука'),
+                content: t('Science'),
             },
             {
                 value: ArticleType.ECONOMICS,
-                content: t('Экономика'),
+                content: t('Economics'),
             },
             {
                 value: ArticleType.IT,
@@ -124,6 +124,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
             </HStack>
             <Card className={cl.search}>
                 <Input
+                    className={cl.input}
                     placeholder={t('poisk')}
                     onChange={onChangeSearch}
                     value={search}

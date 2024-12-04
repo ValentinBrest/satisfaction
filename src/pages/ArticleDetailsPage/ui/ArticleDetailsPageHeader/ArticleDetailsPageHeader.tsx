@@ -8,6 +8,7 @@ import EditIcon from '@/shared/assets/icons/edit.svg';
 import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui';
+import { Icon } from '@/shared/ui/Icon';
 import { HStack } from '@/shared/ui/Stack';
 
 import { getCanEditArticle } from '../../model/selectors/article';
@@ -46,7 +47,7 @@ export const ArticleDetailsPageHeader = memo(
                     theme={ButtonTheme.CLEAR}
                     className={cl.icon}
                 >
-                    <BackIcon />
+                    <Icon width={35} height={35} Svg={BackIcon} />
                 </Button>
 
                 {canEdit && (
@@ -55,7 +56,7 @@ export const ArticleDetailsPageHeader = memo(
                         theme={ButtonTheme.CLEAR}
                         className={cl.edit}
                     >
-                        <EditIcon />
+                        <Icon width={30} height={30} Svg={EditIcon} />
                     </Button>
                 )}
             </HStack>

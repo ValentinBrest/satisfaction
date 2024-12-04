@@ -1,6 +1,9 @@
 import { InputHTMLAttributes, memo, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
+
+import { HStack } from '../Stack';
 
 import cl from './Input.module.scss';
 
@@ -9,12 +12,14 @@ type HTMLInputProps = Omit<
     'value' | 'onChange' | 'readonly'
 >;
 
-interface InputProps extends HTMLInputProps {
+export interface InputProps extends HTMLInputProps {
     className?: string;
     value?: string | number;
     onChange?: (value: string) => void;
     isOpen?: boolean;
     readonly?: boolean;
+    label?: string;
+    dictTr?: string;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -25,8 +30,12 @@ export const Input = memo((props: InputProps) => {
         type = 'text',
         isOpen,
         readonly,
+        label,
+        dictTr,
         ...otherProps
     } = props;
+
+    const { t } = useTranslation(dictTr);
 
     const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value);
@@ -40,19 +49,18 @@ export const Input = memo((props: InputProps) => {
         }
     }, [isOpen]);
 
-    const mods: Mods = {
-        [cl.readonly] : readonly, 
-    };
-
     return (
-        <input
-            ref={refInput}
-            className={classNames(cl.Input, mods, [className])}
-            type={type}
-            value={value}
-            onChange={onChangeHandler}
-            readOnly={readonly}
-            {...otherProps}
-        />
+        <HStack max>
+            {label && <label className={cl.label}>{t(label)}:</label>}
+            <input
+                ref={refInput}
+                className={classNames(cl.Input, {}, [className])}
+                type={type}
+                value={value}
+                onChange={onChangeHandler}
+                disabled={readonly}
+                {...otherProps}
+            />
+        </HStack>
     );
 });

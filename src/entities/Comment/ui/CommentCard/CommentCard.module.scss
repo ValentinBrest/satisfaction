@@ -1,5 +1,5 @@
 .CommentCard {
-    padding: 20px;
+    padding: var(--padding-m);
     border: 1px solid var(--inverted-bg-color);
 }
 
@@ -10,12 +10,12 @@
 }
 
 .username {
-    margin-left: 10px;
+    margin-left: var(--margin-s);
     text-decoration: none;
 }
 
 .comment {
-    margin-left: 45px;
+    margin-left: var(--margin-xx);
 }
 
 .loading {

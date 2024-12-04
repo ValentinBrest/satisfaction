@@ -52,7 +52,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
             <Text
                 theme={TextTheme.ERROR}
                 align={TextAlign.CENTER}
-                title={t('Произошла ошибка при загрузке страницы')}
+                title={t('getError')}
             />
         );
     } else if (isLoading) {

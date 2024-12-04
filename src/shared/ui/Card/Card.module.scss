@@ -1,8 +1,8 @@
 .Card {
-    padding: 15px 25px;
+    padding: var(--padding-sm) var(--padding-ml);
 
     // background: var(--card-bg);
-    border-radius: 10px;
+    border-radius: var(--card-radius);
 }
 
 .normal {

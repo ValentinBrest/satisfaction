@@ -20,6 +20,7 @@ export interface MenuItem {
     content?: ReactNode;
     onCLick?: () => void;
     href?: string;
+    security?: boolean;
 }
 
 interface MenuProps {
@@ -41,35 +42,37 @@ export function Menu(props: MenuProps) {
             </MenuButton>
             <MenuItems className={classNames(cl.options, {}, menuClasses)}>
                 {items.map((item, index) => {
-                    const content = ({ active }: { active: boolean }) => (
-                        <button
-                            type="button"
-                            disabled={item.disabled}
-                            onClick={item.onCLick}
-                            className={classNames(cl.item, {
-                                [cl.active]: active,
-                            })}
-                        >
-                            {t(`${item.content}`)}
-                        </button>
-                    );
-
-                    if (item.href) {
-                        return (
-                            <MenuItem
-                                as={AppLink}
-                                key={index}
-                                to={item.href}
+                    if (item.security === undefined || item.security) {
+                        const content = ({ active }: { active: boolean }) => (
+                            <button
+                                type="button"
+                                disabled={item.disabled}
+                                onClick={item.onCLick}
+                                className={classNames(cl.item, {
+                                    [cl.active]: active,
+                                })}
                             >
+                                {t(`${item.content}`)}
+                            </button>
+                        );
+    
+                        if (item.href) {
+                            return (
+                                <MenuItem
+                                    as={AppLink}
+                                    key={index}
+                                    to={item.href}
+                                >
+                                    {content}
+                                </MenuItem>
+                            );
+                        }
+                        return (
+                            <MenuItem as={Fragment} key={index}>
                                 {content}
                             </MenuItem>
                         );
                     }
-                    return (
-                        <MenuItem as={Fragment} key={index}>
-                            {content}
-                        </MenuItem>
-                    );
                 })}
             </MenuItems>
         </HMenu>

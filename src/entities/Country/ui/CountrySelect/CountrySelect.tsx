@@ -11,6 +11,7 @@ interface CountrySelectProps {
     value?: Country;
     onChange?: (value: Country) => void;
     readonly?: boolean;
+    dictTr?: string;
 }
 
 const options = [
@@ -21,8 +22,8 @@ const options = [
 ];
 
 export const CountrySelect = memo((props: CountrySelectProps) => {
-    const { className, value, onChange, readonly } = props;
-    const { t } = useTranslation();
+    const { className, value, onChange, readonly, dictTr } = props;
+    const { t } = useTranslation(dictTr ?? '');
 
     const onChangeHandler = useCallback(
         (value: string) => {

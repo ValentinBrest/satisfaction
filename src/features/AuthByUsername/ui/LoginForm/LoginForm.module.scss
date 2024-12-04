@@ -14,12 +14,12 @@
 }
 
 .input {
-    margin-top: 10px;
-    padding: 0 10px 0 40px;
+    margin-top: var(--margin-s);
+    padding: 0 var(--padding-s) 0 var(--padding-x);
 }
 
 .loginBtn {
-    margin-top: 40px;
+    margin-top: var(--margin-x);
 }
 
 .wrapInput {
@@ -41,5 +41,5 @@
     width: 15px;
     height: 15px;
 
-    fill: var(--inverted-bg-color);
+    fill: var(--dark-color);
 }

@@ -24,8 +24,8 @@
     flex-direction: column;
     align-items: center;
 
-    width: 300px;
-    padding: 20px;
+    width: var(--modal-width);
+    padding: var(--padding-m);
 
     background: var(--bg-color);
     border-radius: 3px;

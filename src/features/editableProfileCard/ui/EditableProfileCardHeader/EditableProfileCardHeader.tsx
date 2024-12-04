@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 import { getUserAuthData } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Button, ButtonTheme, Text } from '@/shared/ui';
+import { Button, ButtonTheme, Text, TextSize } from '@/shared/ui';
 import { HStack } from '@/shared/ui/Stack';
 
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
@@ -42,7 +42,7 @@ export const EditableProfileCardHeader = memo(
 
         return (
             <HStack justify={'between'} max className={className}>
-                <Text title={t('profile')} />
+                <Text size={TextSize.L} title={t('profile')} />
                 {canEdit && (
                     <div>
                         {readonly ? (

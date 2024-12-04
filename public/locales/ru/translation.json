@@ -11,15 +11,13 @@
   "avtorizaciya": "АВТОРИЗАЦИЯ",
   "vy-vveli-nevernyi-login-ili-parol": "Вы ввели неверный логин или пароль",
   "vyiti": "Выйти",
-  "ukazhite-valyutu": "Укажите валюту",
-  "ukazhite-stranu": "Укажите страну",
-  "sortirovat-po": "Сортировать по",
-  "poisk": "Поиск",
-  "po": "по",
-  "vozrastaniyu": "возрастанию",
-  "ubyvaniyu": "убыванию",
-  "date-sozdaniya": "дате создания",
-  "naimenovaniyu": "наименованию",
-  "prosmotram": "просмотрам",
-  "createArticle": "Создать статью"
+  
+  "createArticle": "Создать статью",
+  "getError": "Произошла ошибка при загрузке страницы",
+  "thankRate": "Спасибо за оценку",
+  "glavnaya-stranica": "Главная страница",
+  "profil": "Профиль",
+  "main": "Главная",
+  "about": "О сайте",
+  "articles": "Статьи"
 }

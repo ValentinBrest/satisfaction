@@ -1,12 +1,8 @@
 .Button {
     cursor: pointer;
-    padding: 5px 15px;
+    padding: var(--padding-xs) var(--padding-sm);
     color: var(--primary-color);
     transition: all 0.3s;
-
-    &:hover {
-        opacity: 0.8;
-    }
 }
 
 .clear,
@@ -25,18 +21,31 @@
     color: var(--primary-color);
     background: none;
     border: 1px solid var(--primary-color);
+    border-radius: var(--btn-radius);
+
+    &:hover {
+        color: var(--inverted-primary-color);
+        background: var(--primary-color);
+    }
 }
 
 .outline_red {
     color: var(--red-light);
     background: none;
     border: 1px solid var(--red-light);
+    border-radius: var(--btn-radius);
+
+    &:hover {
+        color: var(--inverted-primary-color);
+        background: var(--red-light);
+    }
 }
 
 .background {
     color: var(--primary-color);
     background: var(--bg-color);
     border: none;
+    border-radius: var(--btn-radius);
 }
 
 .backgroundInverted {

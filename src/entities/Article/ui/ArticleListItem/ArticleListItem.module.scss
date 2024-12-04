@@ -9,7 +9,7 @@
         align-items: center;
 
         & .avatar {
-            margin-right: 10px;
+            margin-right: var(--margin-s);
         }
     }
 
@@ -24,12 +24,12 @@
     }
 
     .title {
-        margin: 20px 0 5px;
+        margin: var(--margin-m) 0 var(--margin-xs);
         font: var(--font-xl);
     }
 
     .types {
-        margin-bottom: 10px;
+        margin-bottom: var(--margin-s);
     }
 
     .textBlock {
@@ -40,7 +40,7 @@
     .footer {
         display: flex;
         align-items: center;
-        margin-top: 25px;
+        margin-top: var(--margin-ml);
     }
 }
 

@@ -84,57 +84,75 @@ export const ProfileCard = (props: ProfileCardProps) => {
             className={classNames(cl.ProfileCard, {}, [className])}
         >
             {profile?.avatar && (
-                <Avatar src={profile?.avatar} size={150} alt="usericon" />
+                <Avatar
+                    className={cl.avatar}
+                    src={profile?.avatar}
+                    size={150}
+                    alt="usericon"
+                />
             )}
             <VStack max gap="8" className={cl.inputWrap}>
                 <Input
+                    label={'username'}
                     className={cl.profileInput}
-                    placeholder={t('vashe-imya')}
-                    value={profile?.first}
-                    onChange={onChangeFirstname}
+                    placeholder={t('vvedite-imya-polzovatelya')}
+                    value={profile?.username}
+                    onChange={onChangeUsername}
                     readonly={readonly}
-                    data-testid={'ProfileCard.firstname'}
+                    dictTr={'profile'}
                 />
                 <Input
+                    label={'lastName'}
                     className={cl.profileInput}
                     placeholder={t('vasha-familiya')}
                     value={profile?.lastname}
                     onChange={onChangeLastname}
                     readonly={readonly}
                     data-testid={'ProfileCard.lastname'}
+                    dictTr={'profile'}
                 />
                 <Input
+                    label={'name'}
+                    className={cl.profileInput}
+                    placeholder={t('vashe-imya')}
+                    value={profile?.first}
+                    onChange={onChangeFirstname}
+                    readonly={readonly}
+                    data-testid={'ProfileCard.firstname'}
+                    dictTr={'profile'}
+                />
+                <Input
+                    label={'age'}
                     className={cl.profileInput}
                     placeholder={t('vash-vozrast')}
                     value={profile?.age}
                     onChange={onChangeAge}
                     readonly={readonly}
+                    dictTr={'profile'}
                 />
                 <Input
+                    label={'city'}
                     className={cl.profileInput}
                     placeholder={t('vash-gorod')}
                     value={profile?.city}
                     onChange={onChangeCity}
                     readonly={readonly}
+                    dictTr={'profile'}
                 />
-                <Input
-                    className={cl.profileInput}
-                    placeholder={t('vvedite-imya-polzovatelya')}
-                    value={profile?.username}
-                    onChange={onChangeUsername}
-                    readonly={readonly}
-                />
+
                 <CurrencySelect
-                    className={cl.input}
+                    className={cl.profileInput}
                     value={profile?.currency}
                     onChange={onChangeCurrency}
                     readonly={readonly}
+                    dictTr={'profile'}
                 />
                 <CountrySelect
-                    className={cl.input}
+                    className={cl.profileInput}
                     value={profile?.country}
                     onChange={onChangeCountry}
                     readonly={readonly}
+                    dictTr={'profile'}
                 />
             </VStack>
         </HStack>

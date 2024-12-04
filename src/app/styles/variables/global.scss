@@ -28,6 +28,10 @@
     --sidebar-width: 200px;
     --sidebar-width-collapsed: 80px;
     --navbar-width: 100px;
+    --input-height: 40px;
+    --input-comment-height: 50px;
+    --label-input-width: 100px;
+    --modal-width: 300px;
 
     // Цвета
     --light-color: #e7efc5;
@@ -43,7 +47,7 @@
     --red-light: #d81d1d;
     --red-dark: #a50e0e;
     --card-bg-light: #d8d8d8;
-    --card-bg-dark: #311286;
+    --card-bg-dark: #231841;
     --card-bg-orange: #cc921e;
     --listbox-bg-light: #ababab;
     --listbox-bg-dark: #3d0cc2;
@@ -53,15 +57,34 @@
     --modal-z-index: 10;
 
     // Padding
+    --padding-xs: 5px;
     --padding-s: 10px;
+    --padding-sm: 15px;
     --padding-m: 20px;
+    --padding-ml: 25px;
     --padding-l: 30px;
+    --padding-lx: 35px;
     --padding-x: 40px;
+    --padding-xx: 45px;
 
     // margin
+    --margin-xs: 5px;
     --margin-s: 10px;
-    --margin-xs: 15px;
+    --margin-sm: 15px;
     --margin-m: 20px;
+    --margin-ml: 20px;
     --margin-l: 30px;
+    --margin-xl: 35px;
     --margin-x: 40px;
+    --margin-xx: 45px;
+
+    // border-radius
+    --btn-radius: 5px;
+    --input-radius: 3px;
+    --popup-opt-radius: 12px;
+    --avatar-radius: 50%;
+    --card-radius: 10px;
+    --drawer-radius: 12px 12px 0;
+    --popover-radius: 12px;
+    --profile-card-radius: 5px;
 }

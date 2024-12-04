@@ -8,13 +8,13 @@
 }
 
 .title {
-    margin-top: 20px;
+    margin-top: var(--margin-m);
 }
 
 .skeleton {
-    margin-top: 15px;
+    margin-top: var(--margin-sm);
 }
 
 .block {
-    margin-top: 15px;
+    margin-top: var(--margin-sm);
 }

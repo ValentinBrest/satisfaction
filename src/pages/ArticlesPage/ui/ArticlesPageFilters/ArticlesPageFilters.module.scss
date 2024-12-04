@@ -1,4 +1,8 @@
 .search {
     width: 100%;
-    padding: 10px 20px;
+    padding: var(--padding-s) var(--padding-m);
+}
+
+.input {
+    padding-left: var(--padding-sm);
 }

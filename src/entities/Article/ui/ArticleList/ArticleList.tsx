@@ -28,7 +28,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         target,
     } = props;
 
-    const { t } = useTranslation();
+    const { t } = useTranslation('articles');
 
     const getSkeletons = (view: ArticleView) =>
         new Array(view === ArticleView.GRID ? 9 : 3)
@@ -56,7 +56,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                     cl[view],
                 ])}
             >
-                <Text title={t('Статьи не найдены')} />
+                <Text title={t('articlesNotFound')} />
             </div>
         );
     }

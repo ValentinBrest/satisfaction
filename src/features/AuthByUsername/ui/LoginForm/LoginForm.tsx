@@ -8,6 +8,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme, Input, Loader, Text, TextTheme } from '@/shared/ui';
+import { Icon } from '@/shared/ui/Icon';
 
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
@@ -57,7 +58,7 @@ const LoginForm = memo(({className, isOpen, onSuccess}: LoginFormProps) => {
                 {error && <Text text={t('vy-vveli-nevernyi-login-ili-parol')} theme={TextTheme.ERROR}/>}
                 {isLoading && <Loader className={cl.loader}/>}
                 <div className={classNames(cl.wrapInput, {[cl.isLoad]: isLoading})}>
-                    <EmailIcon className={cl.icon}/>
+                    <Icon Svg={EmailIcon} className={cl.icon}/>
                     <Input 
                         className={cl.input} 
                         type="text" 
@@ -68,7 +69,7 @@ const LoginForm = memo(({className, isOpen, onSuccess}: LoginFormProps) => {
                     />
                 </div>
                 <div className={classNames(cl.wrapInput, {[cl.isLoad]: isLoading})}>
-                    <PasswordIcon className={cl.icon}/>
+                    <Icon Svg={PasswordIcon} className={cl.icon}/>
                     <Input 
                         className={cl.input} 
                         type="password" 

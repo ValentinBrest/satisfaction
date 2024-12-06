@@ -21,5 +21,6 @@
   "about": "О сайте",
   "articles": "Статьи",
   "mainPage": "Главная страница",
-  "counter": "Счетчик"
+  "counter": "Счетчик",
+  "hasNotPermission": "У вас не хватает прав!"
 }

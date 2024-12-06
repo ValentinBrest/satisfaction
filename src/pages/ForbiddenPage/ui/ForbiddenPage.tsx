@@ -1,13 +1,14 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { Text } from '@/shared/ui';
 import { Page } from '@/widgets/Page';
 
 const ForbiddenPage = memo(() => {
-    const { t } = useTranslation('about');
+    const { t } = useTranslation();
     return (
         <Page data-testid="ForbiddenPage">
-            <div>{t('У вас не хватает прав!')}</div>
+            <Text title={t('hasNotPermission')}/>
         </Page>
     );
 });

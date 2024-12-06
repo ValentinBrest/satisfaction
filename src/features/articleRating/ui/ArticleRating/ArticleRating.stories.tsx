@@ -1,10 +1,12 @@
 import React from 'react';
 import { ComponentMeta,ComponentStory } from '@storybook/react';
 
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
 import ArticleRating from './ArticleRating';
 
 export default {
-    title: 'shared/ArticleRating',
+    title: 'features/Article/ArticleRating',
     component: ArticleRating,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -15,3 +17,4 @@ const Template: ComponentStory<typeof ArticleRating> = (args) => <ArticleRating 
 
 export const Normal = Template.bind({});
 Normal.args = {};
+Normal.decorators = [StoreDecorator({})];

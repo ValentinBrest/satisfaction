@@ -20,5 +20,6 @@
   "about": "About site",
   "articles": "Articles",
   "mainPage": "Main page",
-  "counter": "Counter"
+  "counter": "Counter",
+  "hasNotPermission": "You don't have enough permissions!"
 }

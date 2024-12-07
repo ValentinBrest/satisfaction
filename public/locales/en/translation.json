@@ -21,5 +21,7 @@
   "articles": "Articles",
   "mainPage": "Main page",
   "counter": "Counter",
-  "hasNotPermission": "You don't have enough permissions!"
+  "hasNotPermission": "You don't have enough permissions!",
+  "loginAdmin": "To log in to the site under the admin, enter the username: admintest, password: 123.",
+  "loginUser": "To log in to the site as a user, enter the username: usertest, password: 123."
 }

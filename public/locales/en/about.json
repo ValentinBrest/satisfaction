@@ -1,3 +1,7 @@
 {
-  "o-saite": "About"
+  "o-saite": "About",
+  "hello": "Welcome to the 'Valk' website.",
+  "goal": "The main purpose of the site is to enable users to post articles related to science, education and IT, comment on and evaluate them.",
+  "opportunity": "The site is running in demo mode, but now you can view existing articles, leave a comment and rate the article. For the convenience of searching, you can use a filter and sorting. On the Profile page, you can update the profile data.",
+  "story": "You can see how the UI components used in the application look like at the link:"
 }

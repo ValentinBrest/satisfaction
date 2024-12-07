@@ -22,7 +22,7 @@ interface ArticleListProps {
 export const ArticleList = memo((props: ArticleListProps) => {
     const {
         className,
-        articles,
+        articles = [],
         isLoading,
         view = ArticleView.LIST,
         target,

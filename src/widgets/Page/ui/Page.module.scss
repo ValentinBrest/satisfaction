@@ -11,3 +11,10 @@
     height: 20px;
     margin: var(--margin-s);
 }
+
+@media (max-width: 768px) {
+    .Page {
+        margin-top: var(--navbar-movile-height);
+        margin-left: var(--sidebar-width-collapsed);
+    }
+}

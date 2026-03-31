@@ -17,3 +17,9 @@ body {
 .content-page {
     display: flex;
 }
+
+@media (max-width: 768px) {
+    .content-page {
+        display: grid;
+    }
+}

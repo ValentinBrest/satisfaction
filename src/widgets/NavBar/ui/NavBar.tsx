@@ -1,4 +1,5 @@
 import { memo, useCallback, useState } from 'react';
+import { isMobile } from 'react-device-detect';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -15,7 +16,7 @@ import {
     ButtonTheme,
 } from '@/shared/ui';
 import { Menu } from '@/shared/ui/Popups';
-import { VStack } from '@/shared/ui/Stack';
+import { HStack, VStack } from '@/shared/ui/Stack';
 
 import menuConfig from './configMenu';
 
@@ -45,35 +46,41 @@ export const NavBar = memo(({ className }: NavBarProps) => {
         dispatch(userActions.logout());
     }, [dispatch]);
 
+    const content = (
+        <>
+            {authData ? (
+                <>
+                    <Menu
+                        items={menuConfig(isAdminUser, authData.id, onLogout)}
+                        trigger={
+                            <Avatar
+                                size={30}
+                                src={authData.avatar}
+                                alt="avatar"
+                                fallbackInverted={true}
+                            />
+                        }
+                    />
+                    <NotificationsButton />
+                </>
+            ) : (
+                <Button
+                    theme={ButtonTheme.CLEAR_INVERTED}
+                    onClick={onShowModal}
+                >
+                    {t('voiti')}
+                </Button>
+            )}
+        </>
+    );
+
     return (
         <header className={classNames(cl.NavBar, {}, [className])}>
+            {isMobile 
+                ? <HStack max gap="8" justify="end">{content}</HStack>
+                : <VStack max gap="8" align="center">{content}</VStack>
+            }
             
-            
-            <VStack max gap="8" align="center">
-                {authData ? (
-                    <>
-                        <Menu
-                            items={menuConfig(isAdminUser, authData.id, onLogout)}
-                            trigger={
-                                <Avatar
-                                    size={30}
-                                    src={authData.avatar}
-                                    alt="avatar"
-                                    fallbackInverted={true}
-                                />
-                            }
-                        />
-                        <NotificationsButton />
-                    </>
-                ) : (
-                    <Button
-                        theme={ButtonTheme.CLEAR_INVERTED}
-                        onClick={onShowModal}
-                    >
-                        {t('voiti')}
-                    </Button>
-                )}
-            </VStack>
             {authData && (
                 <AppLink
                     theme={AppLinkTheme.INVERTED}

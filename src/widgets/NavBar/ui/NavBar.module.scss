@@ -13,3 +13,16 @@
 .new {
     text-align: center;
 }
+
+@media (max-width: 768px) {
+    .NavBar {
+        position: absolute;
+        right: 0;
+        left: var(--sidebar-width-collapsed);
+
+        flex-direction: row-reverse;
+
+        width: calc(100% - var(--sidebar-width-collapsed));
+        height: var(--navbar-movile-height);
+    }
+}
